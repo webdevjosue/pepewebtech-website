@@ -1,6 +1,3 @@
 {
-  "rewrites": [
-    { "source": "/blog/posts/:path*", "destination": "/blog/posts/:path*" }
-  ],
-  "trailingSlash": false
+  "cleanUrls": false
 }
