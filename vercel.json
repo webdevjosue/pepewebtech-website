@@ -1,6 +1,12 @@
 {
-  "trailingSlash": false,
   "cleanUrls": false,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/blog/posts/:slug",
+      "destination": "/blog/posts/:slug.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
