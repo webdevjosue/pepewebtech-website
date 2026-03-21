@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Captain makes building accurate AI-powered knowledge search simple. Learn how automated RAG can help your small business find information in documents with 95% accuracy in minutes, not months.">
+    <meta name="keywords" content="RAG, knowledge search, AI search, document search, small business AI, Captain, automated RAG, vector search">
+    <title>Build Accurate AI Search for Your Business in Minutes (Not Months) | PepeWebTech Blog</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .blog-post {
+            padding-top: 120px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            margin-bottom: 40px;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .blog-hero-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: var(--radius);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .blog-content {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.125rem;
+        }
+
+        .blog-content h2 {
+            color: var(--text-primary);
+            margin-top: 48px;
+            margin-bottom: 24px;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .blog-content h3 {
+            color: var(--text-primary);
+            margin-top: 32px;
+            margin-bottom: 16px;
+            font-size: 1.375rem;
+            font-weight: 600;
+        }
+
+        .blog-content p {
+            margin-bottom: 24px;
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 24px;
+            padding-left: 32px;
+        }
+
+        .blog-content li {
+            margin-bottom: 12px;
+        }
+
+        .blog-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .blog-content code {
+            background: rgba(0,0,0,0.05);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 32px;
+            border-radius: var(--radius);
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .highlight-box h3 {
+            color: white;
+            margin-top: 0;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .highlight-box p {
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 0;
+        }
+
+        .key-takeaway {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary);
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .key-takeaway strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 32px 0;
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .comparison-table th {
+            background: var(--bg-light);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .comparison-table td:first-child {
+            font-weight: 600;
+            color: var(--text-primary);
+            width: 40%;
+        }
+
+        @media (max-width: 768px) {
+            .blog-post {
+                padding-top: 100px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .blog-hero-image {
+                height: 300px;
+                font-size: 1.75rem;
+            }
+
+            .blog-content {
+                font-size: 1rem;
+            }
+
+            .blog-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .blog-content h3 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <article class="blog-post">
+            <div class="blog-header">
+                <div class="blog-meta">
+                    <span>March 13, 2026</span>
+                    <span>•</span>
+                    <span>AI</span>
+                    <span>•</span>
+                    <span>5 min read</span>
+                </div>
+                <h1>Build Accurate AI Search for Your Business in Minutes (Not Months)</h1>
+            </div>
+
+            <div class="blog-hero-image">
+                🔍 AI-Powered Knowledge Search
+            </div>
+
+            <div class="blog-content">
+                <p>Your business has documents. Lots of them. Contracts, policies, SOPs, customer records, product info. And somewhere in that pile is the answer your team needs right now.</p>
+
+                <p>But finding it? That's the hard part. Keyword search fails. Ctrl+F isn't enough. And building an AI-powered search system takes months of engineering work.</p>
+
+                <p>A new tool called <strong>Captain</strong> just launched, and it's solving this problem differently. Let me explain why this matters for small businesses.</p>
+
+                <h2>What Is RAG? (And Why You Should Care)</h2>
+
+                <p>RAG stands for <strong>Retrieval-Augmented Generation</strong>. It's the technology behind ChatGPT's ability to answer questions with your own documents, not just general knowledge.</p>
+
+                <p>Here's how it works:</p>
+
+                <ol>
+                    <li><strong>Index your documents</strong> — Turn PDFs, Word docs, emails into searchable data</li>
+                    <li><strong>Chunk and embed</strong> — Break content into pieces and convert to AI-friendly vectors</li>
+                    <li><strong>Store in vector database</strong> — Keep everything in a specialized database</li>
+                    <li><strong>Search and rank</strong> — When you ask a question, find relevant chunks</li>
+                    <li><strong>Generate answer</strong> — Feed the chunks to an LLM to write a response</li>
+                </ol>
+
+                <p>It works. But building it? That's where most businesses get stuck.</p>
+
+                <div class="highlight-box">
+                    <h3>💡 The Problem</h3>
+                    <p>Building RAG manually takes <strong>3-6 months</strong> of development time. You need to figure out chunking strategies, embedding models, vector databases, re-ranking, and security. Even then, accuracy hovers around <strong>78%</strong>.</p>
+                </div>
+
+                <h2>Captain: Automated RAG That Actually Works</h2>
+
+                <p>Captain automates the entire RAG pipeline. You connect your data sources, and it handles everything else:</p>
+
+                <ul>
+                    <li><strong>Universal Indexing</strong> — Auto OCR + VLM, file conversions, best-in-class embeddings</li>
+                    <li><strong>Managed Storage</strong> — Built-in vector database (no external database needed)</li>
+                    <li><strong>Hybrid Search</strong> — Combines keyword and semantic search for better results</li>
+                    <li><strong>Re-Ranking</strong> — Automatically sorts results by relevance</li>
+                    <li><strong>Security</strong> — Role-based access control, SOC 2 certified</li>
+                </ul>
+
+                <p>The results speak for themselves:</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Manual RAG</th>
+                            <th>Captain</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Accuracy</td>
+                            <td>~78%</td>
+                            <td><strong>95%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Setup Time</td>
+                            <td>3-6 months</td>
+                            <td><strong>Minutes</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Maintenance</td>
+                            <td>Ongoing</td>
+                            <td><strong>Zero</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Security</td>
+                            <td>Custom</td>
+                            <td><strong>SOC 2 Certified</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>What Can You Do With It?</h2>
+
+                <p>Once you've indexed your documents, you can ask questions like:</p>
+
+                <div class="key-takeaway">
+                    <strong>Real Examples:</strong>
+                    "What's our refund policy for digital products?"<br>
+                    "Show me all contracts expiring in Q2"<br>
+                    "What did we promise Client X in the proposal?"<br>
+                    "Summarize the safety guidelines for our equipment"
+                </div>
+
+                <p>Captain connects to your existing systems:</p>
+
+                <ul>
+                    <li><strong>SharePoint</strong> — Import from Microsoft 365</li>
+                    <li><strong>Cloud Storage</strong> — Connect S3, GCS, Azure</li>
+                    <li><strong>Custom Uploads</strong> — Drag and drop files directly</li>
+                </ul>
+
+                <h2>Security That Matters</h2>
+
+                <p>For small businesses, data privacy isn't optional. Captain gets this right:</p>
+
+                <h3>Role-Based Access Control</h3>
+
+                <p>Attach custom metadata to files at index time, then filter queries based on who's asking. Your HR files stay HR-only. Your financial data stays with the finance team.</p>
+
+                <h3>SOC 2 Certified</h3>
+
+                <p>Enterprise-grade infrastructure security. Independently audited and penetration tested. This isn't just "we take security seriously" — it's documented, verified security.</p>
+
+                <h2>Who Should Use Captain?</h2>
+
+                <h3>Use It If:</h3>
+
+                <ul>
+                    <li>You have <strong>lots of documents</strong> (PDFs, Word, emails)</li>
+                    <li>Your team spends time <strong>searching for information</strong></li>
+                    <li>You're building a <strong>customer support system</strong></li>
+                    <li>You need <strong>quick answers</strong> from your knowledge base</li>
+                    <li>You want <strong>accurate AI search</strong> without months of development</li>
+                    <li>You care about <strong>security and compliance</strong></li>
+                </ul>
+
+                <h3>Hold Off If:</h3>
+
+                <ul>
+                    <li>You only have a handful of documents (keyword search works fine)</li>
+                    <li>Your documents are highly structured (database is better)</li>
+                    <li>You need real-time sync with complex systems</li>
+                    <li>You want to build custom ML pipelines (manual RAG gives more control)</li>
+                </ul>
+
+                <h2>The Bigger Picture</h2>
+
+                <p>Captain is part of a bigger trend: <strong>AI infrastructure getting automated</strong>. Instead of every company building their own RAG pipelines, tools like Captain provide managed, optimized solutions.</p>
+
+                <p>This is similar to how cloud computing replaced on-prem servers. You don't build your own database anymore — you use PostgreSQL, MongoDB, or managed services. AI infrastructure is going the same way.</p>
+
+                <p>For small businesses, this is a win. You get enterprise-grade AI without enterprise-grade engineering teams.</p>
+
+                <div class="highlight-box">
+                    <h3>🎯 The Bottom Line</h3>
+                    <p>If you have documents and people need to find things in them, Captain is worth a look. It's not for everyone — simple keyword search works for small document sets — but for businesses drowning in files, it could be a game-changer.</p>
+                </div>
+
+                <h2>Getting Started</h2>
+
+                <p>Here's how to try Captain:</p>
+
+                <ol>
+                    <li>Visit <strong>runcaptain.com</strong> and sign up</li>
+                    <li>Connect your data sources (SharePoint, S3, or upload files)</li>
+                    <li>Let Captain index your documents (auto OCR + VLM handles images)</li>
+                    <li>Start asking questions and testing accuracy</li>
+                    <li>Set up role-based access if you have sensitive data</li>
+                </ol>
+
+                <p><strong>Tip:</strong> Start with a focused use case. "Search our SOPs" or "Find customer contracts" is better than "index everything at once."</p>
+
+                <h2>Pricing and Availability</h2>
+
+                <p>Captain just launched, so pricing details are still rolling out. Expect SaaS pricing tiers based on document volume and features. The team behind it includes engineers from major tech companies, suggesting they're serious about enterprise-grade quality.</p>
+
+                <h2>Competitors to Watch</h2>
+
+                <p>Captain isn't alone in this space. Similar tools include:</p>
+
+                <ul>
+                    <li><strong>LlamaIndex</strong> — Popular RAG framework, but requires development</li>
+                    <li><strong>Pinecone</strong> — Managed vector database (you build the rest)</li>
+                    <li><strong>LangChain</strong> — Developer-focused RAG tools</li>
+                    <li><strong>Weaviate</strong> — Open-source vector search</li>
+                </ul>
+
+                <p>Captain differentiates itself by <strong>automating everything</strong> — not just one piece of the pipeline. You don't need to be an ML engineer to use it.</p>
+
+                <h2>Final Thoughts</h2>
+
+                <p>The ability to search documents with AI is transformative. Customer service reps find answers instantly. HR policies become searchable. Contracts don't get lost in email threads.</p>
+
+                <p>But for most small businesses, building this capability hasn't been practical. It takes too long, costs too much, and requires specialized talent.</p>
+
+                <p>Captain changes the equation. It's <strong>production-ready RAG in minutes</strong>, not months. With 95% accuracy, SOC 2 security, and zero maintenance, it's worth a serious look for any business drowning in documents.</p>
+
+                <p>AI search isn't just for big tech anymore. It's for your business too.</p>
+
+                <hr style="margin: 48px 0; border: none; border-top: 1px solid var(--border-light);">
+
+                <p><strong>Want more practical AI tips for your small business?</strong> Subscribe to the PepeWebTech newsletter for weekly insights on AI, web development, and tech that actually matters.</p>
+            </div>
+        </article>
+    </div>
+</body>
+</html>
