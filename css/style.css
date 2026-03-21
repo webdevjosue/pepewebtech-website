@@ -219,7 +219,8 @@ p {
 .navbar .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    position: relative;
 }
 
 .logo {
@@ -229,11 +230,18 @@ p {
     text-decoration: none;
     color: var(--text-primary);
     font-weight: 700;
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .logo-icon {
     font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.mobile-menu-btn {
+    margin-left: auto;
 }
 
 /* Mobile Menu Button */
@@ -428,6 +436,15 @@ p {
     
     .nav-links a {
         font-size: 0.9rem;
+    }
+
+    .navbar .container {
+        justify-content: space-between;
+    }
+
+    .logo {
+        position: static;
+        transform: none;
     }
     
     .nav-links .btn-primary {
