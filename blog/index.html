@@ -2,13 +2,220 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PepeWebTech Blog - Web development tips, AI insights, and guides for small businesses.">
-    <title>Blog | PepeWebTech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="PepeWebTech Blog - Web development tips, AI insights, and guides for small businesses. 49 articles on AI, web development, and digital marketing.">
+    <title>Blog | PepeWebTech - 49 Articles</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mobile-fixes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Blog index specific styles - mobile first */
+        .blog-list-header {
+            padding-top: clamp(5rem, 14vw, 7rem);
+            padding-bottom: 1.5rem;
+        }
+
+        /* Filter buttons - mobile first */
+        .blog-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 2rem;
+            padding: 0 0 0.5rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .blog-filters::-webkit-scrollbar {
+            display: none;
+        }
+
+        .filter-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 16px;
+            min-height: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            color: var(--text-secondary);
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--text-primary);
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        /* Post count indicator */
+        .post-count {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Blog list grid override - list layout on mobile, grid on desktop */
+        .blog-list-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .blog-list-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.25rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .blog-list-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        /* Compact card for list view */
+        .blog-card-compact {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .blog-card-compact:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            background: var(--bg-card-hover);
+        }
+
+        .blog-card-compact .card-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .blog-card-compact .card-category {
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--primary-light);
+            padding: 3px 10px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .blog-card-compact .card-date {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .blog-card-compact h3 {
+            font-size: 1rem;
+            line-height: 1.4;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .blog-card-compact h3 a {
+            color: var(--text-primary);
+            text-decoration: none;
+            display: block;
+            min-height: 44px;
+            /* Clamp to 3 lines */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .blog-card-compact h3 a:hover {
+            color: var(--primary-light);
+        }
+
+        .blog-card-compact .card-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+            /* Clamp to 2 lines */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .blog-card-compact .card-link {
+            color: var(--primary-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 0;
+            min-height: 44px;
+            line-height: 28px;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        @media (hover: none) {
+            .blog-card-compact:active {
+                transform: translateY(-1px);
+                transition-duration: 0.1s;
+            }
+        }
+
+        /* Hidden posts for filter */
+        .blog-card-compact.hidden {
+            display: none;
+        }
+
+        /* Month separator */
+        .month-separator {
+            grid-column: 1 / -1;
+            padding: 0.5rem 0;
+        }
+
+        .month-separator h3 {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 639px) {
+            .month-separator {
+                padding: 1rem 0 0.25rem;
+            }
+        }
+
+        /* Footer spacing for blog page */
+        .blog-footer {
+            margin-top: 3rem;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -33,521 +240,531 @@
         </div>
     </nav>
 
-    <!-- Blog Posts Section -->
+    <!-- Blog Posts -->
     <section class="blog-list">
         <div class="container">
-            <div class="section-header" style="padding-top: 120px;">
+            <div class="blog-list-header">
                 <span class="section-tag">Blog</span>
                 <h1>All Articles</h1>
                 <p>Tips, guides, and industry news for small businesses</p>
             </div>
-            <div class="blog-grid">
-                <!-- NEW POST - March 21, 2026 -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Guide</span>
+
+            <!-- Category Filters -->
+            <div class="blog-filters" role="tablist" aria-label="Filter by category">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All (49)</button>
+                <button class="filter-btn" data-filter="guide" role="tab" aria-selected="false">Guides</button>
+                <button class="filter-btn" data-filter="ai-automation" role="tab" aria-selected="false">AI & Automation</button>
+                <button class="filter-btn" data-filter="web-development" role="tab" aria-selected="false">Web Development</button>
+                <button class="filter-btn" data-filter="ai-news" role="tab" aria-selected="false">AI News</button>
+                <button class="filter-btn" data-filter="digital-marketing" role="tab" aria-selected="false">Digital Marketing</button>
+            </div>
+
+            <p class="post-count" id="post-count">Showing 49 articles</p>
+
+            <div class="blog-list-grid" id="blog-grid">
+
+                <!-- March 2026 -->
+                <div class="month-separator" data-month="2026-03"><h3>March 2026</h3></div>
+
+                <article class="blog-card-compact" data-category="digital-marketing">
+                    <div class="card-meta">
+                        <span class="card-category">Digital Marketing</span>
+                        <span class="card-date">Mar 21, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 21, 2026</span>
-                        <h3><a href="posts/2026-03-21-ai-video-content-marketing-2026-guide.html">AI Video Generation: Create Professional Marketing Content in Minutes</a></h3>
-                        <p>AI video generation tools are transforming marketing for small businesses. Learn how to create professional video content in minutes without expensive equipment or production crews.</p>
-                        <a href="posts/2026-03-21-ai-video-content-marketing-2026-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-21-ai-video-content-marketing-2026-guide.html">AI Video Generation: Create Professional Marketing Content in Minutes</a></h3>
+                    <p class="card-desc">AI video generation tools are transforming marketing for small businesses. Learn how to create professional video content in minutes without expensive equipment or production crews.</p>
+                    <a href="posts/2026-03-21-ai-video-content-marketing-2026-guide.html" class="card-link">Read More →</a>
                 </article>
-                <!-- NEW POST - March 20, 2026 -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Guide</span>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Mar 20, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 20, 2026</span>
-                        <h3><a href="posts/2026-03-20-ai-bot-traffic-web-infrastructure-small-business-guide.html">AI Bots Will Outnumber Humans Online by 2027 — Here's What That Means for Your Business</a></h3>
-                        <p>AI bots will outnumber humans online by 2027. What small businesses need to know about managing web traffic, hosting costs, and website performance in the age of AI agents.</p>
-                        <a href="posts/2026-03-20-ai-bot-traffic-web-infrastructure-small-business-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-20-ai-startups-venture-capital-trend.html">AI Startups Are Eating the Venture Industry — What That Means for Your Business</a></h3>
+                    <p class="card-desc">AI startups accounted for 41% of venture capital in 2025. What small businesses need to know about the AI investment boom and what it means for your business strategy.</p>
+                    <a href="posts/2026-03-20-ai-startups-venture-capital-trend.html" class="card-link">Read More →</a>
                 </article>
-                <!-- NEW POST - March 20, 2026 -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Business</span>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Mar 20, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 20, 2026</span>
-                        <h3><a href="posts/2026-03-20-ai-startups-venture-capital-trend.html">AI Startups Are Eating the Venture Industry — Here's What That Means for Your Business</a></h3>
-                        <p>AI startups accounted for 41% of venture capital in 2025. What small businesses need to know about the AI investment boom and what it means for your business strategy.</p>
-                        <a href="posts/2026-03-20-ai-startups-venture-capital-trend.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-20-ai-bot-traffic-web-infrastructure-small-business-guide.html">AI Bots Will Outnumber Humans Online by 2027 — Here's What That Means</a></h3>
+                    <p class="card-desc">AI bots will outnumber humans online by 2027. What small businesses need to know about managing web traffic, hosting costs, and website performance in the age of AI agents.</p>
+                    <a href="posts/2026-03-20-ai-bot-traffic-web-infrastructure-small-business-guide.html" class="card-link">Read More →</a>
                 </article>
-                <!-- NEW POST - March 19, 2026 -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Business</span>
+
+                <article class="blog-card-compact" data-category="ai-news">
+                    <div class="card-meta">
+                        <span class="card-category">AI News</span>
+                        <span class="card-date">Mar 19, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 19, 2026</span>
-                        <h3><a href="posts/2026-03-19-samsung-73-billion-ai-chip-expansion-small-businesses.html">Samsung's $73B AI Chip Bet: What It Means for Small Businesses</a></h3>
-                        <p>Samsung's $73 billion AI chip investment signals massive AI infrastructure expansion. What small businesses need to know about the coming wave of accessible, powerful AI tools.</p>
-                        <a href="posts/2026-03-19-samsung-73-billion-ai-chip-expansion-small-businesses.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-19-samsung-73-billion-ai-chip-expansion-small-businesses.html">Samsung's $73B AI Chip Bet: What It Means for Small Businesses</a></h3>
+                    <p class="card-desc">Samsung's $73 billion AI chip investment signals massive AI infrastructure expansion. What small businesses need to know about the coming wave of accessible, powerful AI tools.</p>
+                    <a href="posts/2026-03-19-samsung-73-billion-ai-chip-expansion-small-businesses.html" class="card-link">Read More →</a>
                 </article>
-                <!-- NEW POST - March 18, 2026 -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Business</span>
+
+                <article class="blog-card-compact" data-category="ai-news">
+                    <div class="card-meta">
+                        <span class="card-category">AI News</span>
+                        <span class="card-date">Mar 18, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 18, 2026</span>
-                        <h3><a href="posts/2026-03-18-human-made-ai-labeling-guide.html">The Race for 'Human-Made' Labels: What Small Businesses Need to Know</a></h3>
-                        <p>With 8+ competing 'human-made' labels emerging, businesses face confusion about AI content labeling. Here's what small businesses need to know about AI-free certification trends in 2026.</p>
-                        <a href="posts/2026-03-18-human-made-ai-labeling-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-18-human-made-ai-labeling-guide.html">The Race for 'Human-Made' Labels: What Small Businesses Need to Know</a></h3>
+                    <p class="card-desc">With 8+ competing 'human-made' labels emerging, businesses face confusion about AI content labeling. Here's what small businesses need to know about AI-free certification trends.</p>
+                    <a href="posts/2026-03-18-human-made-ai-labeling-guide.html" class="card-link">Read More →</a>
                 </article>
-                <!-- NEW POST - March 18, 2026 -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Automation</span>
+
+                <article class="blog-card-compact" data-category="ai-news">
+                    <div class="card-meta">
+                        <span class="card-category">AI News</span>
+                        <span class="card-date">Mar 18, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 18, 2026</span>
-                        <h3><a href="posts/2026-03-18-ai-self-improvement-tao-databricks.html">Your AI Can Now Teach Itself: The TAO Breakthrough Small Businesses Need</a></h3>
-                        <p>Databricks' TAO technique lets AI models improve themselves without needing perfectly clean data. Small businesses can now deploy high-performance AI without the data cleaning bottleneck.</p>
-                        <a href="posts/2026-03-18-ai-self-improvement-tao-databricks.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-18-ai-self-improvement-tao-databricks.html">Your AI Can Now Teach Itself: The TAO Breakthrough Small Businesses Need</a></h3>
+                    <p class="card-desc">Small businesses can now use AI without perfect data. Databricks' TAO technique lets AI models improve themselves using reinforcement learning and synthetic data.</p>
+                    <a href="posts/2026-03-18-ai-self-improvement-tao-databricks.html" class="card-link">Read More →</a>
                 </article>
-                <!-- NEW POST - March 17, 2026 -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Innovation</span>
+
+                <article class="blog-card-compact" data-category="ai-automation">
+                    <div class="card-meta">
+                        <span class="card-category">AI & Automation</span>
+                        <span class="card-date">Mar 17, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 17, 2026</span>
-                        <h3><a href="posts/2026-03-17-multimodal-ai-beyond-text-chatbots.html">The Rise of Multimodal AI: Beyond Text-Based Chatbots</a></h3>
-                        <p>Multimodal AI is changing how businesses interact with customers. Learn how AI that can see, hear, and understand multiple media types is replacing text-only chatbots.</p>
-                        <a href="posts/2026-03-17-multimodal-ai-beyond-text-chatbots.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-17-nemoclaw-secure-ai-agents-small-business.html">NemoClaw: Secure AI Agents for Small Businesses</a></h3>
+                    <p class="card-desc">Nvidia just announced NemoClaw — a secure, privacy-focused version of OpenClaw that makes autonomous AI agents safe for businesses to deploy.</p>
+                    <a href="posts/2026-03-17-nemoclaw-secure-ai-agents-small-business.html" class="card-link">Read More →</a>
                 </article>
-                <!-- March 17, 2026 -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Security</span>
+
+                <article class="blog-card-compact" data-category="ai-news">
+                    <div class="card-meta">
+                        <span class="card-category">AI News</span>
+                        <span class="card-date">Mar 17, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 17, 2026</span>
-                        <h3><a href="posts/2026-03-17-nemoclaw-secure-ai-agents-small-business.html">NemoClaw: Secure AI Agents for Small Businesses</a></h3>
-                        <p>Nvidia just announced NemoClaw — a secure, privacy-focused version of OpenClaw that makes autonomous AI agents safe for businesses to deploy.</p>
-                        <a href="posts/2026-03-17-nemoclaw-secure-ai-agents-small-business.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-17-multimodal-ai-beyond-text-chatbots.html">The Rise of Multimodal AI: Beyond Text-Based Chatbots</a></h3>
+                    <p class="card-desc">Multimodal AI is changing how businesses interact with customers. Learn how AI that can see, hear, and understand multiple media types is replacing text-only chatbots.</p>
+                    <a href="posts/2026-03-17-multimodal-ai-beyond-text-chatbots.html" class="card-link">Read More →</a>
                 </article>
-                <!-- March 16, 2026 -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Automation</span>
+
+                <article class="blog-card-compact" data-category="ai-automation">
+                    <div class="card-meta">
+                        <span class="card-category">AI & Automation</span>
+                        <span class="card-date">Mar 16, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 16, 2026</span>
-                        <h3><a href="posts/2026-03-16-ai-agent-workflows-small-businesses.html">AI Agent Workflows: The Future of Business Automation</a></h3>
-                        <p>AI agent workflows are the next evolution beyond single AI tools. Here's how small businesses can build multi-agent systems that automate complex tasks without technical expertise.</p>
-                        <a href="posts/2026-03-16-ai-agent-workflows-small-businesses.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-16-ai-agent-workflows-small-businesses.html">AI Agent Workflows: The Future of Business Automation</a></h3>
+                    <p class="card-desc">AI agent workflows are the next evolution beyond single AI tools. Here's how small businesses can build multi-agent systems that automate complex tasks without technical expertise.</p>
+                    <a href="posts/2026-03-16-ai-agent-workflows-small-businesses.html" class="card-link">Read More →</a>
                 </article>
-                <!-- March 15, 2026 -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Development</span>
+
+                <article class="blog-card-compact" data-category="web-development">
+                    <div class="card-meta">
+                        <span class="card-category">Web Development</span>
+                        <span class="card-date">Mar 15, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 15, 2026</span>
-                        <h3><a href="posts/2026-03-15-anthropic-code-review-ai-generated-code.html">Anthropic's New Tool Tackles the AI Code Quality Crisis</a></h3>
-                        <p>Anthropic launches code review tool to address the flood of AI-generated code. Here's how small businesses can maintain quality while leveraging AI development.</p>
-                        <a href="posts/2026-03-15-anthropic-code-review-ai-generated-code.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-15-anthropic-code-review-ai-generated-code.html">Anthropic's New Tool Tackles the AI Code Quality Crisis</a></h3>
+                    <p class="card-desc">Anthropic launches code review tool to address the flood of AI-generated code. Here's how small businesses can maintain quality while leveraging AI development.</p>
+                    <a href="posts/2026-03-15-anthropic-code-review-ai-generated-code.html" class="card-link">Read More →</a>
                 </article>
-                <!-- March 14, 2026 -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI</span>
+
+                <article class="blog-card-compact" data-category="web-development">
+                    <div class="card-meta">
+                        <span class="card-category">Web Development</span>
+                        <span class="card-date">Mar 14, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 14, 2026</span>
-                        <h3><a href="posts/2026-03-14-chatgpt-app-integrations-guide.html">ChatGPT Now Integrates With Your Favorite Apps: What Small Businesses Need to Know</a></h3>
-                        <p>ChatGPT just rolled out app integrations with DoorDash, Spotify, Uber, and more. AI is now an active assistant that can book rides, order food, and manage playlists.</p>
-                        <a href="posts/2026-03-14-chatgpt-app-integrations-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-14-wordpress-browser-workspace-small-business-guide.html">WordPress Now Runs in Your Browser: Build Websites for Free</a></h3>
+                    <p class="card-desc">WordPress launches my.WordPress.net — a browser-based workspace that lets you build websites without hosting or accounts. Perfect for small businesses exploring web development.</p>
+                    <a href="posts/2026-03-14-wordpress-browser-workspace-small-business-guide.html" class="card-link">Read More →</a>
                 </article>
-                <!-- March 13, 2026 -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI</span>
+
+                <article class="blog-card-compact" data-category="ai-news">
+                    <div class="card-meta">
+                        <span class="card-category">AI News</span>
+                        <span class="card-date">Mar 14, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 13, 2026</span>
-                        <h3><a href="posts/2026-03-13-automated-rag-knowledge-search-small-business.html">Build Accurate AI Search for Your Business in Minutes (Not Months)</a></h3>
-                        <p>Captain automates RAG pipelines to build accurate AI-powered knowledge search. Learn how it delivers 95% accuracy in minutes with zero maintenance.</p>
-                        <a href="posts/2026-03-13-automated-rag-knowledge-search-small-business.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-14-chatgpt-app-integrations-guide.html">ChatGPT Now Integrates With Your Favorite Apps</a></h3>
+                    <p class="card-desc">ChatGPT now integrates with popular apps like DoorDash, Spotify, Uber, and more. Here's how small businesses can use these new AI app integrations to boost productivity.</p>
+                    <a href="posts/2026-03-14-chatgpt-app-integrations-guide.html" class="card-link">Read More →</a>
                 </article>
-                <!-- March 12, 2026 -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI</span>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Mar 13, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 12, 2026</span>
-                        <h3><a href="posts/2026-03-12-gemini-chrome-ai-browser-free-update.html">Gemini in Chrome is Now Free: What This Means for Your Business</a></h3>
-                        <p>Google's Gemini AI browser assistant is now free and expanding to more countries. Learn how it can help small businesses save time and automate tasks.</p>
-                        <a href="posts/2026-03-12-gemini-chrome-ai-browser-free-update.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-13-automated-rag-knowledge-search-small-business.html">Build Accurate AI Search for Your Business in Minutes (Not Months)</a></h3>
+                    <p class="card-desc">Captain makes building accurate AI-powered knowledge search simple. Learn how automated RAG can help your small business find information with 95% accuracy in minutes.</p>
+                    <a href="posts/2026-03-13-automated-rag-knowledge-search-small-business.html" class="card-link">Read More →</a>
                 </article>
-                <!-- March 11, 2026 -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Design</span>
+
+                <article class="blog-card-compact" data-category="ai-news">
+                    <div class="card-meta">
+                        <span class="card-category">AI News</span>
+                        <span class="card-date">Mar 12, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 11, 2026</span>
-                        <h3><a href="posts/2026-03-11-canva-magic-layers-ai-design-editable.html">Canva's Magic Layers: Turn Flat Images into Editable Designs</a></h3>
-                        <p>Canva's new AI feature breaks flat images—including AI-generated designs—into separate, editable layers. A game-changer for small business design work.</p>
-                        <a href="posts/2026-03-11-canva-magic-layers-ai-design-editable.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-12-gemini-chrome-ai-browser-free-update.html">Gemini in Chrome is Now Free: What This Means for Your Business</a></h3>
+                    <p class="card-desc">Google's Gemini in Chrome is now free and expanding to more countries. Learn how this AI browser assistant can help small businesses save time and automate tasks.</p>
+                    <a href="posts/2026-03-12-gemini-chrome-ai-browser-free-update.html" class="card-link">Read More →</a>
                 </article>
-                <!-- Previous posts -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Guide</span>
+
+                <article class="blog-card-compact" data-category="ai-news">
+                    <div class="card-meta">
+                        <span class="card-category">AI News</span>
+                        <span class="card-date">Mar 11, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 10, 2026</span>
-                        <h3><a href="posts/2026-03-10-local-llm-vs-cloud-api-cost-analysis.html">Local LLMs vs Cloud APIs: The 2026 Cost Analysis</a></h3>
-                        <p>Comprehensive cost breakdown: When running AI on-device beats cloud APIs by 91%—and when it doesn't. Real numbers for small business AI budgets.</p>
-                        <a href="posts/2026-03-10-local-llm-vs-cloud-api-cost-analysis.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-11-canva-magic-layers-ai-design-editable.html">Canva's Magic Layers: Turn Flat Images into Editable Designs</a></h3>
+                    <p class="card-desc">Canva's new Magic Layers feature turns flat images and AI-generated designs into fully layered, editable elements. A game-changer for small business design work.</p>
+                    <a href="posts/2026-03-11-canva-magic-layers-ai-design-editable.html" class="card-link">Read More →</a>
                 </article>
-                <!-- Existing posts -->
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI</span>
+
+                <article class="blog-card-compact" data-category="ai-news">
+                    <div class="card-meta">
+                        <span class="card-category">AI News</span>
+                        <span class="card-date">Mar 10, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 9, 2026</span>
-                        <h3><a href="posts/2026-03-09-gpt-5-4-openai-new-model-small-business-guide.html">GPT-5.4: What OpenAI's New Model Means for Small Businesses</a></h3>
-                        <p>OpenAI's GPT-5.4 brings new capabilities for small businesses and developers. Learn about the Pro and Thinking versions, massive context windows, and improved accuracy.</p>
-                        <a href="posts/2026-03-09-gpt-5-4-openai-new-model-small-business-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-10-local-llm-vs-cloud-api-cost-analysis.html">Local LLMs vs Cloud APIs: The 2026 Cost Analysis</a></h3>
+                    <p class="card-desc">A comprehensive cost and privacy analysis for 2026. Learn when running AI on-device makes sense for your small business — and when cloud APIs are still the better choice.</p>
+                    <a href="posts/2026-03-10-local-llm-vs-cloud-api-cost-analysis.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Guide</span>
+
+                <article class="blog-card-compact" data-category="ai-news">
+                    <div class="card-meta">
+                        <span class="card-category">AI News</span>
+                        <span class="card-date">Mar 9, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 8, 2026</span>
-                        <h3><a href="posts/2026-03-08-local-ai-edge-computing-small-business-guide.html">Local AI: Why Small Businesses Should Run AI On-Device</a></h3>
-                        <p>Local AI and edge computing are changing how small businesses use AI. Learn about on-device AI models, privacy benefits, and cost savings for your business.</p>
-                        <a href="posts/2026-03-08-local-ai-edge-computing-small-business-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-09-gpt-5-4-openai-new-model-small-business-guide.html">GPT-5.4: What OpenAI's New Model Means for Small Businesses</a></h3>
+                    <p class="card-desc">OpenAI's GPT-5.4 brings new capabilities for small businesses and developers. Learn about the Pro and Thinking versions, massive context windows, and improved accuracy.</p>
+                    <a href="posts/2026-03-09-gpt-5-4-openai-new-model-small-business-guide.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI</span>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Mar 8, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 6, 2026</span>
-                        <h3><a href="posts/2026-03-06-gpt-5-4-small-business-guide.html">GPT-5.4 is Here: What Small Businesses Need to Know</a></h3>
-                        <p>OpenAI launches GPT-5.4 with Pro and Thinking versions. Here's what small businesses need to know about the upgrade, pricing, and practical applications.</p>
-                        <a href="posts/2026-03-06-gpt-5-4-small-business-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-08-local-ai-edge-computing-small-business-guide.html">Local AI: Why Small Businesses Should Run AI On-Device</a></h3>
+                    <p class="card-desc">Local AI and edge computing are changing how small businesses use AI. Learn about on-device AI models, privacy benefits, and cost savings for your business.</p>
+                    <a href="posts/2026-03-08-local-ai-edge-computing-small-business-guide.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Business</span>
+
+                <article class="blog-card-compact" data-category="ai-news">
+                    <div class="card-meta">
+                        <span class="card-category">AI News</span>
+                        <span class="card-date">Mar 6, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 5, 2026</span>
-                        <h3><a href="posts/2026-03-05-ai-tools-small-businesses-2026-practical-guide.html">AI Tools for Small Businesses: A Practical 2026 Guide</a></h3>
-                        <p>Affordable AI tools are transforming how small businesses operate. Here's what's working, what costs what, and how to get started without breaking the bank.</p>
-                        <a href="posts/2026-03-05-ai-tools-small-businesses-2026-practical-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-06-gpt-5-4-small-business-guide.html">GPT-5.4 is Here: What Small Businesses Need to Know</a></h3>
+                    <p class="card-desc">OpenAI's GPT-5.4 is here. Learn what small businesses need to know about the new Pro and Thinking versions, pricing, and practical applications.</p>
+                    <a href="posts/2026-03-06-gpt-5-4-small-business-guide.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Web Development</span>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Mar 5, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 4, 2026</span>
-                        <h3><a href="posts/2026-03-04-ai-generated-frontend-code-2026.html">AI-Generated Frontend Code: Cut Web Development Costs by 75% in 2026</a></h3>
-                        <p>AI-generated frontend code is revolutionizing web development. Learn how 75% of enterprise code is now AI-assisted, cutting development costs and time-to-market for small businesses.</p>
-                        <a href="posts/2026-03-04-ai-generated-frontend-code-2026.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-05-ai-tools-small-businesses-2026-practical-guide.html">AI Tools for Small Businesses: A Practical 2026 Guide</a></h3>
+                    <p class="card-desc">Discover affordable AI tools that small businesses are using in 2026 to boost productivity, reduce costs, and stay competitive. No coding required.</p>
+                    <a href="posts/2026-03-05-ai-tools-small-businesses-2026-practical-guide.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Trends</span>
+
+                <article class="blog-card-compact" data-category="ai-automation">
+                    <div class="card-meta">
+                        <span class="card-category">AI & Automation</span>
+                        <span class="card-date">Mar 5, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 4, 2026</span>
-                        <h3><a href="posts/2026-03-04-ai-agents-digital-employees-2026.html">AI Agents: Your New Digital Employees in 2026</a></h3>
-                        <p>AI Agents are transforming from chatbots to digital employees in 2026. Learn how 67% of businesses are deploying AI agents that work autonomously, saving 42% in labor costs.</p>
-                        <a href="posts/2026-03-04-ai-agents-digital-employees-2026.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-05-ai-agents-digital-employees-2026.html">AI Agents: From Chatbots to Digital Employees in 2026</a></h3>
+                    <p class="card-desc">AI agents are transforming from chatbots to digital employees in 2026. Learn how small businesses can save 42% on labor costs with autonomous AI agents that work 24/7.</p>
+                    <a href="posts/2026-03-05-ai-agents-digital-employees-2026.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Tips</span>
+
+                <article class="blog-card-compact" data-category="web-development">
+                    <div class="card-meta">
+                        <span class="card-category">Web Development</span>
+                        <span class="card-date">Mar 4, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 3, 2026</span>
-                        <h3><a href="posts/2026-03-03-ai-small-tools-simplicity-2026.html">2026 AI Trend: Simple Tools, Big Results for Small Business</a></h3>
-                        <p>The AI revolution for small businesses isn't about bigger models—it's about smaller, smarter tools anyone can use. Discover how simple AI tools deliver measurable ROI without technical expertise.</p>
-                        <a href="posts/2026-03-03-ai-small-tools-simplicity-2026.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-04-ai-generated-frontend-code-2026.html">AI-Generated Frontend Code: Cut Web Development Costs by 75%</a></h3>
+                    <p class="card-desc">AI-generated frontend code is revolutionizing web development. Learn how 75% of enterprise code is now AI-assisted, cutting development costs and time-to-market for small businesses.</p>
+                    <a href="posts/2026-03-04-ai-generated-frontend-code-2026.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Web Development</span>
+
+                <article class="blog-card-compact" data-category="ai-automation">
+                    <div class="card-meta">
+                        <span class="card-category">AI & Automation</span>
+                        <span class="card-date">Mar 4, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 2, 2026</span>
-                        <h3><a href="posts/2026-03-02-geo-small-business-guide.html">GEO: The New SEO for AI Search in 2026</a></h3>
-                        <p>Traditional SEO is becoming obsolete. As users turn to AI assistants like ChatGPT and DeepSeek for answers, a new approach—GEO—is emerging. Here's what small businesses need to know.</p>
-                        <a href="posts/2026-03-02-geo-small-business-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-04-ai-agents-digital-employees-2026.html">AI Agents: Your New Digital Employees in 2026</a></h3>
+                    <p class="card-desc">AI Agents are transforming from chatbots to digital employees in 2026. Learn how 67% of businesses are deploying AI agents that work autonomously, saving 42% in labor costs.</p>
+                    <a href="posts/2026-03-04-ai-agents-digital-employees-2026.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Guide</span>
+
+                <article class="blog-card-compact" data-category="web-development">
+                    <div class="card-meta">
+                        <span class="card-category">Web Development</span>
+                        <span class="card-date">Mar 3, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 1, 2026</span>
-                        <h3><a href="posts/2026-03-01-practical-ai-tools-small-businesses-2026.html">5 Practical AI Tools Every Small Business Should Use in 2026</a></h3>
-                        <p>You don't need a tech team or big budget. These five AI tools deliver real ROI for small businesses—affordable, easy to use, and designed for non-technical teams.</p>
-                        <a href="posts/2026-03-01-practical-ai-tools-small-businesses-2026.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-03-ai-web-development-beyond-chatgpt-2026.html">AI Web Development: Beyond ChatGPT in 2026</a></h3>
+                    <p class="card-desc">AI web development is moving beyond ChatGPT. Discover how 2026's AI-native development tools, automated SEO, and intelligent marketing modules are transforming small business websites.</p>
+                    <a href="posts/2026-03-03-ai-web-development-beyond-chatgpt-2026.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI</span>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Mar 3, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Mar 1, 2026</span>
-                        <h3><a href="posts/2026-03-01-agentic-ai-small-business-automation-2026.html">Agentic AI: How Small Businesses Can Deploy Digital Employees in 2026</a></h3>
-                        <p>AI agents are moving from chatbots to digital workers that actually execute tasks. Here's how your small business can leverage agentic AI to automate operations and cut costs by 60%.</p>
-                        <a href="posts/2026-03-01-agentic-ai-small-business-automation-2026.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-03-ai-small-tools-simplicity-2026.html">2026 AI Trend: Simple Tools, Big Results for Small Business</a></h3>
+                    <p class="card-desc">Discover how 2026 AI tools for small businesses are shifting from complex enterprise solutions to simple, focused tools that solve specific problems quickly.</p>
+                    <a href="posts/2026-03-03-ai-small-tools-simplicity-2026.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Web Development</span>
+
+                <article class="blog-card-compact" data-category="digital-marketing">
+                    <div class="card-meta">
+                        <span class="card-category">Digital Marketing</span>
+                        <span class="card-date">Mar 2, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 28, 2026</span>
-                        <h3><a href="posts/2026-02-28-ai-native-web-development-2026-guide.html">AI-Native Web Development in 2026: Build Your Website 10x Faster</a></h3>
-                        <p>Over 75% of enterprise frontend code is now AI-assisted generated. Here's how small businesses can leverage this trend to launch professional websites in days, not weeks.</p>
-                        <a href="posts/2026-02-28-ai-native-web-development-2026-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-02-geo-small-business-guide.html">GEO: The New SEO for AI Search in 2026</a></h3>
+                    <p class="card-desc">GEO (Generative Engine Optimization) is replacing traditional SEO in 2026. Learn how small businesses can optimize for AI-powered search engines like ChatGPT and DeepSeek.</p>
+                    <a href="posts/2026-03-02-geo-small-business-guide.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Guide</span>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Mar 1, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 28, 2026</span>
-                        <h3><a href="posts/2026-02-28-ai-agents-software-development-guide.html">AI Agents Transform Software Development: Build Custom Software for 1% of Traditional Cost</a></h3>
-                        <p>In 2026, AI agents are no longer coding assistants—they're autonomous development partners. Small businesses can now build custom software for pennies on the dollar.</p>
-                        <a href="posts/2026-02-28-ai-agents-software-development-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-01-practical-ai-tools-small-businesses-2026.html">5 Practical AI Tools Every Small Business Should Use in 2026</a></h3>
+                    <p class="card-desc">Discover 5 practical AI tools that every small business can deploy in 2026. From content creation to customer service, these affordable solutions deliver real ROI.</p>
+                    <a href="posts/2026-03-01-practical-ai-tools-small-businesses-2026.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Automation</span>
+
+                <article class="blog-card-compact" data-category="ai-automation">
+                    <div class="card-meta">
+                        <span class="card-category">AI & Automation</span>
+                        <span class="card-date">Mar 1, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 27, 2026</span>
-                        <h3><a href="posts/2026-02-27-ai-agents-small-business-automation-2026.html">AI Agents: The 2026 Small Business Revolution</a></h3>
-                        <p>2026 is being called the "AI Agent Year" for good reason. Autonomous AI agents are transforming how small businesses operate, automate workflows, and compete with larger players.</p>
-                        <a href="posts/2026-02-27-ai-agents-small-business-automation-2026.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-03-01-agentic-ai-small-business-automation-2026.html">Agentic AI: How Small Businesses Can Deploy Digital Employees</a></h3>
+                    <p class="card-desc">Agentic AI is transforming small business operations in 2026. Learn how AI agents can automate workflows, reduce costs by 60%, and act as digital employees.</p>
+                    <a href="posts/2026-03-01-agentic-ai-small-business-automation-2026.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Web Development</span>
+
+                <!-- February 2026 -->
+                <div class="month-separator" data-month="2026-02"><h3>February 2026</h3></div>
+
+                <article class="blog-card-compact" data-category="web-development">
+                    <div class="card-meta">
+                        <span class="card-category">Web Development</span>
+                        <span class="card-date">Feb 28, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 27, 2026</span>
-                        <h3><a href="posts/2026-02-27-ai-native-web-development-2026-guide.html">AI-Native Web Development: The 2026 Revolution</a></h3>
-                        <p>AI has graduated from "helpful assistant" to "core development partner." Here's how AI-native web development is transforming the industry and what it means for your next website project.</p>
-                        <a href="posts/2026-02-27-ai-native-web-development-2026-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-28-ai-native-web-development-2026-guide.html">AI-Native Web Development in 2026: Build Your Website 10x Faster</a></h3>
+                    <p class="card-desc">AI-native web development is transforming how small businesses build websites. Learn how AI tools reduce development costs by 90% and launch sites in days not weeks.</p>
+                    <a href="posts/2026-02-28-ai-native-web-development-2026-guide.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Productivity</span>
+
+                <article class="blog-card-compact" data-category="ai-automation">
+                    <div class="card-meta">
+                        <span class="card-category">AI & Automation</span>
+                        <span class="card-date">Feb 28, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 26, 2026</span>
-                        <h3><a href="posts/2026-02-26-lightweight-ai-automation-small-businesses-2026.html">Lightweight AI Automation: The Small Business Productivity Revolution</a></h3>
-                        <p>Complex AI systems are giving way to simple, affordable tools that any business can deploy. Here's how lightweight AI automation is transforming small business productivity.</p>
-                        <a href="posts/2026-02-26-lightweight-ai-automation-small-businesses-2026.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-28-ai-agents-software-development-guide.html">AI Agents Transform Software Development: Build Custom Software for 1% Cost</a></h3>
+                    <p class="card-desc">AI agents are revolutionizing software development. Learn how autonomous AI coding agents reduce development costs by 90% and complete projects in hours not months.</p>
+                    <a href="posts/2026-02-28-ai-agents-software-development-guide.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Automation</span>
+
+                <article class="blog-card-compact" data-category="web-development">
+                    <div class="card-meta">
+                        <span class="card-category">Web Development</span>
+                        <span class="card-date">Feb 27, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 26, 2026</span>
-                        <h3><a href="posts/2026-02-26-ai-agents-2026-small-businesses-guide.html">AI Agents in 2026: Your Small Business's First Digital Employee</a></h3>
-                        <p>AI is evolving from chatbot to digital employee. Here's what that means for your small business—and how to get started without breaking the bank.</p>
-                        <a href="posts/2026-02-26-ai-agents-2026-small-businesses-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-27-ai-native-web-development-2026-guide.html">AI-Native Web Development: The 2026 Revolution</a></h3>
+                    <p class="card-desc">AI-native web development is transforming how websites are built. Learn how 75%+ of enterprise code is AI-assisted and what this means for small businesses.</p>
+                    <a href="posts/2026-02-27-ai-native-web-development-2026-guide.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Digital Marketing</span>
+
+                <article class="blog-card-compact" data-category="ai-automation">
+                    <div class="card-meta">
+                        <span class="card-category">AI & Automation</span>
+                        <span class="card-date">Feb 27, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 25, 2026</span>
-                        <h3><a href="posts/2026-02-25-generative-engine-optimization-small-business-guide.html">Forget SEO: GEO is What Your Small Business Needs in 2026</a></h3>
-                        <p>Search is changing. AI-powered answers are replacing blue links, and if your business isn't prepared, you're about to become invisible.</p>
-                        <a href="posts/2026-02-25-generative-engine-optimization-small-business-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-27-ai-agents-small-business-automation-2026.html">AI Agents: The 2026 Small Business Revolution</a></h3>
+                    <p class="card-desc">AI agents are transforming small business operations in 2026. Learn how autonomous AI agents automate customer service, workflows, and boost efficiency by 60%+.</p>
+                    <a href="posts/2026-02-27-ai-agents-small-business-automation-2026.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Automation</span>
+
+                <article class="blog-card-compact" data-category="ai-automation">
+                    <div class="card-meta">
+                        <span class="card-category">AI & Automation</span>
+                        <span class="card-date">Feb 26, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 24, 2026</span>
-                        <h3><a href="posts/2026-02-24-ai-agents-replacing-basic-work-small-businesses.html">AI Agents Are Replacing Basic Work: What Small Businesses Need to Know in 2026</a></h3>
-                        <p>The shift from chatbots to AI agents isn't coming—it's here. Here's what smart businesses are doing about it.</p>
-                        <a href="posts/2026-02-24-ai-agents-replacing-basic-work-small-businesses.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-26-lightweight-ai-automation-small-businesses.html">Lightweight AI Automation: The Small Business Productivity Revolution</a></h3>
+                    <p class="card-desc">Lightweight AI automation tools are transforming how small businesses operate. Learn how these affordable, easy-to-use tools can boost efficiency by 45% and reduce costs by 32%.</p>
+                    <a href="posts/2026-02-26-lightweight-ai-automation-small-businesses.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Automation</span>
+
+                <article class="blog-card-compact" data-category="ai-automation">
+                    <div class="card-meta">
+                        <span class="card-category">AI & Automation</span>
+                        <span class="card-date">Feb 26, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 23, 2026</span>
-                        <h3><a href="posts/2026-02-23-ai-agents-small-business-guide.html">AI Agents: From Chatbots That Talk to AI That Actually Does Things</a></h3>
-                        <p>The next evolution of AI is here—and it's about real work, not just conversation. Learn what AI Agents mean for your business.</p>
-                        <a href="posts/2026-02-23-ai-agents-small-business-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-26-ai-agents-2026-small-businesses-guide.html">AI Agents in 2026: Your Small Business's First Digital Employee</a></h3>
+                    <p class="card-desc">2026 is the year AI Agents go mainstream. Learn what they are, why they matter for small businesses, and practical ways to get started with automation that actually works.</p>
+                    <a href="posts/2026-02-26-ai-agents-2026-small-businesses-guide.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Guide</span>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Feb 25, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 23, 2026</span>
-                        <h3><a href="posts/2026-02-23-ai-tools-small-business-2026-guide.html">2026: The Year AI Became Small Business Friendly</a></h3>
-                        <p>2026 marked a fundamental shift—lightweight, affordable AI tools designed specifically for small businesses are delivering real results.</p>
-                        <a href="posts/2026-02-23-ai-tools-small-business-2026-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-25-generative-engine-optimization-small-business-guide.html">Forget SEO: GEO is What Your Small Business Needs in 2026</a></h3>
+                    <p class="card-desc">GEO (Generative Engine Optimization) is replacing SEO in 2026. Learn what this means for small businesses, how to prepare, and practical steps to stay visible in AI-powered search.</p>
+                    <a href="posts/2026-02-25-generative-engine-optimization-small-business-guide.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">News</span>
+
+                <article class="blog-card-compact" data-category="ai-automation">
+                    <div class="card-meta">
+                        <span class="card-category">AI & Automation</span>
+                        <span class="card-date">Feb 24, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 22, 2026</span>
-                        <h3><a href="posts/2026-02-22-jetbrains-ai-free-tier.html">JetBrains AI Goes Free: A Game-Changer for Small Business Development</a></h3>
-                        <p>JetBrains announces free AI tier for all IDEs. What this means for small business developers.</p>
-                        <a href="posts/2026-02-22-jetbrains-ai-free-tier.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-24-ai-agents-replacing-basic-work-small-businesses.html">AI Agents Are Replacing Basic Work: What Small Businesses Need to Know</a></h3>
+                    <p class="card-desc">AI Agents are replacing basic work in 2026. Learn what this means for small businesses, how to leverage AI automation, and practical steps to get started.</p>
+                    <a href="posts/2026-02-24-ai-agents-replacing-basic-work-small-businesses.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Web Development</span>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Feb 23, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 20, 2026</span>
-                        <h3><a href="posts/2026-02-20-ai-first-development-small-business-guide.html">AI-First Development in 2026: A Small Business Guide</a></h3>
-                        <p>How AI-first development is changing the game for small businesses in 2026.</p>
-                        <a href="posts/2026-02-20-ai-first-development-small-business-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-23-ai-tools-small-business-2026-guide.html">2026: The Year AI Became Small Business Friendly</a></h3>
+                    <p class="card-desc">2026 is the year AI became accessible to small businesses. Discover lightweight, affordable AI tools delivering real results with adoption numbers and practical use cases.</p>
+                    <a href="posts/2026-02-23-ai-tools-small-business-2026-guide.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Web Dev</span>
+
+                <article class="blog-card-compact" data-category="ai-automation">
+                    <div class="card-meta">
+                        <span class="card-category">AI & Automation</span>
+                        <span class="card-date">Feb 23, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 19, 2026</span>
-                        <h3><a href="posts/2026-02-19-agentic-ai-guide-for-small-businesses.html">Agentic AI: What Small Businesses Need to Know in 2026</a></h3>
-                        <p>Understanding agentic AI and how it can automate your business operations.</p>
-                        <a href="posts/2026-02-19-agentic-ai-guide-for-small-businesses.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-23-ai-agents-small-business-guide.html">AI Agents: From Chatbots That Talk to AI That Actually Does Things</a></h3>
+                    <p class="card-desc">AI Agents are the next evolution of AI. Unlike chatbots that just talk, AI Agents can actually do tasks. Learn what this means for small businesses.</p>
+                    <a href="posts/2026-02-23-ai-agents-small-business-guide.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Tips</span>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Feb 22, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 19, 2026</span>
-                        <h3><a href="posts/2026-02-19-youtube-ai-chatbot-tv-what-businesses-need-to-know.html">YouTube's AI Chatbot Is Coming to Your TV</a></h3>
-                        <p>What businesses need to know about YouTube's new AI chatbot on smart TVs.</p>
-                        <a href="posts/2026-02-19-youtube-ai-chatbot-tv-what-businesses-need-to-know.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-22-small-business-ai-adoption-2026-opportunity.html">The 2026 Small Business AI Opportunity: 12 Million Businesses Need Help</a></h3>
+                    <p class="card-desc">12 million small businesses need AI tools, but 90% lack the expertise. Discover the massive 2026 opportunity for AI implementation services.</p>
+                    <a href="posts/2026-02-22-small-business-ai-adoption-2026-opportunity.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Tips</span>
+
+                <article class="blog-card-compact" data-category="ai-news">
+                    <div class="card-meta">
+                        <span class="card-category">AI News</span>
+                        <span class="card-date">Feb 22, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 19, 2026</span>
-                        <h3><a href="posts/2026-02-19-ai-slop-crisis-business-authenticity.html">AI Slop Is Everywhere. Here's How to Stand Out</a></h3>
-                        <p>Why authenticity is your competitive advantage in an AI-saturated content landscape.</p>
-                        <a href="posts/2026-02-19-ai-slop-crisis-business-authenticity.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-22-jetbrains-ai-free-tier.html">JetBrains AI Goes Free: Game-Changer for Small Business Development</a></h3>
+                    <p class="card-desc">JetBrains announces free AI tier for all IDEs. What this means for small business developers and how to access enterprise-grade AI coding tools at zero cost.</p>
+                    <a href="posts/2026-02-22-jetbrains-ai-free-tier.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI</span>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Feb 21, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 19, 2026</span>
-                        <h3><a href="posts/2026-02-19-ai-without-perfect-data.html">AI Without Perfect Data? New Tech Makes It Possible</a></h3>
-                        <p>How new AI technology is making it possible for small businesses to use AI without perfectly clean data.</p>
-                        <a href="posts/2026-02-19-ai-without-perfect-data.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-21-web-design-trends-ai-saves-12-hours-week.html">Web Design Trends 2026: AI Saves 12 Hours/Week</a></h3>
+                    <p class="card-desc">Discover how AI-powered web design is saving professionals 12 hours per week and helping small businesses test 42% more content.</p>
+                    <a href="posts/2026-02-21-web-design-trends-ai-saves-12-hours-week.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Web Development</span>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Feb 20, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 16, 2026</span>
-                        <h3><a href="posts/2026-02-16-ai-powered-web-development.html">The Rise of AI-Powered Web Development</a></h3>
-                        <p>How AI is changing web development and what it means for small businesses in 2026.</p>
-                        <a href="posts/2026-02-16-ai-powered-web-development.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-20-zero-cost-ai-tools-small-businesses.html">Zero-Cost AI Tools That Are Revolutionizing Local Business</a></h3>
+                    <p class="card-desc">Discover zero-cost AI tools that are revolutionizing how small businesses operate — no coding required.</p>
+                    <a href="posts/2026-02-20-zero-cost-ai-tools-small-businesses.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Automation</span>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Feb 20, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 28, 2026</span>
-                        <h3><a href="posts/2026-02-27-ai-agents-software-development-guide.html">AI Agents Transform Software Development: Build Custom Software for 1% of Traditional Cost</a></h3>
-                        <p>In 2026, AI agents are no longer coding assistants—they're autonomous development partners. Small businesses can now build custom software for pennies on the dollar.</p>
-                        <a href="posts/2026-02-27-ai-agents-software-development-guide.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-20-ai-first-development-small-business-guide.html">AI-First Development in 2026: A Small Business Guide</a></h3>
+                    <p class="card-desc">Learn how AI-first development is transforming web development in 2026 and how small businesses can benefit from faster, cheaper, higher-quality websites.</p>
+                    <a href="posts/2026-02-20-ai-first-development-small-business-guide.html" class="card-link">Read More →</a>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">AI & Automation</span>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Feb 19, 2026</span>
                     </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 27, 2026</span>
-                        <h3><a href="posts/2026-02-27-ai-agents-small-business-automation-2026.html">AI Agents: The 2026 Small Business Revolution</a></h3>
-                        <p>2026 is being called the "AI Agent Year" for good reason. Autonomous AI agents are transforming how small businesses operate, automate workflows, and compete with larger players.</p>
-                        <a href="posts/2026-02-27-ai-agents-small-business-automation-2026.html" class="read-more">Read More →</a>
-                    </div>
+                    <h3><a href="posts/2026-02-19-youtube-ai-chatbot-tv-what-businesses-need-to-know.html">YouTube's AI Chatbot Is Coming to Your TV</a></h3>
+                    <p class="card-desc">YouTube is testing an AI chatbot on TVs and streaming devices. Learn what this means for small business video marketing.</p>
+                    <a href="posts/2026-02-19-youtube-ai-chatbot-tv-what-businesses-need-to-know.html" class="card-link">Read More →</a>
                 </article>
+
+                <article class="blog-card-compact" data-category="ai-news">
+                    <div class="card-meta">
+                        <span class="card-category">AI News</span>
+                        <span class="card-date">Feb 19, 2026</span>
+                    </div>
+                    <h3><a href="posts/2026-02-19-chatgpt-ads-what-small-businesses-need-to-know.html">ChatGPT Ads Are Here: What Small Businesses Need to Know</a></h3>
+                    <p class="card-desc">ChatGPT ads are here. What this means for small business marketing in 2026. Learn about AI-powered advertising opportunities.</p>
+                    <a href="posts/2026-02-19-chatgpt-ads-what-small-businesses-need-to-know.html" class="card-link">Read More →</a>
+                </article>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Feb 19, 2026</span>
+                    </div>
+                    <h3><a href="posts/2026-02-19-ai-without-perfect-data.html">AI Without Perfect Data? New Tech Makes It Possible</a></h3>
+                    <p class="card-desc">New AI breakthroughs let businesses use AI without perfect data. Learn how Databricks' TAO approach makes AI accessible to small businesses.</p>
+                    <a href="posts/2026-02-19-ai-without-perfect-data.html" class="card-link">Read More →</a>
+                </article>
+
+                <article class="blog-card-compact" data-category="guide">
+                    <div class="card-meta">
+                        <span class="card-category">Guide</span>
+                        <span class="card-date">Feb 19, 2026</span>
+                    </div>
+                    <h3><a href="posts/2026-02-19-ai-slop-crisis-business-authenticity.html">AI Slop Is Everywhere. Here's How Your Small Business Can Stand Out</a></h3>
+                    <p class="card-desc">AI slop is flooding the internet. Learn what it means for your small business and how to stand out with authentic content in 2026.</p>
+                    <a href="posts/2026-02-19-ai-slop-crisis-business-authenticity.html" class="card-link">Read More →</a>
+                </article>
+
+                <article class="blog-card-compact" data-category="ai-automation">
+                    <div class="card-meta">
+                        <span class="card-category">AI & Automation</span>
+                        <span class="card-date">Feb 19, 2026</span>
+                    </div>
+                    <h3><a href="posts/2026-02-19-agentic-ai-guide-for-small-businesses.html">Agentic AI: What Small Businesses Need to Know in 2026</a></h3>
+                    <p class="card-desc">Agentic AI is changing how businesses work. Learn what AI agents can do for your small business in 2026.</p>
+                    <a href="posts/2026-02-19-agentic-ai-guide-for-small-businesses.html" class="card-link">Read More →</a>
+                </article>
+
+                <article class="blog-card-compact" data-category="web-development">
+                    <div class="card-meta">
+                        <span class="card-category">Web Development</span>
+                        <span class="card-date">Feb 16, 2026</span>
+                    </div>
+                    <h3><a href="posts/2026-02-16-ai-powered-web-development.html">The Rise of AI-Powered Web Development</a></h3>
+                    <p class="card-desc">How AI is changing web development and what it means for small businesses in 2026. Learn how AI tools can help you build faster and cheaper.</p>
+                    <a href="posts/2026-02-16-ai-powered-web-development.html" class="card-link">Read More →</a>
+                </article>
+
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer blog-footer">
         <div class="container">
             <div class="footer-bottom">
                 <p>&copy; 2026 Josue Zazueta LLC. All rights reserved.</p>
@@ -557,5 +774,81 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script>
+        // Blog filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.blog-card-compact');
+            const monthSeparators = document.querySelectorAll('.month-separator');
+            const postCount = document.getElementById('post-count');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+
+                    // Update active state
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-selected', 'false');
+                    });
+                    this.classList.add('active');
+                    this.setAttribute('aria-selected', 'true');
+
+                    let visibleCount = 0;
+
+                    // Filter cards
+                    cards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.classList.remove('hidden');
+                            visibleCount++;
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+
+                    // Hide month separators if all their posts are hidden
+                    monthSeparators.forEach(separator => {
+                        const nextCards = [];
+                        let sibling = separator.nextElementSibling;
+                        while (sibling && !sibling.classList.contains('month-separator')) {
+                            if (sibling.classList.contains('blog-card-compact')) {
+                                nextCards.push(sibling);
+                            }
+                            sibling = sibling.nextElementSibling;
+                        }
+
+                        const allHidden = nextCards.every(c => c.classList.contains('hidden'));
+                        separator.style.display = allHidden ? 'none' : '';
+                    });
+
+                    // Update count
+                    postCount.textContent = `Showing ${visibleCount} article${visibleCount !== 1 ? 's' : ''}`;
+                });
+            });
+
+            // Body scroll lock for mobile menu
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileMenuBtn && navLinks) {
+                const originalToggle = mobileMenuBtn.onclick;
+
+                mobileMenuBtn.addEventListener('click', function() {
+                    if (navLinks.classList.contains('active')) {
+                        document.body.classList.add('menu-open');
+                    } else {
+                        document.body.classList.remove('menu-open');
+                    }
+                });
+
+                // Close menu and unlock scroll when clicking a link
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        document.body.classList.remove('menu-open');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
