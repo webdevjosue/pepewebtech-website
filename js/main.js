@@ -4,18 +4,51 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
+    const navBackdrop = document.querySelector('.nav-backdrop');
+    const navClose = document.querySelector('.nav-close');
+    
+    function openMobileMenu() {
+        navLinks.classList.add('active');
+        if (navBackdrop) navBackdrop.classList.add('active');
+        document.body.classList.add('menu-open');
+    }
+    
+    function closeMobileMenu() {
+        navLinks.classList.remove('active');
+        if (navBackdrop) navBackdrop.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
     
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
         });
+    }
+    
+    if (navClose) {
+        navClose.addEventListener('click', closeMobileMenu);
+    }
+    
+    if (navBackdrop) {
+        navBackdrop.addEventListener('click', closeMobileMenu);
     }
     
     // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', function() {
-            navLinks.classList.remove('active');
+            closeMobileMenu();
         });
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            closeMobileMenu();
+        }
     });
     
     // Navbar scroll effect
