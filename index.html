@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
-        // Prevent FOUC: apply theme before first paint
         (function() {
             var stored = localStorage.getItem('theme');
             var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
@@ -26,11 +25,10 @@
     <nav class="navbar">
         <div class="nav-backdrop"></div>
         <div class="container">
-            <a href="#" class="logo">
+            <a href="/" class="logo">
                 <span class="logo-icon">⚡</span>
                 <span class="logo-text">PepeWebTech</span>
             </a>
-            <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">🌙</button>
             <button class="mobile-menu-btn" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -38,11 +36,13 @@
             </button>
             <ul class="nav-links">
                 <button class="nav-close" aria-label="Close menu">✕</button>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact" class="btn btn-primary">Get Started</a></li>
+                <li><a href="services/">Services</a></li>
+                <li><a href="pricing/">Pricing</a></li>
+                <li><a href="about/">About</a></li>
+                <li><a href="blog/">Blog</a></li>
+                <li><button class="desktop-theme-toggle" aria-label="Toggle theme">🌙</button></li>
+                <li><a href="contact/" class="btn btn-primary">Get Started</a></li>
+                <li><button class="mobile-theme-toggle" aria-label="Toggle theme">🌙</button></li>
             </ul>
         </div>
     </nav>
@@ -51,12 +51,12 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="badge">AI-Powered Development</span>
+                <span class="badge">⚡ AI-Powered Development</span>
                 <h1>Build Your Website <span class="gradient-text">4x Faster</span></h1>
                 <p class="hero-subtitle">Modern websites for small businesses. Powered by AI, delivered in days, not weeks. Starting at $1,500.</p>
                 <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary btn-lg">Start Your Project</a>
-                    <a href="#pricing" class="btn btn-outline btn-lg">View Pricing</a>
+                    <a href="contact/" class="btn btn-primary btn-lg">Start Your Project</a>
+                    <a href="pricing/" class="btn btn-outline btn-lg">View Pricing</a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat">
@@ -77,8 +77,8 @@
         <div class="hero-bg"></div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- Services Preview -->
+    <section class="services section-alt">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">What We Do</span>
@@ -104,12 +104,9 @@
                     <p>Online stores with payment processing, inventory management, and everything you need to sell online.</p>
                     <span class="service-price">From $5,000</span>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>Maintenance Plans</h3>
-                    <p>Keep your site secure, updated, and running smoothly. We handle everything so you can focus on business.</p>
-                    <span class="service-price">From $200/mo</span>
-                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="services/" class="btn btn-outline">View All Services →</a>
             </div>
         </div>
     </section>
@@ -147,81 +144,8 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Pricing</span>
-                <h2>Transparent Pricing</h2>
-                <p>No hidden fees. No surprises. Just clear, upfront pricing.</p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Starter</h3>
-                        <div class="price">
-                            <span class="currency">$</span>
-                            <span class="amount">1,500</span>
-                        </div>
-                        <p class="price-description">Landing Page</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>✓ Single page design</li>
-                        <li>✓ Mobile responsive</li>
-                        <li>✓ Contact form</li>
-                        <li>✓ SEO basics</li>
-                        <li>✓ Free hosting setup</li>
-                        <li>✓ 1 revision round</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">Most Popular</div>
-                    <div class="pricing-header">
-                        <h3>Business</h3>
-                        <div class="price">
-                            <span class="currency">$</span>
-                            <span class="amount">4,000</span>
-                        </div>
-                        <p class="price-description">Full Website</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>✓ Up to 10 pages</li>
-                        <li>✓ Mobile responsive</li>
-                        <li>✓ Blog integration</li>
-                        <li>✓ Full SEO setup</li>
-                        <li>✓ Analytics dashboard</li>
-                        <li>✓ 2 revision rounds</li>
-                        <li>✓ 30-day support</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary btn-block">Get Started</a>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>E-Commerce</h3>
-                        <div class="price">
-                            <span class="currency">$</span>
-                            <span class="amount">8,000</span>
-                        </div>
-                        <p class="price-description">Online Store</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>✓ Unlimited products</li>
-                        <li>✓ Payment processing</li>
-                        <li>✓ Inventory management</li>
-                        <li>✓ Order tracking</li>
-                        <li>✓ Full SEO setup</li>
-                        <li>✓ 3 revision rounds</li>
-                        <li>✓ 60-day support</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Preview Section -->
-    <section id="blog" class="blog-preview">
+    <!-- Blog Preview -->
+    <section class="blog-preview section-alt">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Blog</span>
@@ -234,10 +158,10 @@
                         <span class="blog-category">Guide</span>
                     </div>
                     <div class="blog-content">
-                        <span class="blog-date">Feb 23, 2026</span>
-                        <h3><a href="blog/posts/2026-02-23-ai-tools-small-business-2026-guide.html">2026: The Year AI Became Small Business Friendly</a></h3>
-                        <p>2026 marked a fundamental shift—lightweight, affordable AI tools designed specifically for small businesses are delivering real results with proven adoption numbers.</p>
-                        <a href="blog/posts/2026-02-23-ai-tools-small-business-2026-guide.html" class="read-more">Read More →</a>
+                        <span class="blog-date">Mar 21, 2026</span>
+                        <h3><a href="blog/posts/2026-03-21-ai-video-content-marketing-2026-guide.html">AI Video Generation: Create Professional Marketing Content in Minutes</a></h3>
+                        <p>AI video generation tools are transforming marketing for small businesses. Learn how to create professional video content in minutes.</p>
+                        <a href="blog/posts/2026-03-21-ai-video-content-marketing-2026-guide.html" class="read-more">Read More →</a>
                     </div>
                 </article>
                 <article class="blog-card">
@@ -245,10 +169,10 @@
                         <span class="blog-category">News</span>
                     </div>
                     <div class="blog-content">
-                        <span class="blog-date">Feb 22, 2026</span>
-                        <h3><a href="blog/posts/2026-02-22-jetbrains-ai-free-tier.html">JetBrains AI Goes Free: A Game-Changer for Small Business Development</a></h3>
-                        <p>JetBrains announces free AI tier for all IDEs. What this means for small business developers and how to access enterprise-grade AI coding tools at zero cost.</p>
-                        <a href="blog/posts/2026-02-22-jetbrains-ai-free-tier.html" class="read-more">Read More →</a>
+                        <span class="blog-date">Mar 20, 2026</span>
+                        <h3><a href="blog/posts/2026-03-20-ai-startups-venture-capital-trend.html">AI Startups Are Eating the Venture Industry</a></h3>
+                        <p>AI startups accounted for 41% of venture capital in 2025. What this means for your business strategy.</p>
+                        <a href="blog/posts/2026-03-20-ai-startups-venture-capital-trend.html" class="read-more">Read More →</a>
                     </div>
                 </article>
                 <article class="blog-card">
@@ -256,159 +180,25 @@
                         <span class="blog-category">Tips</span>
                     </div>
                     <div class="blog-content">
-                        <span class="blog-date">Feb 22, 2026</span>
-                        <h3><a href="blog/posts/2026-02-22-small-business-ai-adoption-2026-opportunity.html">The 2026 Small Business AI Opportunity: 12 Million Businesses Need Help</a></h3>
-                        <p>12 million small businesses are looking for AI implementation help. Discover the massive opportunity and how to get started.</p>
-                        <a href="blog/posts/2026-02-22-small-business-ai-adoption-2026-opportunity.html" class="read-more">Read More →</a>
+                        <span class="blog-date">Mar 20, 2026</span>
+                        <h3><a href="blog/posts/2026-03-20-ai-bot-traffic-web-infrastructure-small-business-guide.html">AI Bots Will Outnumber Humans Online by 2027</a></h3>
+                        <p>What small businesses need to know about managing web traffic and hosting costs in the age of AI agents.</p>
+                        <a href="blog/posts/2026-03-20-ai-bot-traffic-web-infrastructure-small-business-guide.html" class="read-more">Read More →</a>
                     </div>
                 </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Guide</span>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 21, 2026</span>
-                        <h3><a href="blog/posts/2026-02-21-web-design-trends-ai-saves-12-hours-week.html">Web Design Trends 2026: AI Saves Professionals 12 Hours Per Week</a></h3>
-                        <p>Discover how AI-powered web design is saving businesses time and helping them test 42% more content.</p>
-                        <a href="blog/posts/2026-02-21-web-design-trends-ai-saves-12-hours-week.html" class="read-more">Read More →</a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Tips</span>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 20, 2026</span>
-                        <h3><a href="blog/posts/2026-02-20-zero-cost-ai-tools-small-businesses.html">Zero-Cost AI Tools That Are Revolutionizing Local Business</a></h3>
-                        <p>Discover zero-cost AI tools that are empowering small businesses to compete—no coding required.</p>
-                        <a href="blog/posts/2026-02-20-zero-cost-ai-tools-small-businesses.html" class="read-more">Read More →</a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Web Development</span>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 20, 2026</span>
-                        <h3><a href="blog/posts/2026-02-20-ai-first-development-small-business-guide.html">AI-First Development in 2026: A Small Business Guide</a></h3>
-                        <p>Learn how AI-first development is transforming web development and how your small business can benefit from faster, cheaper, higher-quality websites.</p>
-                        <a href="blog/posts/2026-02-20-ai-first-development-small-business-guide.html" class="read-more">Read More →</a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Tips</span>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 19, 2026</span>
-                        <h3><a href="blog/posts/2026-02-19-chatgpt-ads-what-small-businesses-need-to-know.html">ChatGPT Ads Are Here: What Small Businesses Need to Know</a></h3>
-                        <p>OpenAI's new advertising channel is rolling out. Learn what this means for small business marketing in 2026.</p>
-                        <a href="blog/posts/2026-02-19-chatgpt-ads-what-small-businesses-need-to-know.html" class="read-more">Read More →</a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <span class="blog-category">Tips</span>
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-date">Feb 19, 2026</span>
-                        <h3><a href="blog/posts/2026-02-19-ai-slop-crisis-business-authenticity.html">AI Slop Is Everywhere. Here's How to Stand Out</a></h3>
-                        <p>AI-generated low-quality content is flooding the internet. Learn why authenticity is your competitive advantage.</p>
-                        <a href="blog/posts/2026-02-19-ai-slop-crisis-business-authenticity.html" class="read-more">Read More →</a>
-                    </div>
-                </article>
+            </div>
+            <div class="text-center mt-8">
+                <a href="blog/" class="btn btn-outline">View All Posts →</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <span class="section-tag">About</span>
-                    <h2>Built by Developers, for Businesses</h2>
-                    <p>PepeWebTech is a service of <strong>Josue Zazueta LLC</strong>, a Southern California-based digital agency. We combine cutting-edge AI tools with years of development experience to deliver websites that work.</p>
-                    <p>Our mission is simple: make professional web development accessible to every small business. No more $20,000 quotes. No more 3-month timelines. Just fast, affordable, quality work.</p>
-                    <div class="about-stats">
-                        <div class="about-stat">
-                            <span class="about-stat-number">SoCal</span>
-                            <span class="about-stat-label">Based</span>
-                        </div>
-                        <div class="about-stat">
-                            <span class="about-stat-number">2026</span>
-                            <span class="about-stat-label">Founded</span>
-                        </div>
-                        <div class="about-stat">
-                            <span class="about-stat-number">AI</span>
-                            <span class="about-stat-label">Powered</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <span class="section-tag">Contact</span>
-                    <h2>Ready to Start?</h2>
-                    <p>Get a free consultation and quote for your project. No commitment required.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="contact-icon">📧</span>
-                            <div>
-                                <strong>Email</strong>
-                                <a href="mailto:info@pepewebtech.com">info@pepewebtech.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <div>
-                                <strong>Location</strong>
-                                <span>Southern California</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">⏰</span>
-                            <div>
-                                <strong>Response Time</strong>
-                                <span>Within 24 hours</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form-container">
-                    <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required placeholder="Your name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="your@email.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="project">Project Type</label>
-                            <select id="project" name="project">
-                                <option value="">Select a service</option>
-                                <option value="landing">Landing Page ($1,500+)</option>
-                                <option value="business">Business Website ($3,000+)</option>
-                                <option value="ecommerce">E-Commerce ($5,000+)</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Tell us about your project</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Describe your project..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Send Message</button>
-                    </form>
-                </div>
-            </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2>Ready to Build Your Website?</h2>
+            <p style="color: var(--text-secondary); margin: 1rem 0 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">Get a free consultation and quote. No commitment required.</p>
+            <a href="contact/" class="btn btn-primary btn-lg">Start Your Project</a>
         </div>
     </section>
 
@@ -417,7 +207,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="#" class="logo">
+                    <a href="/" class="logo">
                         <span class="logo-icon">⚡</span>
                         <span class="logo-text">PepeWebTech</span>
                     </a>
@@ -427,18 +217,18 @@
                     <div class="footer-column">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="#services">Landing Pages</a></li>
-                            <li><a href="#services">Business Sites</a></li>
-                            <li><a href="#services">E-Commerce</a></li>
-                            <li><a href="#services">Maintenance</a></li>
+                            <li><a href="services/">Landing Pages</a></li>
+                            <li><a href="services/">Business Sites</a></li>
+                            <li><a href="services/">E-Commerce</a></li>
+                            <li><a href="services/">Maintenance</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>Company</h4>
                         <ul>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#blog">Blog</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="about/">About</a></li>
+                            <li><a href="blog/">Blog</a></li>
+                            <li><a href="contact/">Contact</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -459,35 +249,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-        // Theme toggle with localStorage + prefers-color-scheme
-        function getPreferredTheme() {
-            const stored = localStorage.getItem('theme');
-            if (stored) return stored;
-            return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-        }
-
-        function toggleTheme() {
-            const html = document.documentElement;
-            const current = html.getAttribute('data-theme') || 'dark';
-            const next = current === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-            document.querySelector('.theme-toggle').textContent = next === 'dark' ? '🌙' : '☀️';
-        }
-
-        // Apply theme on load (before render to prevent flash)
-        (function() {
-            const theme = getPreferredTheme();
-            document.documentElement.setAttribute('data-theme', theme);
-            // Update icon after DOM ready
-            document.addEventListener('DOMContentLoaded', function() {
-                document.querySelector('.theme-toggle').textContent = theme === 'dark' ? '🌙' : '☀️';
-            });
-            // Also set immediately if element exists (script is at end of body)
-            const btn = document.querySelector('.theme-toggle');
-            if (btn) btn.textContent = theme === 'dark' ? '🌙' : '☀️';
-        })();
-    </script>
 </body>
 </html>

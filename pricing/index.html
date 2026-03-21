@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PepeWebTech pricing: Transparent, upfront pricing for web development. Starting at $1,500.">
+    <title>Pricing | PepeWebTech</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mobile-fixes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            var stored = localStorage.getItem('theme');
+            var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+            var theme = stored || (prefersLight ? 'light' : 'dark');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-backdrop"></div>
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">PepeWebTech</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <button class="nav-close" aria-label="Close menu">✕</button>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/pricing/">Pricing</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><button class="desktop-theme-toggle" aria-label="Toggle theme">🌙</button></li>
+                <li><a href="/contact/" class="btn btn-primary">Get Started</a></li>
+                <li><button class="mobile-theme-toggle" aria-label="Toggle theme">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-tag">Pricing</span>
+            <h1>Transparent Pricing</h1>
+            <p>No hidden fees. No surprises. Just clear, upfront pricing.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">1,500</span>
+                        </div>
+                        <p class="price-description">Landing Page</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Single page design</li>
+                        <li>✓ Mobile responsive</li>
+                        <li>✓ Contact form</li>
+                        <li>✓ SEO basics</li>
+                        <li>✓ Free hosting setup</li>
+                        <li>✓ 1 revision round</li>
+                    </ul>
+                    <a href="/contact/" class="btn btn-outline btn-block">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Business</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">4,000</span>
+                        </div>
+                        <p class="price-description">Full Website</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Up to 10 pages</li>
+                        <li>✓ Mobile responsive</li>
+                        <li>✓ Blog integration</li>
+                        <li>✓ Full SEO setup</li>
+                        <li>✓ Analytics dashboard</li>
+                        <li>✓ 2 revision rounds</li>
+                        <li>✓ 30-day support</li>
+                    </ul>
+                    <a href="/contact/" class="btn btn-primary btn-block">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>E-Commerce</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount">8,000</span>
+                        </div>
+                        <p class="price-description">Online Store</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Unlimited products</li>
+                        <li>✓ Payment processing</li>
+                        <li>✓ Inventory management</li>
+                        <li>✓ Order tracking</li>
+                        <li>✓ Full SEO setup</li>
+                        <li>✓ 3 revision rounds</li>
+                        <li>✓ 60-day support</li>
+                    </ul>
+                    <a href="/contact/" class="btn btn-outline btn-block">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2>Common Questions</h2>
+            </div>
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div style="border-bottom: 1px solid var(--border); padding: 1.25rem 0;">
+                    <h4 style="margin-bottom: 0.5rem;">Do you offer payment plans?</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Yes! We offer flexible payment plans. Typically 50% upfront and 50% on delivery. We can work with your budget.</p>
+                </div>
+                <div style="border-bottom: 1px solid var(--border); padding: 1.25rem 0;">
+                    <h4 style="margin-bottom: 0.5rem;">How long does a project take?</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Landing pages: 3-5 business days. Business websites: 1-2 weeks. E-commerce: 2-4 weeks. AI-powered = faster delivery.</p>
+                </div>
+                <div style="border-bottom: 1px solid var(--border); padding: 1.25rem 0;">
+                    <h4 style="margin-bottom: 0.5rem;">What's included in hosting?</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Free SSL, automatic backups, CDN for fast loading, 99.9% uptime, and analytics. No hidden hosting fees.</p>
+                </div>
+                <div style="padding: 1.25rem 0;">
+                    <h4 style="margin-bottom: 0.5rem;">Can I make changes after launch?</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Absolutely. Each plan includes revision rounds. We also offer maintenance plans for ongoing updates and support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2>Ready to Get Started?</h2>
+            <p style="color: var(--text-secondary); margin: 1rem 0 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">Get a free consultation and quote for your project.</p>
+            <a href="/contact/" class="btn btn-primary btn-lg">Start Your Project</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">PepeWebTech</span>
+                    </a>
+                    <p>AI-powered web development for small businesses.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="/services/">Landing Pages</a></li>
+                            <li><a href="/services/">Business Sites</a></li>
+                            <li><a href="/services/">E-Commerce</a></li>
+                            <li><a href="/services/">Maintenance</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/about/">About</a></li>
+                            <li><a href="/blog/">Blog</a></li>
+                            <li><a href="/contact/">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="mailto:info@pepewebtech.com">Email</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Josue Zazueta LLC. All rights reserved.</p>
+                <p>PepeWebTech is a service of Josue Zazueta LLC</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -7,8 +7,6 @@
 
 /* ============================================
    ISSUE 1: Base body font below 16px on mobile
-   - Current: clamp(0.875rem, 1.5vw, 1rem) = 14px at 375px
-   - Fix: Bump minimum to 16px (1rem)
    ============================================ */
 body {
     font-size: 16px;
@@ -22,8 +20,6 @@ p {
 
 /* ============================================
    ISSUE 2: Badge font-size too small on mobile
-   - Current: clamp(0.625rem, 1.25vw, 0.875rem) = 10px at 375px
-   - Fix: Minimum 11px, target 13px on mobile
    ============================================ */
 .badge {
     font-size: clamp(0.6875rem, 1.5vw, 0.875rem);
@@ -35,8 +31,6 @@ p {
 
 /* ============================================
    ISSUE 3: Stat labels too small on mobile
-   - Current: clamp(0.625rem, 1.25vw, 0.875rem) = 10px at 375px
-   - Fix: Minimum 12px
    ============================================ */
 .stat-label {
     font-size: clamp(0.75rem, 1.5vw, 0.875rem);
@@ -48,9 +42,6 @@ p {
 
 /* ============================================
    ISSUE 4: Blog category/date font-size too small
-   - Current blog-category: clamp(0.625rem, ...) = 10px at 375px
-   - Current blog-date: clamp(0.75rem, ...) = 12px at 375px
-   - Fix: Minimum 11px for categories, 13px for dates
    ============================================ */
 .blog-category {
     font-size: clamp(0.6875rem, 1.25vw, 0.75rem);
@@ -62,8 +53,6 @@ p {
 
 /* ============================================
    ISSUE 5: Footer bottom font too small
-   - Current: clamp(0.7rem, 1.25vw, 0.875rem) = 11.2px at 375px
-   - Fix: Minimum 12px
    ============================================ */
 .footer-bottom {
     font-size: clamp(0.75rem, 1.25vw, 0.875rem);
@@ -71,8 +60,6 @@ p {
 
 /* ============================================
    ISSUE 6: Pricing badge font too small
-   - Current: clamp(0.625rem, 1.25vw, 0.7rem) = 10px at 375px
-   - Fix: Minimum 11px
    ============================================ */
 .pricing-badge {
     font-size: clamp(0.6875rem, 1.25vw, 0.75rem);
@@ -80,8 +67,6 @@ p {
 
 /* ============================================
    ISSUE 7: Price description too small on mobile
-   - Current: clamp(0.75rem, 1.25vw, 0.875rem) = 12px at 375px
-   - Fix: Minimum 13px for readability
    ============================================ */
 .price-description {
     font-size: clamp(0.8125rem, 1.25vw, 0.875rem);
@@ -89,9 +74,6 @@ p {
 
 /* ============================================
    ISSUE 8: Touch targets for navigation links
-   - Apple HIG: Minimum 44x44px for all interactive elements
-   - Current nav links have no explicit padding on mobile
-   - Fix: Add padding to make nav links easily tappable
    ============================================ */
 .nav-links a {
     display: block;
@@ -107,9 +89,6 @@ p {
 
 /* ============================================
    ISSUE 9: Hamburger menu button touch target
-   - Current: padding: 4px with 22px wide spans
-   - Total tap area: ~30x26px — well below 44x44px minimum
-   - Fix: Expand the clickable area
    ============================================ */
 .mobile-menu-btn {
     padding: 12px;
@@ -121,10 +100,7 @@ p {
 }
 
 /* ============================================
-   ISSUE 10: CTA buttons in hero need bigger tap targets
-   - btn-lg on mobile: clamp(0.75rem, ...) padding with clamped font
-   - May fall below 44px height on very small screens
-   - Fix: Ensure minimum 48px height on all .btn elements
+   ISSUE 10: CTA buttons min-height
    ============================================ */
 .btn {
     min-height: 44px;
@@ -139,15 +115,7 @@ p {
 }
 
 /* ============================================
-   ISSUE 11: Service card price touch/click area
-   - Service prices aren't interactive but need readable sizing
-   - No fix needed (already adequate)
-   ============================================ */
-
-/* ============================================
    ISSUE 12: "Read More" links need larger touch target
-   - Current: just text, no padding
-   - Fix: Add padding for tap area
    ============================================ */
 .read-more {
     display: inline-block;
@@ -159,8 +127,6 @@ p {
 
 /* ============================================
    ISSUE 13: Footer links need larger touch targets
-   - Current: font-size clamp with no padding
-   - Fix: Add padding to each link
    ============================================ */
 .footer-column a {
     display: inline-block;
@@ -171,8 +137,7 @@ p {
 }
 
 /* ============================================
-   ISSUE 14: Contact item links (email) need tap padding
-   - Fix: Same as footer links
+   ISSUE 14: Contact item links
    ============================================ */
 .contact-item a {
     display: inline-block;
@@ -181,10 +146,7 @@ p {
 }
 
 /* ============================================
-   ISSUE 15: Form inputs too small on mobile
-   - iOS Safari scales inputs below 16px font-size
-   - Current: clamp(0.875rem, 1.5vw, 1rem) = 14px at 375px
-   - Fix: Force 16px minimum to prevent zoom on focus
+   ISSUE 15: Form inputs - prevent iOS zoom on focus
    ============================================ */
 .form-group input,
 .form-group select,
@@ -199,8 +161,7 @@ p {
 }
 
 /* ============================================
-   ISSUE 16: Select dropdown styling on mobile
-   - Add appearance and background for custom arrow
+   ISSUE 16: Select dropdown styling
    ============================================ */
 .form-group select {
     appearance: none;
@@ -216,32 +177,23 @@ p {
 }
 
 /* ============================================
-   ISSUE 17: Horizontal scroll prevention
-   - The global `max-width: 100%` on `*` is aggressive
-   - Can break flexbox/grid children and transforms
-   - Fix: Remove the global rule and use targeted fixes
+   ISSUE 17: Prevent horizontal overflow
    ============================================ */
-/* Override the blanket max-width:100% on * that's in style.css */
 * {
     max-width: none;
 }
 
-/* Re-apply only to elements that actually need it */
 img, picture, video, canvas, svg {
     max-width: 100%;
 }
 
-/* Prevent horizontal overflow at the page level */
 html, body {
     overflow-x: hidden;
     width: 100%;
 }
 
 /* ============================================
-   ISSUE 18: Blog card titles — long titles overflow
-   - Some blog titles are very long (60+ chars)
-   - On mobile, they can break awkwardly or overflow
-   - Fix: Clamp title to 3 lines with ellipsis
+   ISSUE 18: Blog card titles - clamp to 3 lines
    ============================================ */
 .blog-content h3 {
     display: -webkit-box;
@@ -252,13 +204,11 @@ html, body {
 
 .blog-content h3 a {
     display: block;
-    /* Ensure full card is tappable, not just the link text */
     min-height: 44px;
 }
 
 /* ============================================
-   ISSUE 19: Blog card descriptions too long on mobile
-   - Fix: Clamp to 3 lines
+   ISSUE 19: Blog card descriptions - clamp to 3 lines
    ============================================ */
 .blog-content p {
     display: -webkit-box;
@@ -268,8 +218,7 @@ html, body {
 }
 
 /* ============================================
-   ISSUE 20: Pricing card feature lists — ensure touch-friendly
-   - Items are not interactive but should have adequate spacing
+   ISSUE 20: Pricing card feature lists
    ============================================ */
 .pricing-features li {
     padding: 10px 0;
@@ -277,10 +226,7 @@ html, body {
 }
 
 /* ============================================
-   ISSUE 21: Blog list page padding-top for fixed nav
-   - The blog-list section uses inline padding-top: 120px
-   - This is hardcoded and doesn't account for dynamic nav height
-   - Fix: Use a CSS variable or clamp
+   ISSUE 21: Blog list page spacing
    ============================================ */
 .blog-list .section-header {
     padding-top: 0;
@@ -288,9 +234,7 @@ html, body {
 }
 
 /* ============================================
-   ISSUE 22: Safe area insets for modern iPhones
-   - iPhone X+ have notch/home indicator that overlaps content
-   - Fix: Add safe-area padding
+   ISSUE 22: Safe area insets
    ============================================ */
 @supports (padding-top: env(safe-area-inset-top)) {
     .navbar {
@@ -302,15 +246,17 @@ html, body {
         padding-top: max(100px, calc(env(safe-area-inset-top) + 60px));
     }
 
+    .page-hero {
+        padding-top: max(100px, calc(env(safe-area-inset-top) + 60px));
+    }
+
     .footer {
         padding-bottom: max(1.5rem, calc(env(safe-area-inset-bottom) + 1rem));
     }
 }
 
 /* ============================================
-   ISSUE 23: Mobile nav overlay — body scroll lock
-   - When mobile menu is open, background still scrolls
-   - Fix: Added via body class toggle (see JS fix below)
+   ISSUE 23: Body scroll lock when menu open
    ============================================ */
 body.menu-open {
     overflow: hidden;
@@ -319,9 +265,7 @@ body.menu-open {
 }
 
 /* ============================================
-   ISSUE 24: Active/focus states for accessibility
-   - All interactive elements need visible focus indicators
-   - Fix: Add outline styles for keyboard navigation
+   ISSUE 24: Focus indicators for accessibility
    ============================================ */
 a:focus-visible,
 button:focus-visible,
@@ -333,10 +277,7 @@ textarea:focus-visible {
 }
 
 /* ============================================
-   ISSUE 25: Container edge padding on very small screens
-   - At 320px, clamp(1rem, 4vw, 2rem) = 1rem (16px) — adequate
-   - But content still feels cramped in some sections
-   - Fix: Ensure minimum 16px side padding on container
+   ISSUE 25: Container edge padding
    ============================================ */
 .container {
     padding-left: max(1rem, env(safe-area-inset-left, 1rem));
@@ -344,9 +285,7 @@ textarea:focus-visible {
 }
 
 /* ============================================
-   ISSUE 26: Logo touch target on mobile
-   - Logo text + icon should be tappable
-   - Fix: Add padding
+   ISSUE 26: Logo touch target
    ============================================ */
 .logo {
     padding: 8px 0;
@@ -354,18 +293,14 @@ textarea:focus-visible {
 }
 
 /* ============================================
-   ISSUE 27: Blog list page on blog/index.html
-   - The blog-list section needs proper mobile spacing
+   ISSUE 27: Blog list page padding
    ============================================ */
 .blog-list {
     padding-bottom: 3rem;
 }
 
 /* ============================================
-   ISSUE 28: Card hover effects on touch devices
-   - Hover transforms (translateY(-4px)) cause "sticky hover"
-   - Touch devices show hover state after tap and it persists
-   - Fix: Only apply hover transforms on pointer devices
+   ISSUE 28: Card hover on touch devices
    ============================================ */
 @media (hover: hover) and (pointer: fine) {
     .service-card:hover,
@@ -375,7 +310,6 @@ textarea:focus-visible {
     }
 }
 
-/* On touch devices, use active state instead */
 @media (hover: none) {
     .service-card:active,
     .pricing-card:active,
@@ -386,9 +320,7 @@ textarea:focus-visible {
 }
 
 /* ============================================
-   ISSUE 29: Hero stats wrapping on very small screens
-   - At 375px with 3 stats, flex-wrap can cause inconsistent spacing
-   - Fix: Ensure even distribution
+   ISSUE 29: Hero stats wrapping
    ============================================ */
 .hero-stats {
     gap: 1.5rem;
@@ -401,9 +333,6 @@ textarea:focus-visible {
 
 /* ============================================
    ISSUE 30: Desktop nav link font size
-   - At 768px breakpoint, nav links are 0.9rem (14.4px) — adequate
-   - But at 1024px+, 0.9rem might feel small compared to design
-   - Fix: Bump to 0.95rem on large screens
    ============================================ */
 @media (min-width: 1024px) {
     .nav-links a {
@@ -412,16 +341,14 @@ textarea:focus-visible {
 }
 
 /* ============================================
-   BREAKPOINT: 640px (Small tablet / large phone)
+   BREAKPOINT: 640px
    ============================================ */
 @media (min-width: 640px) {
-    /* Increase touch targets where appropriate */
     .footer-column a {
         padding: 6px 0;
         min-height: 40px;
     }
 
-    /* Allow longer blog title on wider screens */
     .blog-content h3 {
         -webkit-line-clamp: 3;
     }
@@ -431,25 +358,21 @@ textarea:focus-visible {
    BREAKPOINT: 768px (Tablet)
    ============================================ */
 @media (min-width: 768px) {
-    /* Reset body font to default behavior on tablet+ */
     body {
         font-size: unset;
     }
 
-    /* Nav links on desktop get inline-block, not flex center */
     .nav-links a {
         display: inline-block;
         padding: 8px 0;
         min-height: auto;
     }
 
-    /* Footer links on desktop — compact but adequate */
     .footer-column a {
         padding: 4px 0;
         min-height: auto;
     }
 
-    /* Read more links reset */
     .read-more {
         padding: 0;
         min-height: auto;

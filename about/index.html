@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About PepeWebTech - AI-powered web development by Josue Zazueta LLC, based in Southern California.">
+    <title>About | PepeWebTech</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/mobile-fixes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            var stored = localStorage.getItem('theme');
+            var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+            var theme = stored || (prefersLight ? 'light' : 'dark');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-backdrop"></div>
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">PepeWebTech</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <button class="nav-close" aria-label="Close menu">✕</button>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/pricing/">Pricing</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><button class="desktop-theme-toggle" aria-label="Toggle theme">🌙</button></li>
+                <li><a href="/contact/" class="btn btn-primary">Get Started</a></li>
+                <li><button class="mobile-theme-toggle" aria-label="Toggle theme">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-tag">About</span>
+            <h1>Built by Developers, for Businesses</h1>
+            <p>We make professional web development accessible to every small business</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Mission</h2>
+                    <p>PepeWebTech is a service of <strong>Josue Zazueta LLC</strong>, a Southern California-based digital agency. We combine cutting-edge AI tools with years of development experience to deliver websites that work.</p>
+                    <p>Our mission is simple: make professional web development accessible to every small business. No more $20,000 quotes. No more 3-month timelines. Just fast, affordable, quality work.</p>
+                    <p>We believe that small businesses deserve the same quality web presence as large corporations—without the enterprise price tag. By leveraging AI-powered development tools, we're able to deliver professional results at a fraction of the traditional cost and time.</p>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="about-stats" style="justify-content: center; text-align: center; margin-top: 3rem;">
+                <div class="about-stat" style="text-align: center;">
+                    <span class="about-stat-number">📍 SoCal</span>
+                    <span class="about-stat-label">Based</span>
+                </div>
+                <div class="about-stat" style="text-align: center;">
+                    <span class="about-stat-number">2026</span>
+                    <span class="about-stat-label">Founded</span>
+                </div>
+                <div class="about-stat" style="text-align: center;">
+                    <span class="about-stat-number">⚡ AI</span>
+                    <span class="about-stat-label">Powered</span>
+                </div>
+                <div class="about-stat" style="text-align: center;">
+                    <span class="about-stat-number">50+</span>
+                    <span class="about-stat-label">Projects</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">The AI Advantage</span>
+                <h2>Why PepeWebTech?</h2>
+                <p>We use cutting-edge AI tools to deliver better results, faster</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>4x Faster</h3>
+                    <p>AI-assisted development means we build in days what others take weeks to complete.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <h3>50% Cheaper</h3>
+                    <p>Efficiency savings passed directly to you. Enterprise quality at small business prices.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile-First</h3>
+                    <p>Every site is built mobile-responsive from day one. No extra cost, no compromises.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure Hosting</h3>
+                    <p>Free SSL, automatic backups, and enterprise-grade security included at no extra charge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2>Want to Work With Us?</h2>
+            <p style="color: var(--text-secondary); margin: 1rem 0 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">Let's build something great together.</p>
+            <a href="/contact/" class="btn btn-primary btn-lg">Start Your Project</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">PepeWebTech</span>
+                    </a>
+                    <p>AI-powered web development for small businesses.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="/services/">Landing Pages</a></li>
+                            <li><a href="/services/">Business Sites</a></li>
+                            <li><a href="/services/">E-Commerce</a></li>
+                            <li><a href="/services/">Maintenance</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/about/">About</a></li>
+                            <li><a href="/blog/">Blog</a></li>
+                            <li><a href="/contact/">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="mailto:info@pepewebtech.com">Email</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Josue Zazueta LLC. All rights reserved.</p>
+                <p>PepeWebTech is a service of Josue Zazueta LLC</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
