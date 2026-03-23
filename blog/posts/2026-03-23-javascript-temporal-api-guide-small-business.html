@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript's new Temporal API is here to replace Moment.js. Learn how this built-in date/time library can improve your web apps with zero bundle size and better performance.">
+    <meta name="keywords" content="JavaScript Temporal API, Moment.js replacement, JavaScript date handling, web development 2026, small business web apps, bundle optimization">
+    <title>Goodbye Moment.js: JavaScript's New Temporal API Is a Game-Changer for Web Apps | PepeWebTech Blog</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .blog-post {
+            padding-top: 120px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            margin-bottom: 40px;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .blog-hero-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #f7df1e 0%, #e8c30e 100%);
+            border-radius: var(--radius);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(247, 223, 30, 0.3);
+        }
+
+        .blog-content {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .blog-content h2 {
+            color: var(--text-primary);
+            margin: 48px 0 24px;
+            font-size: 1.75rem;
+        }
+
+        .blog-content h3 {
+            color: var(--text-primary);
+            margin: 32px 0 16px;
+            font-size: 1.25rem;
+        }
+
+        .blog-content p {
+            margin-bottom: 24px;
+        }
+
+        .blog-content ul {
+            margin: 24px 0;
+            padding-left: 32px;
+        }
+
+        .blog-content li {
+            margin-bottom: 12px;
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid #f7df1e;
+            padding-left: 24px;
+            margin: 24px 0;
+            font-style: italic;
+            color: var(--text-muted);
+            background: var(--bg-secondary);
+            padding: 16px 24px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .blog-content strong {
+            color: var(--text-primary);
+        }
+
+        .blog-content a {
+            color: #f7df1e;
+            text-decoration: none;
+            border-bottom: 1px solid #f7df1e;
+            padding-bottom: 2px;
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: #f7df1e;
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f7df1e 0%, #e8c30e 100%);
+            color: #000;
+            padding: 32px;
+            border-radius: var(--radius);
+            margin: 32px 0;
+            text-align: center;
+        }
+
+        .highlight-box h3 {
+            color: #000;
+            margin: 0 0 16px 0;
+            font-size: 1.5rem;
+        }
+
+        .highlight-box p {
+            color: rgba(0,0,0,0.8);
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        .feature-card {
+            background: var(--bg-secondary);
+            padding: 24px;
+            border-radius: var(--radius);
+            border-left: 4px solid #f7df1e;
+        }
+
+        .feature-card h4 {
+            color: var(--text-primary);
+            margin: 0 0 12px;
+            font-size: 1.1rem;
+        }
+
+        .feature-card p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table th {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">PepeWebTech</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#services">Services</a></li>
+                <li><a href="../../index.html#about">About</a></li>
+                <li><a href="../../index.html#portfolio">Portfolio</a></li>
+                <li><a href="../index.html" class="btn-primary">Blog</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="blog-post">
+        <article>
+            <header class="blog-header">
+                <div class="blog-meta">
+                    <span class="category-badge">Web Development</span>
+                    <time>March 23, 2026</time>
+                    <span>6 min read</span>
+                </div>
+                <h1>Goodbye Moment.js: JavaScript's New Temporal API Is a Game-Changer for Web Apps</h1>
+            </header>
+
+            <div class="blog-hero-image">
+                ⏰🚀
+            </div>
+
+            <div class="blog-content">
+                <p><strong>Moment.js is officially a legacy library:</strong> After years of being the go-to solution for JavaScript date handling, it's now in maintenance mode with no new features planned. But don't worry—JavaScript has a built-in replacement that's better in almost every way: the <strong>Temporal API</strong>.</p>
+
+                <p>This isn't just another JavaScript library update. It's a <strong>fundamental upgrade</strong> to the language itself, and it could have a significant impact on your web application's performance and maintainability.</p>
+
+                <div class="highlight-box">
+                    <h3>The Bottom Line</h3>
+                    <p>Temporal is built into browsers, adds nothing to your bundle size, and fixes the long-standing problems that made Moment.js necessary in the first place.</p>
+                </div>
+
+                <h2>What Is the Temporal API?</h2>
+
+                <p>Temporal is a new standard for working with dates and times in JavaScript. It's been added to the ECMAScript specification (the official JavaScript standard) and is now a <strong>Stage 4 proposal</strong>—meaning it's finalized and ready for production use.</p>
+
+                <p>As of March 2026, it's already supported in:</p>
+
+                <ul>
+                    <li><strong>Chrome 144+</strong> (released late 2025)</li>
+                    <li><strong>Firefox 139+</strong> (released early 2026)</li>
+                    <li><strong>Safari</strong> (implementation in progress, expected soon)</li>
+                    <li><strong>Node.js</strong> (via polyfill for now)</li>
+                </ul>
+
+                <h2>Why Moment.js Wasn't Enough</h2>
+
+                <p>Moment.js was great for its time, but it had serious limitations that became harder to ignore:</p>
+
+                <h3>1. Massive Bundle Size</h3>
+
+                <p>Moment.js is a large library, and because it doesn't support <strong>tree shaking</strong> (a modern bundling technique that removes unused code), you're forced to include the entire library even if you only use one or two functions.</p>
+
+                <div class="feature-card">
+                    <h4>Impact</h4>
+                    <p>Your application's bundle grows by 67KB (minified) even if you only use a single Moment function.</p>
+                </div>
+
+                <h3>2. Mutable Objects Create Bugs</h3>
+
+                <p>Moment.js objects are mutable, meaning they can be changed after they're created. This leads to unexpected behavior:</p>
+
+                <div class="code-block">
+const now = moment();
+now.add(1, 'day');
+// Oops! You just modified the original object
+// Any code that was still using 'now' now has the wrong date
+                </div>
+
+                <h3>3. Zero-Indexed Months</h3>
+
+                <p>Like JavaScript's built-in Date API, Moment.js treats January as month 0. This is a constant source of bugs because it doesn't match how humans think about dates.</p>
+
+                <h2>What Temporal Fixes</h2>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Issue</th>
+                            <th>Moment.js</th>
+                            <th>Temporal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bundle Size</td>
+                            <td>67KB (minified)</td>
+                            <td><strong>0KB (built-in)</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Immutability</td>
+                            <td>Mutable (bug-prone)</td>
+                            <td><strong>Immutable (safe)</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Month Indexing</td>
+                            <td>0-based (January = 0)</td>
+                            <td><strong>1-based (January = 1)</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Time Zone Support</td>
+                            <td>Requires separate plugin</td>
+                            <td><strong>Built-in</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>1. Zero Bundle Size</h3>
+
+                <p>Since Temporal is built into the browser, it adds absolutely nothing to your application's bundle. This means:</p>
+
+                <ul>
+                    <li>Faster page load times</li>
+                    <li>Reduced bandwidth usage</li>
+                    <li>Smaller application footprint</li>
+                </ul>
+
+                <p>For small businesses hosting their own web applications, this translates to lower hosting costs and a better user experience for customers with slower internet connections.</p>
+
+                <h3>2. Immutability</h3>
+
+                <p>Temporal objects are immutable—once created, they can't be changed. Any operation that modifies a date returns a <strong>new</strong> Temporal object instead:</p>
+
+                <div class="code-block">
+const now = Temporal.Now.plainDateISO();
+const tomorrow = now.add({ days: 1 });
+
+// 'now' is still today
+// 'tomorrow' is a new object representing tomorrow
+// No accidental mutations, no bugs
+                </div>
+
+                <h3>3. 1-Based Month Indexing</h3>
+
+                <p>Temporal uses 1-based indexing for months, matching how humans actually think about dates:</p>
+
+                <div class="code-block">
+// Moment.js: January is month 0
+moment('2026-01-15').month(); // Returns 0
+
+// Temporal: January is month 1
+Temporal.PlainDate.from('2026-01-15').month; // Returns 1
+                </div>
+
+                <h3>4. Built-in Time Zone Support</h3>
+
+                <p>Temporal has full time zone awareness built in—no separate plugin required:</p>
+
+                <div class="code-block">
+const now = Temporal.Now.zonedDateTimeISO('America/Los_Angeles');
+const newYorkTime = now.withTimeZone('America/New_York');
+                </div>
+
+                <h2>What This Means for Small Businesses</h2>
+
+                <h3>1. Faster Applications</h3>
+
+                <p>Removing Moment.js from your bundle can significantly reduce your application's load time. For e-commerce sites and customer portals, faster load times directly impact conversion rates and customer satisfaction.</p>
+
+                <blockquote>
+                    <p><strong>Real-world impact:</strong> A 67KB reduction in bundle size can shave 100-300ms off initial page load times on 4G connections.</p>
+                </blockquote>
+
+                <h3>2. Fewer Bugs</h3>
+
+                <p>Immutability and 1-based indexing eliminate entire categories of bugs that developers have been fighting for years. Less time debugging means faster development cycles and lower maintenance costs.</p>
+
+                <h3>3. Lower Hosting Costs</h3>
+
+                <p>Smaller bundles mean less bandwidth usage. If you're paying for content delivery network (CDN) bandwidth or hosting, the savings can add up—especially for high-traffic applications.</p>
+
+                <h2>Should You Migrate Now?</h2>
+
+                <p>Not necessarily—if your application works fine with Moment.js, there's no urgent need to rewrite everything. But:</p>
+
+                <ul>
+                    <li><strong>New projects:</strong> Start with Temporal</li>
+                    <li><strong>Existing projects:</strong> Plan for gradual migration</li>
+                    <li><strong>Performance-critical apps:</strong> Migration is a low-effort, high-impact optimization</li>
+                </ul>
+
+                <h2>Getting Started</h2>
+
+                <p>The migration is straightforward. Temporal follows similar patterns to Moment.js, so the learning curve is gentle:</p>
+
+                <div class="code-block">
+// Moment.js
+const date = moment('2026-03-23');
+const tomorrow = date.add(1, 'day');
+
+// Temporal
+const date = Temporal.PlainDate.from('2026-03-23');
+const tomorrow = date.add({ days: 1 });
+                </div>
+
+                <h2>The Future of JavaScript Date Handling</h2>
+
+                <p>Moment.js served us well, but its time has passed. The Temporal API is the future—and it's available now.</p>
+
+                <p>For small businesses building web applications, this upgrade means faster, more reliable code with fewer dependencies. It's one of those rare technical updates that delivers real business value without requiring a complete rewrite.</p>
+
+                <div class="highlight-box">
+                    <h3>Ready to Get Started?</h3>
+                    <p>Check out the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal" style="color: #000; border-bottom-color: #000;">MDN documentation</a> for Temporal and start experimenting. Your users will thank you.</p>
+                </div>
+
+                <hr style="margin: 48px 0; border: none; border-top: 1px solid var(--border-color);">
+
+                <p><strong>Want help optimizing your web application?</strong> PepeWebTech specializes in modern, performance-focused web development. <a href="../../index.html#contact" style="color: #f7df1e;">Let's talk</a> about how we can improve your digital presence.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 PepeWebTech. Building for the future, today.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
