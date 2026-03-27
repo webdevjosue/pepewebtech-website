@@ -1,0 +1,251 @@
+{
+  "project": "PepeWebTech.com",
+  "branchName": "ralph/code-review-fixes",
+  "description": "Fix all HIGH priority issues from GLM-5.1 code review — SEO, security, accessibility, content, performance",
+  "created": "2026-03-27",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Add canonical URLs and Open Graph tags to all pages",
+      "description": "As a site owner, I need canonical URLs and Open Graph tags so that search engines and social platforms correctly index and display my pages.",
+      "acceptanceCriteria": [
+        "Every page (index, about, services, pricing, blog, contact) has <link rel=\"canonical\"> with full URL",
+        "Every page has og:title, og:description, og:url, og:type, og:image meta tags",
+        "Every page has Twitter Card tags (twitter:card, twitter:title, twitter:description)",
+        "og:image uses a placeholder or PepeWebTech branded image reference",
+        "All tags validated with no duplicate or missing values"
+      ],
+      "priority": 1,
+      "dependencies": [],
+      "passes": false,
+      "notes": "Pages: index.html, about/index.html, services/index.html, pricing/index.html, blog/index.html, contact/index.html",
+      "status": "pending"
+    },
+    {
+      "id": "US-002",
+      "title": "Add JSON-LD structured data to homepage and blog posts",
+      "description": "As a site owner, I need structured data so that search engines can better understand my content for rich results.",
+      "acceptanceCriteria": [
+        "Homepage has Organization JSON-LD with name, url, logo, contact info",
+        "Homepage has WebSite JSON-LD schema",
+        "Blog posts have BlogPosting JSON-LD with title, datePublished, author, description",
+        "JSON-LD is valid (no syntax errors)",
+        "Structured data references correct URLs"
+      ],
+      "priority": 2,
+      "dependencies": ["US-001"],
+      "passes": false,
+      "notes": "Blog posts are in blog/posts/ directory. Add to at least 5 recent posts as template.",
+      "status": "pending"
+    },
+    {
+      "id": "US-003",
+      "title": "Add security headers and caching to vercel.json",
+      "description": "As a site owner, I need security headers and proper caching so that the site is secure and performs well.",
+      "acceptanceCriteria": [
+        "X-Content-Type-Options: nosniff on all routes",
+        "X-Frame-Options: DENY on all routes",
+        "Referrer-Policy: strict-origin-when-cross-origin on all routes",
+        "Permissions-Policy restricting camera, microphone, geolocation",
+        "Cache-Control with long max-age for /css/ and /js/ (immutable assets)",
+        "Duplicate outputDirectory key removed from vercel.json",
+        "vercel.json is valid JSON"
+      ],
+      "priority": 3,
+      "dependencies": [],
+      "passes": false,
+      "notes": "See code review Section 10 for exact header values.",
+      "status": "pending"
+    },
+    {
+      "id": "US-004",
+      "title": "Fix contact form — replace Formspree placeholder",
+      "description": "As a visitor, I need the contact form to actually work so that I can reach PepeWebTech.",
+      "acceptanceCriteria": [
+        "Form action points to a working endpoint OR use Web3Forms (free, no signup needed with form-id)",
+        "Form submission shows success message (not alert())",
+        "Form submission shows error message on failure",
+        "Client-side validation for required fields and email format",
+        "Form is accessible (aria-live for status messages)"
+      ],
+      "priority": 4,
+      "dependencies": [],
+      "passes": false,
+      "notes": "Web3Forms is free: https://web3forms.com/ — needs access key from Mr. Z. Alternatively, use a Supabase edge function.",
+      "status": "pending"
+    },
+    {
+      "id": "US-005",
+      "title": "Fix pricing inconsistency between Services and Pricing pages",
+      "description": "As a potential client, I need consistent pricing across the site so that I don't get confused or lose trust.",
+      "acceptanceCriteria": [
+        "Services page and Pricing page show the same prices for matching tiers",
+        "All pricing mentions across homepage, services, and pricing are consistent",
+        "Document the final agreed prices in pricing section of each page"
+      ],
+      "priority": 5,
+      "dependencies": [],
+      "passes": false,
+      "notes": "Services page says $3K/$5K, Pricing page says $4K/$8K. Pick one set and make consistent.",
+      "status": "pending"
+    },
+    {
+      "id": "US-006",
+      "title": "Add mobile-fixes.css to blog post pages",
+      "description": "As a mobile visitor, I need blog posts to work properly on my phone with touch targets and safe area insets.",
+      "acceptanceCriteria": [
+        "All blog post HTML files include <link rel=\"stylesheet\" href=\"/css/mobile-fixes.css\">",
+        "Blog posts use clamp() for padding-top instead of fixed 120px",
+        "Test at least 3 blog posts to confirm mobile-fixes apply"
+      ],
+      "priority": 6,
+      "dependencies": [],
+      "passes": false,
+      "notes": "Blog posts are in blog/posts/. There may be 60+ files. Use a script to add the link tag to all.",
+      "status": "pending"
+    },
+    {
+      "id": "US-007",
+      "title": "Extract blog post inline CSS into shared blog-post.css",
+      "description": "As a developer, I need blog post styles in a shared CSS file so that changes don't require editing 60+ HTML files.",
+      "acceptanceCriteria": [
+        "Create css/blog-post.css with all shared blog post styles",
+        "Remove inline <style> blocks from all blog post HTML files",
+        "Add <link rel=\"stylesheet\" href=\"/css/blog-post.css\"> to all blog posts",
+        "Blog posts still render identically after the extraction"
+      ],
+      "priority": 7,
+      "dependencies": ["US-006"],
+      "passes": false,
+      "notes": "Use a script to automate the extraction across all blog posts.",
+      "status": "pending"
+    },
+    {
+      "id": "US-008",
+      "title": "Fix invalid nav HTML — wrap buttons in li elements",
+      "description": "As a user relying on assistive technology, I need valid HTML so that screen readers correctly parse the navigation.",
+      "acceptanceCriteria": [
+        "All <button> elements inside <ul> are wrapped in <li>",
+        "Navigation still works correctly (mobile toggle, theme toggle, close button)",
+        "No visual regression",
+        "HTML validates without block-level element inside inline element errors"
+      ],
+      "priority": 8,
+      "dependencies": [],
+      "passes": false,
+      "notes": "Applies to all pages. The nav structure has buttons for theme toggle, close menu that are direct children of <ul>.",
+      "status": "pending"
+    },
+    {
+      "id": "US-009",
+      "title": "Add skip-to-content link to all pages",
+      "description": "As a keyboard user, I need a skip-to-content link so that I don't have to tab through the entire navigation on every page.",
+      "acceptanceCriteria": [
+        "Skip-to-content link as first focusable element in each page",
+        "Link is visually hidden until focused (skip-link pattern)",
+        "Link jumps to main content area",
+        "Applied to all 6 main pages"
+      ],
+      "priority": 9,
+      "dependencies": [],
+      "passes": false,
+      "notes": "Add id=\"main\" to main content wrapper if not already present.",
+      "status": "pending"
+    },
+    {
+      "id": "US-010",
+      "title": "Replace href=\"#\" social links with real URLs",
+      "description": "As a visitor, I want social links to actually work so that I can follow PepeWebTech on social media.",
+      "acceptanceCriteria": [
+        "Twitter/X link points to @SpanglishGamer or remove if not ready",
+        "LinkedIn link points to Josue Zazueta's LinkedIn or remove if not ready",
+        "GitHub link points to webdevjosue GitHub",
+        "No href=\"#\" links remain in the footer",
+        "If social accounts aren't ready, use aria-hidden to hide the links rather than pointing to #"
+      ],
+      "priority": 10,
+      "dependencies": [],
+      "passes": false,
+      "notes": "GitHub: https://github.com/webdevjosue. LinkedIn and X: ask Mr. Z for URLs or hide them.",
+      "status": "pending"
+    },
+    {
+      "id": "US-011",
+      "title": "Add aria-expanded and aria-hidden to mobile menu",
+      "description": "As a screen reader user, I need ARIA states on the mobile menu so that I know when it's open or closed.",
+      "acceptanceCriteria": [
+        "Mobile menu button has aria-expanded (true when open, false when closed)",
+        "Nav links container has aria-hidden (true when closed, false when open)",
+        "States update correctly when toggling menu",
+        "Applied to all pages with mobile menu"
+      ],
+      "priority": 11,
+      "dependencies": ["US-008"],
+      "passes": false,
+      "notes": "JS toggle function needs to update these attributes.",
+      "status": "pending"
+    },
+    {
+      "id": "US-012",
+      "title": "Replace alert() with accessible inline messages in contact form",
+      "description": "As a user, I need form feedback as inline messages instead of browser alerts for a better and more accessible experience.",
+      "acceptanceCriteria": [
+        "Success state shows inline message (not alert())",
+        "Error state shows inline message with error details",
+        "Messages use aria-live for screen reader announcement",
+        "Form resets after successful submission"
+      ],
+      "priority": 12,
+      "dependencies": ["US-004"],
+      "passes": false,
+      "notes": "",
+      "status": "pending"
+    },
+    {
+      "id": "US-013",
+      "title": "Fix pagination bug in blog filterAndDisplay function",
+      "description": "As a blog visitor, I need pagination to work correctly when filtering categories so that the right number of posts appears.",
+      "acceptanceCriteria": [
+        "filterAndDisplay() correctly counts visible items regardless of filter state",
+        "Page limit works correctly after filtering",
+        "Load More button shows/hides based on actual remaining items",
+        "No items are permanently hidden after filter switch"
+      ],
+      "priority": 13,
+      "dependencies": [],
+      "passes": false,
+      "notes": "The bug: filterAndDisplay counts visibleCount incrementally but hides items beyond page limit incorrectly.",
+      "status": "pending"
+    },
+    {
+      "id": "US-014",
+      "title": "Add noscript fallback for card visibility",
+      "description": "As a user without JavaScript, I need cards to be visible so that the page content is not hidden.",
+      "acceptanceCriteria": [
+        "<noscript> tag added with CSS rules to make service-cards, features, pricing-cards, blog-cards visible (opacity: 1)",
+        "Cards still animate in normally when JS is enabled",
+        "No visual difference for JS-enabled users"
+      ],
+      "priority": 14,
+      "dependencies": [],
+      "passes": false,
+      "notes": "Cards start with opacity:0 and IntersectionObserver makes them visible. Without JS, they stay invisible.",
+      "status": "pending"
+    },
+    {
+      "id": "US-015",
+      "title": "Add favicon to all pages",
+      "description": "As a visitor, I want to see a favicon in the browser tab so that I can identify the PepeWebTech tab easily.",
+      "acceptanceCriteria": [
+        "Favicon added to all 6 main pages",
+        "Favicon works in modern browsers (favicon.ico and/or SVG)",
+        "If no favicon image exists yet, create a simple text-based favicon or use a placeholder path"
+      ],
+      "priority": 15,
+      "dependencies": [],
+      "passes": false,
+      "notes": "Can use a simple emoji favicon as placeholder: data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠️</text></svg>",
+      "status": "pending"
+    }
+  ]
+}

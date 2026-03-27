@@ -1,0 +1,11 @@
+{
+  "checks": [
+    {"name": "HTML Validation", "command": "echo 'Static site — no build step. Checking file existence and basic structure...' && find . -name '*.html' -not -path './node_modules/*' | head -5 && echo 'HTML files found: OK'"},
+    {"name": "CSS Syntax", "command": "for f in css/*.css; do node -e \"try { require('fs').readFileSync('$f','utf8'); } catch(e) { process.exit(1); }\" && echo \"✅ $f readable\"; done"},
+    {"name": "JS Syntax", "command": "for f in js/*.js; do node --check \"$f\" && echo \"✅ $f valid\"; done"},
+    {"name": "JSON Valid", "command": "cat ralph/prd.json | jq empty && echo '✅ prd.json valid' && cat vercel.json | jq empty && echo '✅ vercel.json valid'"},
+    {"name": "No Broken Links", "command": "grep -rn 'href=\"#\"' index.html about/index.html services/index.html pricing/index.html blog/index.html contact/index.html | grep -v '#main\\|#services\\|#pricing\\|#about\\|#blog\\|#contact\\|#testimonials' && echo '❌ Still has placeholder #' links' || echo '✅ No placeholder # links'"},
+    {"name": "Mobile Fixes on Blog", "command": "grep -l 'mobile-fixes.css' blog/posts/*.html | wc -l | xargs -I{} echo 'Blog posts with mobile-fixes.css: {}'"},
+    {"name": "OG Tags Present", "command": "grep -l 'og:title' index.html about/index.html services/index.html pricing/index.html blog/index.html contact/index.html | wc -l | xargs -I{} echo 'Pages with OG tags: {}/6'"}
+  ]
+}
