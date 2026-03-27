@@ -277,6 +277,26 @@ textarea:focus-visible {
 }
 
 /* ============================================
+   ISSUE 31: Skip-to-content link
+   ============================================ */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary);
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 10000;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ============================================
    ISSUE 25: Container edge padding
    ============================================ */
 .container {

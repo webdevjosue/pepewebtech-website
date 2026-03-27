@@ -7,7 +7,6 @@
     <meta name="keywords" content="web development, website design, small business, AI, affordable websites, Southern California">
     <title>PepeWebTech | AI-Powered Web Development</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/mobile-fixes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,8 +18,44 @@
             document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="canonical" href="https://pepewebtech.com/">
+    <meta property="og:title" content="PepeWebTech | AI-Powered Web Development">
+    <meta property="og:description" content="PepeWebTech - AI-powered web development for small businesses. Fast, affordable, modern websites.">
+    <meta property="og:url" content="https://pepewebtech.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PepeWebTech">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="PepeWebTech | AI-Powered Web Development">
+    <meta name="twitter:description" content="PepeWebTech - AI-powered web development for small businesses. Fast, affordable, modern websites.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PepeWebTech",
+        "url": "https://pepewebtech.com",
+        "description": "AI-powered web development for small businesses",
+        "address": { "@type": "PostalAddress", "addressLocality": "Southern California", "addressCountry": "US" },
+        "email": "info@pepewebtech.com",
+        "foundingDate": "2026"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "PepeWebTech",
+        "url": "https://pepewebtech.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Southern California", "addressCountry": "US" },
+        "priceRange": "$1,500 - $8,000",
+        "openingHours": "Mo-Fr 09:00-18:00"
+    }
+    </script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-backdrop"></div>
@@ -34,7 +69,7 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <button class="nav-close" aria-label="Close menu">✕</button>
+                <li><button class="nav-close" aria-label="Close menu">✕</button></li>
                 <li><a href="services/">Services</a></li>
                 <li><a href="pricing/">Pricing</a></li>
                 <li><a href="about/">About</a></li>
@@ -46,11 +81,12 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Hero -->
+    <section id="main" class="hero">
+        <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
-                <span class="badge">⚡ AI-Powered Development</span>
+                <span class="badge">AI-Powered Development</span>
                 <h1>Build Your Website <span class="gradient-text">4x Faster</span></h1>
                 <p class="hero-subtitle">Modern websites for small businesses. Powered by AI, delivered in days, not weeks. Starting at $1,500.</p>
                 <div class="hero-cta">
@@ -73,8 +109,9 @@
                 </div>
             </div>
         </div>
-        <div class="hero-bg"></div>
     </section>
+
+    <hr class="section-divider">
 
     <!-- Services Preview -->
     <section class="services section-alt">
@@ -95,13 +132,13 @@
                     <div class="service-icon">💼</div>
                     <h3>Business Websites</h3>
                     <p>Professional multi-page websites with all the features your business needs. Blog, contact forms, and more.</p>
-                    <span class="service-price">From $3,000</span>
+                    <span class="service-price">From $4,000</span>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🛒</div>
                     <h3>E-Commerce</h3>
                     <p>Online stores with payment processing, inventory management, and everything you need to sell online.</p>
-                    <span class="service-price">From $5,000</span>
+                    <span class="service-price">From $8,000</span>
                 </div>
             </div>
             <div class="text-center mt-8">
@@ -110,7 +147,9 @@
         </div>
     </section>
 
-    <!-- Why Us Section -->
+    <hr class="section-divider">
+
+    <!-- Why Us -->
     <section class="why-us">
         <div class="container">
             <div class="section-header">
@@ -142,6 +181,8 @@
             </div>
         </div>
     </section>
+
+    <hr class="section-divider">
 
     <!-- Blog Preview -->
     <section class="blog-preview section-alt">
@@ -192,11 +233,11 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="cta-section">
         <div class="container text-center">
             <h2>Ready to Build Your Website?</h2>
-            <p style="color: var(--text-secondary); margin: 1rem 0 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">Get a free consultation and quote. No commitment required.</p>
+            <p>Get a free consultation and quote. No commitment required.</p>
             <a href="contact/" class="btn btn-primary btn-lg">Start Your Project</a>
         </div>
     </section>
@@ -233,8 +274,6 @@
                         <h4>Connect</h4>
                         <ul>
                             <li><a href="mailto:info@pepewebtech.com">Email</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">LinkedIn</a></li>
                         </ul>
                     </div>
                 </div>

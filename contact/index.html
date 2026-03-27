@@ -18,8 +18,23 @@
             document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="canonical" href="https://pepewebtech.com/contact">
+    <meta property="og:title" content="Contact | PepeWebTech">
+    <meta property="og:description" content="Contact PepeWebTech for a free consultation and quote. AI-powered web development for small businesses.">
+    <meta property="og:url" content="https://pepewebtech.com/contact">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PepeWebTech">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Contact | PepeWebTech">
+    <meta name="twitter:description" content="Contact PepeWebTech for a free consultation and quote. AI-powered web development for small businesses.">
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "LocalBusiness", "name": "PepeWebTech", "url": "https://pepewebtech.com" }
+    </script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-backdrop"></div>
@@ -33,7 +48,7 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <button class="nav-close" aria-label="Close menu">✕</button>
+                <li><button class="nav-close" aria-label="Close menu">✕</button></li>
                 <li><a href="/services/">Services</a></li>
                 <li><a href="/pricing/">Pricing</a></li>
                 <li><a href="/about/">About</a></li>
@@ -46,7 +61,7 @@
     </nav>
 
     <!-- Page Hero -->
-    <section class="page-hero">
+    <section id="main" class="page-hero">
         <div class="container">
             <span class="section-tag">Contact</span>
             <h1>Ready to Start?</h1>
@@ -95,7 +110,7 @@
                     </div>
                 </div>
                 <div class="contact-form-container">
-                    <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/NEEDS_REAL_ID" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required placeholder="Your name">
@@ -109,8 +124,8 @@
                             <select id="project" name="project">
                                 <option value="">Select a service</option>
                                 <option value="landing">Landing Page ($1,500+)</option>
-                                <option value="business">Business Website ($3,000+)</option>
-                                <option value="ecommerce">E-Commerce ($5,000+)</option>
+                                <option value="business">Business Website ($4,000+)</option>
+                                <option value="ecommerce">E-Commerce ($8,000+)</option>
                                 <option value="maintenance">Maintenance Plan ($200/mo+)</option>
                                 <option value="other">Other</option>
                             </select>
@@ -158,8 +173,7 @@
                         <h4>Connect</h4>
                         <ul>
                             <li><a href="mailto:info@pepewebtech.com">Email</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">LinkedIn</a></li>
+                            <!-- TODO: Add real social media URLs -->
                         </ul>
                     </div>
                 </div>

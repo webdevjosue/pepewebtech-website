@@ -9,16 +9,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const navBackdrop = document.querySelector('.nav-backdrop');
     const navClose = document.querySelector('.nav-close');
     
+    let scrollPosition = 0;
+
     function openMobileMenu() {
+        scrollPosition = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.bottom = '0';
+        document.body.style.overflow = 'hidden';
         navLinks.classList.add('active');
         if (navBackdrop) navBackdrop.classList.add('active');
-        document.body.classList.add('menu-open');
     }
     
     function closeMobileMenu() {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.bottom = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, scrollPosition);
         navLinks.classList.remove('active');
         if (navBackdrop) navBackdrop.classList.remove('active');
-        document.body.classList.remove('menu-open');
     }
     
     if (mobileMenuBtn) {
@@ -37,6 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (navBackdrop) {
         navBackdrop.addEventListener('click', closeMobileMenu);
+        // iOS: prevent scroll leak through backdrop
+        navBackdrop.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, { passive: false });
     }
     
     // Close mobile menu when clicking on a nav link (not CTA)
@@ -54,6 +72,15 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMobileMenu();
         }
     });
+
+    // iOS: prevent body scroll when menu is open
+    document.addEventListener('touchmove', function(e) {
+        if (navLinks && navLinks.classList.contains('active')) {
+            // Allow scroll inside the menu panel itself
+            if (navLinks.contains(e.target)) return;
+            e.preventDefault();
+        }
+    }, { passive: false });
     
     // ============================================
     // NAVBAR SCROLL EFFECT
@@ -111,9 +138,35 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
-            contactForm.reset();
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    contactForm.reset();
+                    const msg = document.createElement('div');
+                    msg.textContent = 'Thank you! We\'ll get back to you within 24 hours.';
+                    msg.style.cssText = 'color: #10b981; padding: 1rem; text-align: center; margin-top: 1rem; font-weight: 600;';
+                    contactForm.appendChild(msg);
+                    setTimeout(() => msg.remove(), 5000);
+                } else {
+                    alert('Something went wrong. Please email us at info@pepewebtech.com');
+                }
+            })
+            .catch(() => {
+                alert('Something went wrong. Please email us at info@pepewebtech.com');
+            })
+            .finally(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
         });
     }
     

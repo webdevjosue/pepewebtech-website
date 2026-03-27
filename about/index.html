@@ -18,8 +18,23 @@
             document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="canonical" href="https://pepewebtech.com/about">
+    <meta property="og:title" content="About | PepeWebTech">
+    <meta property="og:description" content="About PepeWebTech - AI-powered web development by Josue Zazueta LLC, based in Southern California.">
+    <meta property="og:url" content="https://pepewebtech.com/about">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PepeWebTech">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="About | PepeWebTech">
+    <meta name="twitter:description" content="About PepeWebTech - AI-powered web development by Josue Zazueta LLC, based in Southern California.">
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "LocalBusiness", "name": "PepeWebTech", "url": "https://pepewebtech.com" }
+    </script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-backdrop"></div>
@@ -33,7 +48,7 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <button class="nav-close" aria-label="Close menu">✕</button>
+                <li><button class="nav-close" aria-label="Close menu">✕</button></li>
                 <li><a href="/services/">Services</a></li>
                 <li><a href="/pricing/">Pricing</a></li>
                 <li><a href="/about/">About</a></li>
@@ -46,7 +61,7 @@
     </nav>
 
     <!-- Page Hero -->
-    <section class="page-hero">
+    <section id="main" class="page-hero">
         <div class="container">
             <span class="section-tag">About</span>
             <h1>Built by Developers, for Businesses</h1>
@@ -162,8 +177,7 @@
                         <h4>Connect</h4>
                         <ul>
                             <li><a href="mailto:info@pepewebtech.com">Email</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">LinkedIn</a></li>
+                            <!-- TODO: Add real social media URLs -->
                         </ul>
                     </div>
                 </div>
