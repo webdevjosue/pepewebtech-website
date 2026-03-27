@@ -1,5 +1,10 @@
 .vercel
+node_modules
+.next
+out
+legacy
+*.tsbuildinfo
+next-env.d.ts
 MOBILE-AUDIT.md
 STRIPE-GUIDE.md
 MARKET-RESEARCH.md
-*.md

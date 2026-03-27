@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 189 94% 43%;
+    --accent-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 239 84% 67%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 225 47% 7%;
+    --foreground: 210 40% 98%;
+    --card: 227 35% 14%;
+    --card-foreground: 210 40% 98%;
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 227 35% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 227 35% 18%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 189 94% 43%;
+    --accent-foreground: 0 0% 100%;
+    --border: 227 25% 20%;
+    --input: 227 25% 20%;
+    --ring: 239 84% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+}
+
+/* Section divider */
+.section-divider {
+  @apply border-border opacity-30;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+/* Glassmorphism nav */
+.nav-glass {
+  @apply bg-background/80 backdrop-blur-xl border-b border-border;
+}
+
+/* Blog post content styles */
+.blog-content h2 {
+  @apply text-2xl font-bold mt-12 mb-6;
+}
+
+.blog-content h3 {
+  @apply text-xl font-semibold mt-8 mb-4;
+}
+
+.blog-content p {
+  @apply mb-6 leading-relaxed text-muted-foreground;
+}
+
+.blog-content ul,
+.blog-content ol {
+  @apply my-6 pl-8;
+}
+
+.blog-content li {
+  @apply mb-3;
+}
+
+.blog-content strong {
+  @apply text-foreground font-semibold;
+}
+
+.blog-content a {
+  @apply text-primary underline underline-offset-2 hover:text-primary/80;
+}
+
+.blog-content table {
+  @apply w-full border-collapse my-6;
+}
+
+.blog-content th,
+.blog-content td {
+  @apply px-4 py-3 text-left border-b border-border;
+}
+
+.blog-content th {
+  @apply font-semibold text-foreground;
+}
+
+.blog-content code {
+  @apply bg-secondary px-1.5 py-0.5 rounded text-sm;
+}
+
+.blog-content blockquote {
+  @apply border-l-4 border-accent pl-6 my-6 italic text-muted-foreground;
+}
+
+/* TLDR box */
+.tldr-box {
+  @apply bg-accent text-accent-foreground p-6 rounded-lg my-8;
+}
+
+.tldr-box p {
+  @apply text-accent-foreground my-2;
+}
+
+.tldr-box strong {
+  @apply text-accent-foreground;
+}
+
+/* Highlight box */
+.highlight-box {
+  @apply bg-secondary border-l-4 border-accent p-6 my-8 rounded-lg;
+}
+
+.highlight-box p {
+  @apply text-foreground m-0;
+}
