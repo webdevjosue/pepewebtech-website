@@ -9,6 +9,14 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-03-28-ai-first-development-2026-small-business-guide",
+    title: "AI-First Development: How Small Businesses Can Build 10x Faster in 2026",
+    date: "Mar 28, 2026",
+    category: "Web Development",
+    excerpt: "AI-first development is transforming web development. Learn how small businesses can build 10x faster with AI-native workflows in 2026.",
+    readTime: "5 min read",
+  },
+  {
     slug: "2026-03-27-railway-100m-ai-cloud-small-business",
     title: "Railway's $100M Bet: AI-Native Cloud for the Rest of Us",
     date: "Mar 27, 2026",
