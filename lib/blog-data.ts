@@ -9,6 +9,14 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-03-28-speech-ai-explosion-small-business-guide",
+    title: "The Speech AI Explosion: What Small Businesses Need to Know",
+    date: "Mar 28, 2026",
+    category: "AI",
+    excerpt: "The speech AI layer exploded in March 2026. Cohere, Sanas, and Google all launched voice products. Here's what small businesses need to know.",
+    readTime: "5 min read",
+  },
+  {
     slug: "2026-03-28-ai-first-development-2026-small-business-guide",
     title: "AI-First Development: How Small Businesses Can Build 10x Faster in 2026",
     date: "Mar 28, 2026",
