@@ -9,6 +9,14 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-03-29-ai-agents-practical-automation-small-business-guide",
+    title: "AI Agents Beyond Chatbots: Practical Automation for Small Businesses",
+    date: "Mar 29, 2026",
+    category: "AI Agents",
+    excerpt: "AI agents are moving beyond chatbots to practical automation. Learn how small businesses can implement AI agents for real work, from customer service to operational tasks.",
+    readTime: "8 min read",
+  },
+  {
     slug: "2026-03-29-nvidia-vera-rubin-1t-ai-boom-small-business",
     title: "NVIDIA's $1T AI Infrastructure Boom: What Small Businesses Need to Know",
     date: "Mar 29, 2026",
