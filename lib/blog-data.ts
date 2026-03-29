@@ -9,6 +9,14 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-03-29-nvidia-vera-rubin-1t-ai-boom-small-business",
+    title: "NVIDIA's $1T AI Infrastructure Boom: What Small Businesses Need to Know",
+    date: "Mar 29, 2026",
+    category: "AI Trends",
+    excerpt: "NVIDIA announced $1T in AI infrastructure and the Vera Rubin platform at GTC 2026. Learn what this means for AI costs and small business AI adoption.",
+    readTime: "6 min read",
+  },
+  {
     slug: "2026-03-28-ai-first-web-development-2026-guide",
     title: "AI-First Web Development in 2026: What Small Businesses Need to Know",
     date: "Mar 28, 2026",
