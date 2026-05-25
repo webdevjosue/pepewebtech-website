@@ -21,15 +21,17 @@ const showcaseItems: ShowcaseItem[] = [
     tags: ["HTML5", "CSS3", "JavaScript"],
     href: "https://www.pepewebtech.com",
     external: true,
+    thumbnail: "/images/pepewebtech-thumb.png",
   },
   {
     icon: "⚡",
-    title: "Portfolio Website",
+    title: "Web Dev Josue",
     description:
       "Modern responsive portfolio showcasing full-stack development skills and project history.",
     tags: ["HTML5", "CSS3", "JavaScript", "Tailwind"],
     href: "https://webdevjosue.github.io",
     external: true,
+    thumbnail: "/images/portfolio-thumb.png",
   },
   {
     icon: "💈",
