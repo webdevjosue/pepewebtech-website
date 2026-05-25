@@ -58,6 +58,10 @@ export default async function BlogPostPage({ params }: PageProps) {
         .replace(/<span[^>]*>·<\/span>/gi, "")
         // Add role="list" to ul elements for screen reader features
         .replace(/<ul>/gi, '<ul role="list">')
+        // Strip blog-hero-image div (decorative emoji container, adds noise)
+        .replace(/<div[^>]*class="[^"]*blog-hero-image[^"]*"[^>]*>[\s\S]*?<\/div>/gi, "")
+        // Strip duplicate blog-meta (Next.js template already shows date/category/times)
+        .replace(/<div[^>]*class="[^"]*blog-meta[^"]*"[^>]*>[\s\S]*?<\/div>/gi, "")
         // Clean up double blank lines
         .replace(/\n\s*\n\s*\n/g, "\n\n");
       htmlContent = content.trim();
