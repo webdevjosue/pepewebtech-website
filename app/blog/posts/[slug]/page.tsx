@@ -48,7 +48,18 @@ export default async function BlogPostPage({ params }: PageProps) {
         .replace(/<h1[^>]*>[\s\S]*?<\/h1>/gi, "")
         // Fix heading hierarchy: h3 in tool cards -> h2 for screen reader flow
         .replace(/<h3/gi, "<h2")
-        .replace(/<\/h3>/gi, "</h2>");
+        .replace(/<\/h3>/gi, "</h2>")
+        // Strip nested <article> and wrapping <header> to avoid confusing screen readers
+        .replace(/<article[^>]*>/gi, "")
+        .replace(/<\/article>/gi, "")
+        .replace(/<header[^>]*>/gi, "")
+        .replace(/<\/header>/gi, "")
+        // Remove decorative span separators that get read as "middle dot"
+        .replace(/<span[^>]*>·<\/span>/gi, "")
+        // Add role="list" to ul elements for screen reader features
+        .replace(/<ul>/gi, '<ul role="list">')
+        // Clean up double blank lines
+        .replace(/\n\s*\n\s*\n/g, "\n\n");
       htmlContent = content.trim();
     }
   }
