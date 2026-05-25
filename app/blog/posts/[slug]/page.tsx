@@ -48,7 +48,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   return (
-    <article className="pt-32 pb-16 md:pt-40" role="main" aria-label="Blog post">
+    <article className="pt-32 pb-16 md:pt-40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
         <header className="mb-8">
           <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
