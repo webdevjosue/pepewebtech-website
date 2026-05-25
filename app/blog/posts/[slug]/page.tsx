@@ -68,6 +68,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="relative">
           <div
             className="blog-content"
+            suppressHydrationWarning
             dangerouslySetInnerHTML={{ __html: htmlContent }}
           />
         </div>
