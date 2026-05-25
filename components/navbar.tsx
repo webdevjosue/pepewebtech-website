@@ -54,7 +54,7 @@ export function Navbar() {
             ))}
             <ThemeToggle />
             <Button asChild>
-              <Link href="/contact">Get Started</Link>
+              <Link href="/contact">Free Quote</Link>
             </Button>
           </div>
 
@@ -86,7 +86,7 @@ export function Navbar() {
                 </div>
                 <Button asChild className="mt-4">
                   <Link href="/contact" onClick={() => setOpen(false)}>
-                    Get Started
+                    Free Quote
                   </Link>
                 </Button>
               </nav>

@@ -2,6 +2,8 @@ import { Hero } from "@/components/hero";
 import { ServiceCard } from "@/components/service-card";
 import { FeatureCard } from "@/components/feature-card";
 import { BlogCard } from "@/components/blog-card";
+import { Showcase } from "@/components/showcase";
+import { Testimonials } from "@/components/testimonials";
 import { CTASection } from "@/components/cta-section";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -120,6 +122,11 @@ export default function Home() {
 
       <hr className="section-divider" />
 
+      {/* Portfolio */}
+      <Showcase />
+
+      <hr className="section-divider" />
+
       {/* Blog */}
       <section className="py-16 md:py-24 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -146,6 +153,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <Testimonials />
 
       {/* CTA */}
       <CTASection

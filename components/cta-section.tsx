@@ -11,7 +11,7 @@ interface CTASectionProps {
 export function CTASection({
   title,
   description,
-  buttonText = "Start Your Project",
+  buttonText = "Get Your Free Quote",
   buttonHref = "/contact",
 }: CTASectionProps) {
   return (

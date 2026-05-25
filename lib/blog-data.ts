@@ -9,6 +9,14 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-05-25-ai-tools-every-small-business-website-needs",
+    title: "5 AI Tools Every Small Business Website Needs in 2026",
+    date: "May 25, 2026",
+    category: "AI Tools",
+    excerpt: "The right AI integrations can turn your website from a digital brochure into a 24/7 sales machine. Here are the tools that actually deliver ROI.",
+    readTime: "6 min read",
+  },
+  {
     slug: "2026-03-29-ai-agents-practical-automation-small-business-guide",
     title: "AI Agents Beyond Chatbots: Practical Automation for Small Businesses",
     date: "Mar 29, 2026",
