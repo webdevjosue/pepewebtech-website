@@ -37,32 +37,39 @@ export default async function BlogPostPage({ params }: PageProps) {
     // Extract the main article content (between first <article> or the body content)
     const bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
     if (bodyMatch) {
-      // Remove nav, footer, scripts, style links
+      // Remove nav, footer, scripts, style links, and duplicate h1 from blog post HTML
       let content = bodyMatch[1]
         .replace(/<nav[\s\S]*?<\/nav>/gi, "")
         .replace(/<footer[\s\S]*?<\/footer>/gi, "")
         .replace(/<script[\s\S]*?<\/script>/gi, "")
         .replace(/<link[^>]*>/gi, "")
-        .replace(/<style[\s\S]*?<\/style>/gi, "");
+        .replace(/<style[\s\S]*?<\/style>/gi, "")
+        // Remove duplicate h1 heading (blog post HTML files embed their own h1)
+        .replace(/<h1[^>]*>[\s\S]*?<\/h1>/gi, "")
+        // Fix heading hierarchy: h3 in tool cards -> h2 for screen reader flow
+        .replace(/<h3/gi, "<h2")
+        .replace(/<\/h3>/gi, "</h2>");
       htmlContent = content.trim();
     }
   }
 
   return (
-    <article className="pt-32 pb-16 md:pt-40">
+    <article className="pt-32 pb-16 md:pt-40" role="main" aria-label="Blog post">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-        <div className="mb-8">
+        <header className="mb-8">
           <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
             {post.category}
           </span>
-          <time className="block mt-3 text-sm text-muted-foreground">{post.date}</time>
-          {post.readTime && (
-            <span className="text-sm text-muted-foreground"> · {post.readTime}</span>
-          )}
+          <div className="mt-3">
+            <time className="text-sm text-muted-foreground" dateTime={post.date}>{post.date}</time>
+            {post.readTime && (
+              <span className="text-sm text-muted-foreground"> · {post.readTime}</span>
+            )}
+          </div>
           <h1 className="mt-4 text-3xl md:text-4xl font-bold leading-tight">
             {post.title}
           </h1>
-        </div>
+        </header>
 
         <div className="relative">
           <div
@@ -71,14 +78,14 @@ export default async function BlogPostPage({ params }: PageProps) {
           />
         </div>
 
-        <div className="mt-12 pt-8 border-t">
+        <nav className="mt-12 pt-8 border-t" aria-label="Blog navigation">
           <a
             href="/blog"
             className="text-primary hover:text-primary/80 font-medium transition-colors"
           >
             &larr; Back to Blog
           </a>
-        </div>
+        </nav>
       </div>
     </article>
   );
