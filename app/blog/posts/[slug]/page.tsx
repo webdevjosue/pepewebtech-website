@@ -55,7 +55,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             {post.category}
           </span>
           <div className="mt-3">
-            <time className="text-sm text-muted-foreground" dateTime={post.date}>{post.date}</time>
+            <time className="text-sm text-muted-foreground" dateTime={post.slug.substring(0, 10)}>{post.date}</time>
             {post.readTime && (
               <span className="text-sm text-muted-foreground"> · {post.readTime}</span>
             )}
