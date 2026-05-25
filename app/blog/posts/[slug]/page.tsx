@@ -27,44 +27,23 @@ export default async function BlogPostPage({ params }: PageProps) {
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) notFound();
 
-  // Find the HTML file - slug format: 2026-03-27-title -> 2026-03-27-title.html
+  // Read the HTML file for this slug
   const contentDir = path.join(process.cwd(), "content", "blog");
   const htmlPath = path.join(contentDir, `${slug}.html`);
 
   let htmlContent = "";
   if (fs.existsSync(htmlPath)) {
     htmlContent = fs.readFileSync(htmlPath, "utf-8");
-    // Extract the main article content (between first <article> or the body content)
+    // Extract body content, strip nav/footer/script/style/link, render as-is
     const bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
     if (bodyMatch) {
-      // Remove nav, footer, scripts, style links, and duplicate h1 from blog post HTML
-      let content = bodyMatch[1]
+      htmlContent = bodyMatch[1]
         .replace(/<nav[\s\S]*?<\/nav>/gi, "")
         .replace(/<footer[\s\S]*?<\/footer>/gi, "")
         .replace(/<script[\s\S]*?<\/script>/gi, "")
-        .replace(/<link[^>]*>/gi, "")
         .replace(/<style[\s\S]*?<\/style>/gi, "")
-        // Remove duplicate h1 heading (blog post HTML files embed their own h1)
-        .replace(/<h1[^>]*>[\s\S]*?<\/h1>/gi, "")
-        // Fix heading hierarchy: h3 in tool cards -> h2 for screen reader flow
-        .replace(/<h3/gi, "<h2")
-        .replace(/<\/h3>/gi, "</h2>")
-        // Strip nested <article> and wrapping <header> to avoid confusing screen readers
-        .replace(/<article[^>]*>/gi, "")
-        .replace(/<\/article>/gi, "")
-        .replace(/<header[^>]*>/gi, "")
-        .replace(/<\/header>/gi, "")
-        // Remove decorative span separators that get read as "middle dot"
-        .replace(/<span[^>]*>·<\/span>/gi, "")
-        // Add role="list" to ul elements for screen reader features
-        .replace(/<ul>/gi, '<ul role="list">')
-        // Strip blog-hero-image div (decorative emoji container, adds noise)
-        .replace(/<div[^>]*class="[^"]*blog-hero-image[^"]*"[^>]*>[\s\S]*?<\/div>/gi, "")
-        // Strip duplicate blog-meta (Next.js template already shows date/category/times)
-        .replace(/<div[^>]*class="[^"]*blog-meta[^"]*"[^>]*>[\s\S]*?<\/div>/gi, "")
-        // Clean up double blank lines
-        .replace(/\n\s*\n\s*\n/g, "\n\n");
-      htmlContent = content.trim();
+        .replace(/<link[^>]*>/gi, "")
+        .trim();
     }
   }
 
