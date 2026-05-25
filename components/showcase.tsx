@@ -9,6 +9,7 @@ interface ShowcaseItem {
   tags: string[];
   href: string;
   external?: boolean;
+  thumbnail?: string;
 }
 
 const showcaseItems: ShowcaseItem[] = [
@@ -29,6 +30,16 @@ const showcaseItems: ShowcaseItem[] = [
     tags: ["HTML5", "CSS3", "JavaScript", "Tailwind"],
     href: "https://webdevjosue.github.io",
     external: true,
+  },
+  {
+    icon: "💈",
+    title: "The Butchers Barbershop",
+    description:
+      "Premium barbershop website in Murrieta, CA. Established 2021. Modern design with booking and services showcase.",
+    tags: ["Business", "Booking", "Responsive"],
+    href: "https://webpage-eight-bice.vercel.app",
+    external: true,
+    thumbnail: "/images/butchers-thumb.png",
   },
   {
     icon: "🚀",
@@ -58,8 +69,16 @@ export function Showcase() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {showcaseItems.map((item) => (
             <Card key={item.title} className="overflow-hidden hover:shadow-lg transition-shadow">
-              <CardHeader className="pb-0 pt-6">
-                <div className="text-5xl mb-3 text-center">{item.icon}</div>
+              <CardHeader className="pb-0 pt-0">
+                {item.thumbnail ? (
+                  <img
+                    src={item.thumbnail}
+                    alt={item.title}
+                    className="w-full h-48 object-cover rounded-t-lg"
+                  />
+                ) : (
+                  <div className="text-5xl mb-3 text-center pt-6">{item.icon}</div>
+                )}
               </CardHeader>
               <CardContent className="pt-4">
                 <h3 className="font-semibold text-lg mb-2 text-foreground">
