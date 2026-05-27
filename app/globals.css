@@ -141,6 +141,33 @@
   @apply text-foreground m-0;
 }
 
+/* Make all images in blog content responsive */
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.blog-content figure {
+  margin: 2rem 0;
+}
+
+.blog-featured-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* Table wrapper for horizontal scroll on mobile */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+}
+
+.table-wrapper table {
+  min-width: 500px;
+}
+
 /* ===== MOBILE-FIRST FIXES ===== */
 
 /* 1. Mobile hero - more vertical padding below fixed navbar */
