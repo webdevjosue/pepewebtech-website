@@ -5,9 +5,19 @@ export interface BlogPost {
   category: string;
   excerpt: string;
   readTime?: string;
+  image?: string;
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "2026-05-27-website-cost-socal",
+    title: "Small Business Website Cost in SoCal 2026 — Complete Pricing Guide",
+    date: "May 27, 2026",
+    category: "Web Development",
+    excerpt: "What does a small business website cost in Southern California? Compare DIY builders, freelancers, and agencies. Real LA, OC &amp; San Diego pricing. Get a free quote.",
+    readTime: "6 min read",
+    image: "/images/blog/website-cost-og.webp",
+  },
   {
     slug: "2026-05-25-ai-tools-every-small-business-website-needs",
     title: "5 AI Tools Every Small Business Website Needs in 2026",
