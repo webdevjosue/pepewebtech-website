@@ -1,26 +1,31 @@
-# SYSTEM_STATUS.md — Last Updated: 2026-05-27 14:15 PT
+# SYSTEM_STATUS.md — Last Updated: 2026-05-27 16:15 PT
 
 ## Repository
-- **Branch:** main
-- **Status:** Dirty (1 modified: HEARTBEAT.md, 1 untracked: SYSTEM_STATUS.md)
-- **Latest commit:** a605276 — fix: replace tool-card divs with section tags for Safari Reader compatibility
+- **Branch:** main (active), master (stale — consider pruning)
+- **Working tree:** Clean
+- **Recent activity:** Accessibility fixes, blog posts, Lucide icon migration
 
 ## Deployment
-- **Site:** www.pepewebtech.com — ✅ LIVE (HTTP 200, 2.1s response)
-- **Framework:** Next.js 14.2.35
+- **URL:** www.pepewebtech.com
+- **Status:** ✅ Live (HTTP 200)
+- **Platform:** Vercel
 
 ## System Health
-- **Disk:** 53% used (43G/87G) — ✅ OK
-- **Memory:** 5.5G/11G used (5.9G available) — ✅ OK
-- **Docker:** 2 containers running (n8n, postgres) — ✅ Healthy
+- **Disk:** 53% used (44G/87G) — ✅ OK
+- **Memory:** 5.2G/11G — ✅ OK
+- **Swap:** 299M/3.8G — ✅ OK
+- **Docker:** 2 containers (n8n 2.21.7 + postgres:16-alpine) — ✅ Healthy
 
 ## Dependencies
-- **Total outdated:** 13 packages
-- **Major bumps available:** next (16), react (19), tailwindcss (4), typescript (6), lucide-react (1)
-- **Vulnerabilities:** 2 (1 moderate, 1 high) — postCSS XSS
-- **ESLint:** Not configured
+- **Framework:** Next.js 14.2, React 18.3, TypeScript 5.4
+- **UI:** Tailwind 3.4, Lucide React, Radix UI
+- **Audit status:** Not run this cycle
 
-## Notes
-- Major version bumps need planned migration (Next 16, React 19)
-- PostCSS vulnerability fix blocked by Next.js major version constraint
-- No critical issues
+## Known Issues
+- [ ] ESLint not configured (no .eslintrc file)
+- [ ] Stale `master` branch exists alongside `main`
+- [ ] No npm audit run recently
+
+## Performance Notes
+- No large unoptimized images found
+- Core Web Vitals: not measured this cycle
