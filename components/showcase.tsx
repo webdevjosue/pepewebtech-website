@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Globe, Zap, Scissors, Rocket } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 interface ShowcaseItem {
-  icon: string;
+  icon: LucideIcon;
   title: string;
   description: string;
   tags: string[];
@@ -14,7 +16,7 @@ interface ShowcaseItem {
 
 const showcaseItems: ShowcaseItem[] = [
   {
-    icon: "🌐",
+    icon: Globe,
     title: "PepeWebTech",
     description:
       "Complete business platform with modern design, dark/light mode, pricing, and 50+ blog posts.",
@@ -24,7 +26,7 @@ const showcaseItems: ShowcaseItem[] = [
     thumbnail: "/images/pepewebtech-thumb.png",
   },
   {
-    icon: "⚡",
+    icon: Zap,
     title: "Web Dev Josue",
     description:
       "Modern responsive portfolio showcasing full-stack development skills and project history.",
@@ -34,7 +36,7 @@ const showcaseItems: ShowcaseItem[] = [
     thumbnail: "/images/portfolio-thumb.png",
   },
   {
-    icon: "💈",
+    icon: Scissors,
     title: "The Butchers Barbershop",
     description:
       "Premium barbershop website in Murrieta, CA. Established 2021. Modern design with booking and services showcase.",
@@ -44,7 +46,7 @@ const showcaseItems: ShowcaseItem[] = [
     thumbnail: "/images/butchers-thumb.png",
   },
   {
-    icon: "🚀",
+    icon: Rocket,
     title: "Your Project Here",
     description:
       "Have a vision? We build custom websites, apps, and e-commerce solutions tailored to your business.",
@@ -79,7 +81,9 @@ export function Showcase() {
                     className="w-full h-48 object-cover rounded-t-lg"
                   />
                 ) : (
-                  <div className="text-5xl mb-3 text-center pt-6">{item.icon}</div>
+                  <div className="flex items-center justify-center text-center pt-8 pb-2" aria-hidden="true">
+                    <item.icon className="h-12 w-12 text-primary" aria-hidden="true" />
+                  </div>
                 )}
               </CardHeader>
               <CardContent className="pt-4">

@@ -1,6 +1,7 @@
 import { ServiceCard } from "@/components/service-card";
 import { CTASection } from "@/components/cta-section";
 import type { Metadata } from "next";
+import { Rocket, Briefcase, ShoppingCart, Wrench } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -28,28 +29,28 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
             <ServiceCard
-              icon="🚀"
+              icon={Rocket}
               title="Landing Pages"
               description="Single-page sites designed to convert visitors into customers. Perfect for launching new products, services, or campaigns. Fast delivery, maximum impact."
               price="From $1,500"
               features={["Single page design", "Mobile responsive", "Contact form", "SEO basics", "Free hosting setup"]}
             />
             <ServiceCard
-              icon="💼"
+              icon={Briefcase}
               title="Business Websites"
               description="Professional multi-page websites with all the features your business needs. Blog integration, contact forms, analytics, and more."
               price="From $4,000"
               features={["Up to 10 pages", "Blog integration", "Full SEO setup", "Analytics dashboard", "30-day support"]}
             />
             <ServiceCard
-              icon="🛒"
+              icon={ShoppingCart}
               title="E-Commerce"
               description="Online stores with payment processing, inventory management, and everything you need to sell online. Scale-ready from day one."
               price="From $8,000"
               features={["Unlimited products", "Payment processing", "Inventory management", "Order tracking", "60-day support"]}
             />
             <ServiceCard
-              icon="🔧"
+              icon={Wrench}
               title="Maintenance Plans"
               description="Keep your site secure, updated, and running smoothly. We handle everything so you can focus on what matters—your business."
               price="From $200/mo"

@@ -1,13 +1,14 @@
 import { cn } from "@/lib/utils";
+import type { LucideIcon } from "lucide-react";
 
 interface FeatureCardProps {
-  icon: string;
+  icon: LucideIcon;
   title: string;
   description: string;
   className?: string;
 }
 
-export function FeatureCard({ icon, title, description, className }: FeatureCardProps) {
+export function FeatureCard({ icon: Icon, title, description, className }: FeatureCardProps) {
   return (
     <div
       className={cn(
@@ -15,8 +16,8 @@ export function FeatureCard({ icon, title, description, className }: FeatureCard
         className
       )}
     >
-      <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-2xl">
-        {icon}
+      <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10" aria-hidden="true">
+        <Icon className="h-6 w-6 text-primary" aria-hidden="true" />
       </div>
       <h3 className="text-lg font-semibold text-foreground">{title}</h3>
       <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{description}</p>

@@ -8,6 +8,7 @@ import { CTASection } from "@/components/cta-section";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { blogPosts } from "@/lib/blog-data";
+import { Rocket, Briefcase, ShoppingCart, Zap, DollarSign, Smartphone, Lock } from "lucide-react";
 
 export default function Home() {
   const latestPosts = blogPosts.slice(0, 3);
@@ -32,7 +33,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             <ServiceCard
-              icon="🚀"
+              icon={Rocket}
               title="Landing Pages"
               description="Single-page sites designed to convert visitors into customers. Perfect for launching new products or services."
               price="From $1,500"
@@ -45,7 +46,7 @@ export default function Home() {
               ]}
             />
             <ServiceCard
-              icon="💼"
+              icon={Briefcase}
               title="Business Websites"
               description="Professional multi-page websites with all the features your business needs. Blog, contact forms, and more."
               price="From $4,000"
@@ -58,7 +59,7 @@ export default function Home() {
               ]}
             />
             <ServiceCard
-              icon="🛒"
+              icon={ShoppingCart}
               title="E-Commerce"
               description="Online stores with payment processing, inventory management, and everything you need to sell online."
               price="From $8,000"
@@ -97,22 +98,22 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             <FeatureCard
-              icon="⚡"
+              icon={Zap}
               title="4x Faster"
               description="AI-assisted development means we build in days what others take weeks to complete."
             />
             <FeatureCard
-              icon="💰"
+              icon={DollarSign}
               title="50% Cheaper"
               description="Efficiency savings passed directly to you. Enterprise quality at small business prices."
             />
             <FeatureCard
-              icon="📱"
+              icon={Smartphone}
               title="Mobile-First"
               description="Every site is built mobile-responsive from day one. No extra cost, no compromises."
             />
             <FeatureCard
-              icon="🔒"
+              icon={Lock}
               title="Secure Hosting"
               description="Free SSL, automatic backups, and enterprise-grade security included at no extra charge."
             />

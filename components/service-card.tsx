@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
+import type { LucideIcon } from "lucide-react";
 
 interface ServiceCardProps {
-  icon: string;
+  icon: LucideIcon;
   title: string;
   description: string;
   price: string;
@@ -10,7 +11,7 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({
-  icon,
+  icon: Icon,
   title,
   description,
   price,
@@ -24,14 +25,16 @@ export function ServiceCard({
         className
       )}
     >
-      <div className="text-4xl mb-4">{icon}</div>
+      <div className="mb-4" aria-hidden="true">
+        <Icon className="h-8 w-8 text-primary" aria-hidden="true" />
+      </div>
       <h3 className="text-xl font-semibold text-foreground">{title}</h3>
       <p className="mt-2 text-muted-foreground">{description}</p>
       {features && features.length > 0 && (
         <ul className="mt-4 space-y-2">
           {features.map((feature, i) => (
             <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
-              <span className="text-primary mt-0.5">&#10003;</span>
+              <span className="text-primary mt-0.5" aria-hidden="true">&#10003;</span>
               {feature}
             </li>
           ))}

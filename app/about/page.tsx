@@ -1,18 +1,14 @@
 import { FeatureCard } from "@/components/feature-card";
 import { CTASection } from "@/components/cta-section";
 import type { Metadata } from "next";
+import { MapPin, Zap, DollarSign, Smartphone, Lock } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About",
   description: "PepeWebTech is a Southern California-based digital agency. AI-powered web development for small businesses.",
 };
 
-const stats = [
-  { label: "SoCal", value: "📍", caption: "Based" },
-  { label: "2026", value: "2026", caption: "Founded" },
-  { label: "AI", value: "⚡", caption: "Powered" },
-  { label: "50+", value: "50+", caption: "Projects" },
-];
+// no stats array — rendered inline
 
 export default function AboutPage() {
   return (
@@ -47,12 +43,26 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <div className="text-2xl font-bold">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.caption}</div>
+            <div>
+              <div className="text-2xl font-bold flex items-center justify-center gap-2">
+                <MapPin className="h-6 w-6" aria-hidden="true" />
               </div>
-            ))}
+              <div className="text-sm text-muted-foreground">Based</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold">2026</div>
+              <div className="text-sm text-muted-foreground">Founded</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold flex items-center justify-center gap-2">
+                <Zap className="h-6 w-6" aria-hidden="true" />
+              </div>
+              <div className="text-sm text-muted-foreground">Powered</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold">50+</div>
+              <div className="text-sm text-muted-foreground">Projects</div>
+            </div>
           </div>
         </div>
       </section>
@@ -71,10 +81,10 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-5xl mx-auto">
-            <FeatureCard icon="⚡" title="4x Faster" description="AI-assisted development means we build in days what others take weeks to complete." />
-            <FeatureCard icon="💰" title="50% Cheaper" description="Efficiency savings passed directly to you. Enterprise quality at small business prices." />
-            <FeatureCard icon="📱" title="Mobile-First" description="Every site is built mobile-responsive from day one. No extra cost, no compromises." />
-            <FeatureCard icon="🔒" title="Secure Hosting" description="Free SSL, automatic backups, and enterprise-grade security included at no extra charge." />
+            <FeatureCard icon={Zap} title="4x Faster" description="AI-assisted development means we build in days what others take weeks to complete." />
+            <FeatureCard icon={DollarSign} title="50% Cheaper" description="Efficiency savings passed directly to you. Enterprise quality at small business prices." />
+            <FeatureCard icon={Smartphone} title="Mobile-First" description="Every site is built mobile-responsive from day one. No extra cost, no compromises." />
+            <FeatureCard icon={Lock} title="Secure Hosting" description="Free SSL, automatic backups, and enterprise-grade security included at no extra charge." />
           </div>
         </div>
       </section>

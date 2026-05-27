@@ -3,11 +3,12 @@
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import { Card, CardContent } from "@/components/ui/card";
+import { Mail, MapPin, Clock } from "lucide-react";
 
 const contactInfo = [
-  { icon: "📧", label: "Email", value: "info@pepewebtech.com", href: "mailto:info@pepewebtech.com" },
-  { icon: "📍", label: "Location", value: "Southern California" },
-  { icon: "⏰", label: "Response Time", value: "Within 24 hours" },
+  { icon: Mail, label: "Email", value: "info@pepewebtech.com", href: "mailto:info@pepewebtech.com" },
+  { icon: MapPin, label: "Location", value: "Southern California" },
+  { icon: Clock, label: "Response Time", value: "Within 24 hours" },
 ];
 
 const expectations = [
@@ -76,7 +77,7 @@ export default function ContactPage() {
               <div className="space-y-4">
                 {contactInfo.map((item) => (
                   <div key={item.label} className="flex items-start gap-4">
-                    <span className="text-2xl">{item.icon}</span>
+                    <span className="mt-1" aria-hidden="true"><item.icon className="h-5 w-5 text-primary" aria-hidden="true" /></span>
                     <div>
                       <div className="font-semibold text-foreground">{item.label}</div>
                       {item.href ? (
