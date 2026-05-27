@@ -126,7 +126,7 @@ export default function PricingPage() {
                         key={feature}
                         className="text-sm text-muted-foreground flex items-start gap-2"
                       >
-                        <span className="text-primary mt-0.5">&#10003;</span>
+                        <span className="text-primary mt-0.5" aria-hidden="true">&#10003;</span>
                         {feature}
                       </li>
                     ))}

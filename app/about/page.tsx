@@ -46,8 +46,9 @@ export default function AboutPage() {
             <div>
               <div className="text-2xl font-bold flex items-center justify-center gap-2">
                 <MapPin className="h-6 w-6" aria-hidden="true" />
+                <span>SoCal</span>
               </div>
-              <div className="text-sm text-muted-foreground">Based</div>
+              <div className="text-sm text-muted-foreground">Based in SoCal</div>
             </div>
             <div>
               <div className="text-2xl font-bold">2026</div>
@@ -56,8 +57,9 @@ export default function AboutPage() {
             <div>
               <div className="text-2xl font-bold flex items-center justify-center gap-2">
                 <Zap className="h-6 w-6" aria-hidden="true" />
+                <span>AI</span>
               </div>
-              <div className="text-sm text-muted-foreground">Powered</div>
+              <div className="text-sm text-muted-foreground">AI Powered</div>
             </div>
             <div>
               <div className="text-2xl font-bold">50+</div>

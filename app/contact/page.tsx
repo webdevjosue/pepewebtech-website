@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import type { Metadata } from "next";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, MapPin, Clock } from "lucide-react";
 
@@ -77,7 +76,7 @@ export default function ContactPage() {
               <div className="space-y-4">
                 {contactInfo.map((item) => (
                   <div key={item.label} className="flex items-start gap-4">
-                    <span className="mt-1" aria-hidden="true"><item.icon className="h-5 w-5 text-primary" aria-hidden="true" /></span>
+                    <span className="mt-1"><item.icon className="h-5 w-5 text-primary" aria-hidden="true" /></span>
                     <div>
                       <div className="font-semibold text-foreground">{item.label}</div>
                       {item.href ? (
