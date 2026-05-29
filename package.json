@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "mkdir -p out/blog && cp out/blog.html out/blog/index.html",
     "start": "next start",
     "lint": "next lint"
   },
