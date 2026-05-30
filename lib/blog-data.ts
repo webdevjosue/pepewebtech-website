@@ -10,6 +10,22 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-05-29-claude-opus-48-small-business",
+    title: "Claude Opus 4.8 Just Dropped \u2014 What SoCal Small Business Owners Need to Know",
+    date: "May 29, 2026",
+    category: "AI Trends",
+    excerpt: "Claude Opus 4.8 is here \u2014 and it's changing what AI can do for small business websites. Here's what it means for your Orange County business and whether you should care.",
+    readTime: "5 min read",
+  },
+  {
+    slug: "2026-05-27-not-showing-on-google",
+    title: "Why Your Small Business Website Isn't Showing Up on Google (And How to Fix It)",
+    date: "May 27, 2026",
+    category: "Guide",
+    excerpt: "Is your small business website invisible on Google? Learn the 7 most common reasons local SoCal businesses don't rank \u2014 and exact steps to fix each one.",
+    readTime: "12 min read",
+  },
+  {
     slug: "2026-05-27-website-cost-socal",
     title: "Small Business Website Cost in SoCal 2026 — Complete Pricing Guide",
     date: "May 27, 2026",
