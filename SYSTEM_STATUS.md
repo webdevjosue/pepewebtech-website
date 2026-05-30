@@ -1,29 +1,32 @@
-# System Status — 2026-05-29 14:15 PT
+# System Status — 2026-05-29 22:15 PDT
 
-## Repo
-- **Status:** Clean (1 modified: SYSTEM_STATUS.md)
-- **Latest commit:** d618338 — fix: use correct media agent images for website cost blog post
-- **Recent activity:** Accessibility fixes, blog posts, responsive image improvements
+## Repository
+- **Branch:** main (clean working tree)
+- **Recent commits:** 10 (blog posts, accessibility fixes, responsive fixes)
+- **Stale branches:** `master` (local + remote) — consider cleanup
 
 ## Deployment
-- **Site:** www.pepewebtech.com — ✅ LIVE (HTTP 200, 0.48s response)
-- **Platform:** Vercel (Next.js 2.0.0)
+- **Site:** www.pepewebtech.com — ✅ LIVE (HTTP 200, 0.69s response)
+- **Platform:** Vercel (Next.js static export)
 
 ## System Health
 - **Disk:** 54% used (44G/87G) — ✅ OK
-- **Memory:** 2.3G/15G used, 12G available — ✅ OK
+- **Memory:** 2.8G/15G used — ✅ OK
 - **Swap:** 0B used — ✅ OK
 
 ## Dependencies
-- **Total:** 17 (Next.js, React, Radix UI, Tailwind, TypeScript)
-- **Security:** Not checked (npm audit timed out)
-- **Status:** Appears stable based on recent builds
-
-## Performance Notes
-- Large PNGs present but webp versions exist (good)
-- website-cost-header.png: 1.6MB (webp available)
-- website-cost-og.png: 1.8MB (webp available)
-- butchers-thumb.png: 356KB (no webp version)
+- **Vulnerabilities:** 2 (1 moderate PostCSS XSS, 1 high)
+  - Fix requires `npm audit fix --force` but would bump Next.js 14→16 (breaking)
+  - Recommend: pin PostCSS patch or plan Next.js 16 migration
+- **Outdated:** `npm outdated` timed out (check manually next cycle)
+- **ESLint:** Not fully configured (prompts for setup) — should initialize
 
 ## Issues
-- None critical
+- ⚠️ 2 npm vulnerabilities (PostCSS XSS) — non-critical but should plan fix
+- ⚠️ ESLint not configured — linting unavailable
+- ℹ️ `master` branch is stale, `main` is active — cleanup candidate
+
+## Next Actions
+- [ ] Initialize ESLint config for `next lint`
+- [ ] Evaluate PostCSS vulnerability patch
+- [ ] Clean up stale `master` branch
