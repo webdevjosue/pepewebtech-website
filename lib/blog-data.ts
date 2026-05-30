@@ -16,6 +16,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Trends",
     excerpt: "Claude Opus 4.8 is here \u2014 and it's changing what AI can do for small business websites. Here's what it means for your Orange County business and whether you should care.",
     readTime: "5 min read",
+    image: "/images/blog/claude-opus-48-header.webp",
   },
   {
     slug: "2026-05-27-not-showing-on-google",
@@ -24,6 +25,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "Is your small business website invisible on Google? Learn the 7 most common reasons local SoCal businesses don't rank \u2014 and exact steps to fix each one.",
     readTime: "12 min read",
+    image: "/images/blog/not-showing-on-google-header.webp",
   },
   {
     slug: "2026-05-27-website-cost-socal",

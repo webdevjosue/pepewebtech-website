@@ -6,15 +6,26 @@ interface BlogCardProps {
   excerpt: string;
   date: string;
   category: string;
+  image?: string;
 }
 
-export function BlogCard({ slug, title, excerpt, date, category }: BlogCardProps) {
+export function BlogCard({ slug, title, excerpt, date, category, image }: BlogCardProps) {
   return (
     <article className="rounded-lg border border-border bg-card overflow-hidden hover:shadow-lg transition-shadow">
-      <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-        <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-          {category}
-        </span>
+      <div className="h-48 relative overflow-hidden">
+        {image ? (
+          <img
+            src={image}
+            alt={title + " featured image"}
+            className="object-cover w-full h-full"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+            <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+              {category}
+            </span>
+          </div>
+        )}
       </div>
       <div className="p-5">
         <time className="text-sm text-muted-foreground">{date}</time>
