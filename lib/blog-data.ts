@@ -43,6 +43,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Tools",
     excerpt: "The right AI integrations can turn your website from a digital brochure into a 24/7 sales machine. Here are the tools that actually deliver ROI.",
     readTime: "6 min read",
+    image: "/images/blog/2026-05-25-ai-tools-every-small-business-website-needs-header.webp",
   },
   {
     slug: "2026-03-29-ai-agents-practical-automation-small-business-guide",
@@ -51,6 +52,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Agents",
     excerpt: "AI agents are moving beyond chatbots to practical automation. Learn how small businesses can implement AI agents for real work, from customer service to operational tasks.",
     readTime: "8 min read",
+    image: "/images/blog/2026-03-29-ai-agents-practical-automation-small-business-guide-header.webp",
   },
   {
     slug: "2026-03-29-nvidia-vera-rubin-1t-ai-boom-small-business",
@@ -59,6 +61,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Trends",
     excerpt: "NVIDIA announced $1T in AI infrastructure and the Vera Rubin platform at GTC 2026. Learn what this means for AI costs and small business AI adoption.",
     readTime: "6 min read",
+    image: "/images/blog/2026-03-29-nvidia-vera-rubin-1t-ai-boom-small-business-header.webp",
   },
   {
     slug: "2026-03-28-ai-first-web-development-2026-guide",
@@ -67,6 +70,7 @@ export const blogPosts: BlogPost[] = [
     category: "Web Development",
     excerpt: "AI-first development is reshaping web development in 2026. Learn what it means and how small businesses can benefit from faster, cheaper website builds.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-28-ai-first-web-development-2026-guide-header.webp",
   },
   {
     slug: "2026-03-28-speech-ai-explosion-small-business-guide",
@@ -75,6 +79,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI",
     excerpt: "The speech AI layer exploded in March 2026. Cohere, Sanas, and Google all launched voice products. Here's what small businesses need to know.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-28-speech-ai-explosion-small-business-guide-header.webp",
   },
   {
     slug: "2026-03-28-ai-first-development-2026-small-business-guide",
@@ -83,6 +88,7 @@ export const blogPosts: BlogPost[] = [
     category: "Web Development",
     excerpt: "AI-first development is transforming web development. Learn how small businesses can build 10x faster with AI-native workflows in 2026.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-28-ai-first-development-2026-small-business-guide-header.webp",
   },
   {
     slug: "2026-03-27-railway-100m-ai-cloud-small-business",
@@ -91,6 +97,7 @@ export const blogPosts: BlogPost[] = [
     category: "Web Development",
     excerpt: "Railway raised $100M to build AI-native cloud infrastructure that automatically deploys, scales, and fixes issues. What small businesses need to know about the future of cloud computing.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-27-railway-100m-ai-cloud-small-business-header.webp",
   },
   {
     slug: "2026-03-27-claude-code-auto-mode-autonomous-ai-small-business",
@@ -99,6 +106,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Trends",
     excerpt: "Anthropic's new Auto Mode for Claude Code lets AI approve its own actions with built-in safety checks. What small businesses need to know about autonomous AI in 2026.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-27-claude-code-auto-mode-autonomous-ai-small-business-header.webp",
   },
   {
     slug: "2026-03-26-google-turboquant-ai-compression-small-business-guide",
@@ -107,6 +115,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Trends",
     excerpt: "Google's new TurboQuant algorithm reduces AI memory usage by 6x without quality loss. What small businesses need to know about this AI efficiency breakthrough.",
     readTime: "6 min read",
+    image: "/images/blog/2026-03-26-google-turboquant-ai-compression-small-business-guide-header.webp",
   },
   {
     slug: "2026-03-26-agentic-ai-small-business-advantage",
@@ -115,6 +124,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Trends",
     excerpt: "Agentic AI (not chatbots) runs multi-step workflows without human babysitting. Small businesses are better positioned to adopt it than enterprises\u2014lean teams, no legacy systems, faster ROI.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-26-agentic-ai-small-business-advantage-header.webp",
   },
   {
     slug: "2026-03-25-ai-agents-2026-small-business-guide",
@@ -123,6 +133,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Trends",
     excerpt: "IDC projects 1.3 billion AI agents by 2028. Learn what small businesses need to know about the rise of AI agents, risks, and how to prepare.",
     readTime: "6 min read",
+    image: "/images/blog/2026-03-25-ai-agents-2026-small-business-guide-header.webp",
   },
   {
     slug: "2026-03-25-ai-tools-web-development-2026-guide",
@@ -131,6 +142,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "Discover the top AI tools transforming web development in 2026. Learn how these tools boost productivity, improve code quality, and help small businesses build faster.",
     readTime: "7 min read",
+    image: "/images/blog/2026-03-25-ai-tools-web-development-2026-guide-header.webp",
   },
   {
     slug: "2026-03-24-wordpress-ai-agents-write-content-automation",
@@ -139,6 +151,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI & Automation",
     excerpt: "WordPress.com just added AI agent write capabilities. Learn how Claude, ChatGPT, and other AI agents can now draft, publish, and manage your WordPress content automatically.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-24-wordpress-ai-agents-write-content-automation-header.webp",
   },
   {
     slug: "2026-03-24-ai-agents-digital-employees-small-business",

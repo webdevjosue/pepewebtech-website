@@ -1,32 +1,30 @@
-# System Status — 2026-05-29 22:15 PDT
+# System Status — 2026-06-01 18:15 PT
 
-## Repository
-- **Branch:** main (clean working tree)
-- **Recent commits:** 10 (blog posts, accessibility fixes, responsive fixes)
-- **Stale branches:** `master` (local + remote) — consider cleanup
+## Repo
+- **Status:** 3 uncommitted changes (SYSTEM_STATUS.md modified, 2 untracked blog images)
+- **Latest commit:** ad00658 — feat: deploy Claude Opus 4.8 post with 3 images + fix table overflow CSS
+- **Working tree:** dirty
 
 ## Deployment
-- **Site:** www.pepewebtech.com — ✅ LIVE (HTTP 200, 0.69s response)
-- **Platform:** Vercel (Next.js static export)
+- **Site:** www.pepewebtech.com — ✅ LIVE (200 OK, 0.24s response)
+- **Framework:** Next.js v14.2.35 (static export)
 
 ## System Health
-- **Disk:** 54% used (44G/87G) — ✅ OK
-- **Memory:** 2.8G/15G used — ✅ OK
-- **Swap:** 0B used — ✅ OK
+- **Disk:** 55% used (45G / 87G) — OK
+- **Memory:** 2.4G / 15G used, 12G available — OK
+- **Swap:** 3.8G available, 0B used — OK
+- **Docker:** not running / not applicable
 
 ## Dependencies
-- **Vulnerabilities:** 2 (1 moderate PostCSS XSS, 1 high)
-  - Fix requires `npm audit fix --force` but would bump Next.js 14→16 (breaking)
-  - Recommend: pin PostCSS patch or plan Next.js 16 migration
-- **Outdated:** `npm outdated` timed out (check manually next cycle)
-- **ESLint:** Not fully configured (prompts for setup) — should initialize
+- 13 dependencies total
+- All within wanted ranges (Current == Wanted)
+- Major version bumps available: Next 14→16, React 18→19, Tailwind 3→4, lucide 0.4→1.17
+- **Security:** 2 vulnerabilities (1 moderate, 1 high)
 
 ## Issues
-- ⚠️ 2 npm vulnerabilities (PostCSS XSS) — non-critical but should plan fix
-- ⚠️ ESLint not configured — linting unavailable
-- ℹ️ `master` branch is stale, `main` is active — cleanup candidate
+- 2 npm vulnerabilities (moderate + high) — non-blocking, review recommended
+- 2 untracked blog images — may need commit
+- No critical issues
 
-## Next Actions
-- [ ] Initialize ESLint config for `next lint`
-- [ ] Evaluate PostCSS vulnerability patch
-- [ ] Clean up stale `master` branch
+## Last Check
+2026-06-01 18:15 PT
