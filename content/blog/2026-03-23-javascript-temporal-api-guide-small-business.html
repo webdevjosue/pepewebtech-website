@@ -1,3 +1,6 @@
+<figure class="blog-featured-image">
+  <img src="/images/blog/2026-03-23-javascript-temporal-api-guide-small-business-header.webp" alt="Developer screen showing JavaScript code editor with date and time functions on dual monitors" width="1344" height="768" loading="eager">
+</figure>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -231,7 +234,7 @@
             </header>
 
             <div class="blog-hero-image">
-                ⏰🚀
+                ⏰<span class="icon-accent">launch</span>
             </div>
 
             <div class="blog-content">
@@ -365,7 +368,11 @@ const now = Temporal.Now.zonedDateTimeISO('America/Los_Angeles');
 const newYorkTime = now.withTimeZone('America/New_York');
                 </div>
 
-                <h2>What This Means for Small Businesses</h2>
+                
+<figure class="blog-inline-image">
+  <img src="/images/blog/inline-1-2026-03-23-javascript-temporal-api-guide-small-business.webp" alt="Side by side comparison showing old date library on left and new clean API on right" width="1024" height="1024" loading="lazy">
+</figure>
+<h2>What This Means for Small Businesses</h2>
 
                 <h3>1. Faster Applications</h3>
 
@@ -407,7 +414,11 @@ const date = Temporal.PlainDate.from('2026-03-23');
 const tomorrow = date.add({ days: 1 });
                 </div>
 
-                <h2>The Future of JavaScript Date Handling</h2>
+                
+<figure class="blog-inline-image">
+  <img src="/images/blog/inline-2-2026-03-23-javascript-temporal-api-guide-small-business.webp" alt="Web application loading screen with clock widget and timezone selector on a laptop" width="1024" height="1024" loading="lazy">
+</figure>
+<h2>The Future of JavaScript Date Handling</h2>
 
                 <p>Moment.js served us well, but its time has passed. The Temporal API is the future—and it's available now.</p>
 

@@ -160,6 +160,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI & Automation",
     excerpt: "AI is evolving from chatbots to action-oriented digital employees. Learn how Zuckerberg's CEO agent and other trends are transforming small business automation in 2026.",
     readTime: "6 min read",
+    image: "/images/blog/2026-03-24-ai-agents-digital-employees-small-business-header.webp",
   },
   {
     slug: "2026-03-23-javascript-temporal-api-guide-small-business",
@@ -168,6 +169,7 @@ export const blogPosts: BlogPost[] = [
     category: "Web Development",
     excerpt: "Moment.js is now in maintenance mode. JavaScript's new built-in Temporal API offers zero bundle size, immutability, and better time handling for modern web applications.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-23-javascript-temporal-api-guide-small-business-header.webp",
   },
   {
     slug: "2026-03-22-ai-agent-memory-systems-small-business",
@@ -176,6 +178,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "AI agents forget conversations, preferences, and decisions. Memory systems solve this. Here's how small businesses can build AI that remembers customers, orders, and context.",
     readTime: "6 min read",
+    image: "/images/blog/2026-03-22-ai-agent-memory-systems-small-business-header.webp",
   },
   {
     slug: "2026-03-22-wordpress-ai-agents-mcp-blog-automation",
@@ -184,6 +187,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI",
     excerpt: "WordPress.com now lets AI agents like Claude and ChatGPT draft and publish blog posts via MCP. Small businesses can automate content publishing like never before.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-22-wordpress-ai-agents-mcp-blog-automation-header.webp",
   },
   {
     slug: "2026-03-21-ai-video-content-marketing-2026-guide",
@@ -192,6 +196,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "AI video generation tools are transforming marketing for small businesses. Learn how to create professional video content in minutes without expensive equipment.",
     readTime: "6 min read",
+    image: "/images/blog/2026-03-21-ai-video-content-marketing-2026-guide-header.webp",
   },
   {
     slug: "2026-03-21-kimi-k25-agent-swarm-rl-guide",
@@ -200,6 +205,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Agents",
     excerpt: "One developer used 185 million tokens in a single week building with AI agents. Here's what this means for small businesses and the future of AI-powered work.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-21-kimi-k25-agent-swarm-rl-guide-header.webp",
   },
   {
     slug: "2026-03-21-185-million-tokens-one-week-ai-agent-workforce",
@@ -208,6 +214,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Agents",
     excerpt: "Kimi's K2.5 uses reinforcement learning to power agent swarms. Here's what this breakthrough means for small business automation.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-21-185-million-tokens-one-week-ai-agent-workforce-header.webp",
   },
   {
     slug: "2026-03-20-ai-startups-venture-capital-trend",
@@ -216,6 +223,7 @@ export const blogPosts: BlogPost[] = [
     category: "News",
     excerpt: "AI startups accounted for 41% of venture capital in 2025. What this means for your business strategy.",
     readTime: "4 min read",
+    image: "/images/blog/2026-03-20-ai-startups-venture-capital-trend-header.webp",
   },
   {
     slug: "2026-03-20-ai-bot-traffic-web-infrastructure-small-business-guide",
@@ -224,6 +232,7 @@ export const blogPosts: BlogPost[] = [
     category: "Tips",
     excerpt: "What small businesses need to know about managing web traffic and hosting costs in the age of AI agents.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-20-ai-bot-traffic-web-infrastructure-small-business-guide-header.webp",
   },
   {
     slug: "2026-03-19-samsung-73-billion-ai-chip-expansion-small-businesses",
@@ -232,6 +241,7 @@ export const blogPosts: BlogPost[] = [
     category: "News",
     excerpt: "Samsung's $73 billion AI chip investment signals massive AI infrastructure expansion. What small businesses need to know about the coming wave of accessible AI.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-19-samsung-73-billion-ai-chip-expansion-small-businesses-header.webp",
   },
   {
     slug: "2026-03-18-human-made-ai-labeling-guide",
@@ -240,6 +250,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "With 8+ competing 'human-made' labels emerging, businesses face confusion about AI content labeling. Here's what small businesses need to know.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-18-human-made-ai-labeling-guide-header.webp",
   },
   {
     slug: "2026-03-18-ai-self-improvement-tao-databricks",
@@ -248,6 +259,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Agents",
     excerpt: "Small businesses can now use AI without perfect data. Databricks' TAO technique lets AI models improve themselves using reinforcement learning.",
     readTime: "6 min read",
+    image: "/images/blog/2026-03-18-ai-self-improvement-tao-databricks-header.webp",
   },
   {
     slug: "2026-03-17-nemoclaw-secure-ai-agents-small-business",
@@ -256,6 +268,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Agents",
     excerpt: "Nvidia just announced NemoClaw - a secure version of OpenClaw that adds privacy and security protections to autonomous AI agents.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-17-nemoclaw-secure-ai-agents-small-business-header.webp",
   },
   {
     slug: "2026-03-17-multimodal-ai-beyond-text-chatbots",
@@ -264,6 +277,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Trends",
     excerpt: "Multimodal AI is changing how businesses interact with customers. Learn how AI that can see, hear, and understand multiple media types is replacing text-only chatbots.",
     readTime: "6 min read",
+    image: "/images/blog/2026-03-17-multimodal-ai-beyond-text-chatbots-header.webp",
   },
   {
     slug: "2026-03-16-ai-agent-workflows-small-businesses",
@@ -272,6 +286,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Agents",
     excerpt: "AI agent workflows are the next evolution beyond single AI tools. Here's how small businesses can build multi-agent systems that automate complex tasks.",
     readTime: "6 min read",
+    image: "/images/blog/2026-03-16-ai-agent-workflows-small-businesses-header.webp",
   },
   {
     slug: "2026-03-15-anthropic-code-review-ai-generated-code",
@@ -280,6 +295,7 @@ export const blogPosts: BlogPost[] = [
     category: "Web Development",
     excerpt: "Anthropic launches code review tool to address the flood of AI-generated code. Here's how small businesses can maintain quality while leveraging AI development.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-15-anthropic-code-review-ai-generated-code-header.webp",
   },
   {
     slug: "2026-03-14-wordpress-browser-workspace-small-business-guide",
@@ -288,6 +304,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "WordPress launches my.WordPress.net - a browser-based workspace that lets you build websites without hosting or accounts. Perfect for small businesses getting started.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-14-wordpress-browser-workspace-small-business-guide-header.webp",
   },
   {
     slug: "2026-03-14-chatgpt-app-integrations-guide",
@@ -296,6 +313,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "ChatGPT now integrates with popular apps like DoorDash, Spotify, Uber, and more. Here's how small businesses can use these new AI app integrations.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-14-chatgpt-app-integrations-guide-header.webp",
   },
   {
     slug: "2026-03-13-automated-rag-knowledge-search-small-business",
@@ -304,6 +322,7 @@ export const blogPosts: BlogPost[] = [
     category: "Tech",
     excerpt: "Captain makes building accurate AI-powered knowledge search simple. Learn how automated RAG can help your small business find information in documents instantly.",
     readTime: "5 min read",
+    image: "/images/blog/2026-03-13-automated-rag-knowledge-search-small-business-header.webp",
   },
   {
     slug: "2026-03-12-gemini-chrome-ai-browser-free-update",
@@ -312,6 +331,7 @@ export const blogPosts: BlogPost[] = [
     category: "News",
     excerpt: "Google's Gemini in Chrome is now free and expanding to more countries. Learn how this AI browser assistant can help small businesses save time.",
     readTime: "4 min read",
+    image: "/images/blog/2026-03-12-gemini-chrome-ai-browser-free-update-header.webp",
   },
   {
     slug: "2026-03-11-canva-magic-layers-ai-design-editable",
