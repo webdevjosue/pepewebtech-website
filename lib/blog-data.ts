@@ -10,6 +10,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-06-03-google-may-2026-core-update-small-business",
+    title: "Google's May 2026 Core Update Just Changed Local Search. Is Your Small Business Ready?",
+    date: "Jun 3, 2026",
+    category: "SEO & Marketing",
+    excerpt: "Google's latest core update is shaking local business rankings and directly affecting AI Overviews for the first time. Here's exactly what changed, why your traffic may have dropped, and the steps to fix it.",
+    readTime: "8 min read",
+    image: "/images/blog/2026-06-03-google-may-2026-core-update-small-business-header.webp",
+  },
+  {
+    slug: "2026-06-03-apple-intelligence-web-small-business",
+    title: "Apple Intelligence Comes to the Web: What Small Businesses Need to Know",
+    date: "Jun 3, 2026",
+    category: "AI Trends",
+    excerpt: "Apple's WWDC 2026 brought Safari AI summaries, Web-Smart Siri, and new developer APIs that change how customers find and interact with your small business website. Here's what to do about it.",
+    readTime: "7 min read",
+    image: "/images/blog/2026-06-03-apple-intelligence-web-small-business-header.webp",
+  },
+  {
     slug: "2026-05-29-claude-opus-48-small-business",
     title: "Claude Opus 4.8 Just Dropped \u2014 What SoCal Small Business Owners Need to Know",
     date: "May 29, 2026",
