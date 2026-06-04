@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-06-04-google-ai-mode-organic-traffic-small-business",
+    title: "Google's AI Mode Is Stealing Your Organic Traffic. Here's How to Fight Back.",
+    date: "Jun 4, 2026",
+    category: "SEO & Marketing",
+    excerpt: "Google's AI Mode is now answering searches directly, cutting organic click-through rates for small businesses. Learn why your traffic is dropping and the strategies to adapt your web presence for the AI search era.",
+    readTime: "8 min read",
+    image: "/images/blog/2026-06-04-google-ai-mode-organic-traffic-small-business-header.webp",
+  },
+  {
     slug: "2026-06-04-small-business-website-security-2026",
     title: "Small Business Website Security in 2026: SSL, Backups, and the Threats You're Ignoring",
     date: "Jun 4, 2026",
