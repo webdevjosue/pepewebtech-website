@@ -636,6 +636,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "Learn how AI-first development is transforming web development in 2026 and how small businesses can benefit from faster, cheaper, higher-quality websites.",
     readTime: "6 min read",
+    image: "/images/blog/2026-02-20-ai-first-development-small-business-guide-header.webp"
   },
   {
     slug: "2026-02-19-youtube-ai-chatbot-tv-what-businesses-need-to-know",
@@ -644,6 +645,7 @@ export const blogPosts: BlogPost[] = [
     category: "AI Trends",
     excerpt: "YouTube is testing an AI chatbot on TVs and streaming devices. Learn what this means for small business video marketing.",
     readTime: "4 min read",
+    image: "/images/blog/2026-02-19-youtube-ai-chatbot-tv-what-businesses-need-to-know-header.webp"
   },
   {
     slug: "2026-02-19-chatgpt-ads-what-small-businesses-need-to-know",
@@ -652,6 +654,7 @@ export const blogPosts: BlogPost[] = [
     category: "News",
     excerpt: "ChatGPT ads are here. What this means for small business marketing in 2026. Learn about AI-powered advertising opportunities.",
     readTime: "4 min read",
+    image: "/images/blog/2026-02-19-chatgpt-ads-what-small-businesses-need-to-know-header.webp"
   },
   {
     slug: "2026-02-19-ai-without-perfect-data",
@@ -660,6 +663,7 @@ export const blogPosts: BlogPost[] = [
     category: "Tech",
     excerpt: "New AI breakthroughs let businesses use AI without perfect data. Learn how Databricks' TAO approach makes AI accessible to small businesses.",
     readTime: "5 min read",
+    image: "/images/blog/2026-02-19-ai-without-perfect-data-header.webp"
   },
   {
     slug: "2026-02-19-ai-slop-crisis-business-authenticity",
@@ -668,6 +672,7 @@ export const blogPosts: BlogPost[] = [
     category: "Tips",
     excerpt: "AI slop is flooding the internet. Learn what it means for your small business and how to stand out with authentic content in 2026.",
     readTime: "5 min read",
+    image: "/images/blog/2026-02-19-ai-slop-crisis-business-authenticity-header.webp"
   },
   {
     slug: "2026-02-19-agentic-ai-guide-for-small-businesses",
@@ -676,6 +681,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "Agentic AI is changing how businesses work. Learn what AI agents can do for your small business in 2026.",
     readTime: "5 min read",
+    image: "/images/blog/2026-02-19-agentic-ai-guide-for-small-businesses-header.webp"
   },
   {
     slug: "2026-02-16-ai-powered-web-development",
@@ -684,6 +690,7 @@ export const blogPosts: BlogPost[] = [
     category: "Web Development",
     excerpt: "How AI is changing web development and what it means for small businesses in 2026. Learn how AI tools can help you build faster and cheaper.",
     readTime: "5 min read",
+    image: "/images/blog/2026-02-16-ai-powered-web-development-header.webp"
   },
 ];
 
