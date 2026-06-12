@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-06-11-microsoft-build-2026-windows-agent-platform-small-business",
+    title: "Microsoft Just Turned Windows Into an AI Agent Platform: What Small Businesses Need to Know",
+    date: "Jun 11, 2026",
+    category: "AI Trends",
+    excerpt: "Microsoft Build 2026 just turned Windows into an AI agent platform. Project Polaris replaces GPT-4 in Copilot, Windows Agent Framework goes open source, and AI agents become first-class Windows citizens. Here is what SoCal small business owners need to know and how to prepare.",
+    readTime: "8 min read",
+    image: "/images/blog/2026-06-11-microsoft-build-2026-windows-agent-platform-small-business-header.webp",
+  },
+  {
     slug: "2026-06-11-ai-voice-agent-receptionist-small-business",
     title: "AI Voice Agents for Small Business: Never Miss a Call Again",
     date: "Jun 11, 2026",
