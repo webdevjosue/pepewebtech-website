@@ -8,6 +8,22 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Pricing",
   description: "Transparent pricing for AI-powered web development. Landing pages from $1,500, business websites from $4,000.",
+  alternates: {
+    canonical: "/pricing",
+  },
+  openGraph: {
+    title: "Pricing | PepeWebTech",
+    description: "Transparent pricing for AI-powered web development. Landing pages from $1,500, business websites from $4,000.",
+    url: "https://pepewebtech.com/pricing",
+    images: [
+      {
+        url: "/images/pepewebtech-thumb.png",
+        width: 1200,
+        height: 630,
+        alt: "PepeWebTech Pricing",
+      },
+    ],
+  },
 };
 
 const plans = [

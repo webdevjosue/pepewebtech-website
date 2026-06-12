@@ -10,11 +10,40 @@ import Link from "next/link";
 import { blogPosts } from "@/lib/blog-data";
 import { Rocket, Briefcase, ShoppingCart, Zap, DollarSign, Smartphone, Lock } from "lucide-react";
 
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "PepeWebTech",
+  image: "https://pepewebtech.com/images/pepewebtech-thumb.png",
+  url: "https://pepewebtech.com",
+  telephone: "",
+  email: "info@pepewebtech.com",
+  description: "AI-powered web development for small businesses. Fast, affordable, modern websites.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Southern California",
+    addressRegion: "CA",
+    addressCountry: "US",
+  },
+  priceRange: "$1,500-$8,000",
+  openingHours: "Mo-Fr 09:00-17:00",
+  sameAs: [],
+  areaServed: {
+    "@type": "Place",
+    name: "Southern California",
+  },
+  serviceType: ["Website Design", "Web Development", "E-Commerce Development", "SEO", "Web Maintenance"],
+};
+
 export default function Home() {
   const latestPosts = blogPosts.slice(0, 3);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
       <Hero />
 
       {/* Services */}

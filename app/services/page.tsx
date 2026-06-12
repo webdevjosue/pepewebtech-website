@@ -6,6 +6,22 @@ import { Rocket, Briefcase, ShoppingCart, Wrench } from "lucide-react";
 export const metadata: Metadata = {
   title: "Services",
   description: "PepeWebTech services: Landing pages, business websites, e-commerce stores, and maintenance plans for small businesses.",
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Services | PepeWebTech",
+    description: "PepeWebTech services: Landing pages, business websites, e-commerce stores, and maintenance plans for small businesses.",
+    url: "https://pepewebtech.com/services",
+    images: [
+      {
+        url: "/images/pepewebtech-thumb.png",
+        width: 1200,
+        height: 630,
+        alt: "PepeWebTech Services",
+      },
+    ],
+  },
 };
 
 export default function ServicesPage() {

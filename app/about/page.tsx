@@ -6,6 +6,22 @@ import { MapPin, Zap, DollarSign, Smartphone, Lock } from "lucide-react";
 export const metadata: Metadata = {
   title: "About",
   description: "PepeWebTech is a Southern California-based digital agency. AI-powered web development for small businesses.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About | PepeWebTech",
+    description: "PepeWebTech is a Southern California-based digital agency. AI-powered web development for small businesses.",
+    url: "https://pepewebtech.com/about",
+    images: [
+      {
+        url: "/images/pepewebtech-thumb.png",
+        width: 1200,
+        height: 630,
+        alt: "About PepeWebTech",
+      },
+    ],
+  },
 };
 
 // no stats array — rendered inline
