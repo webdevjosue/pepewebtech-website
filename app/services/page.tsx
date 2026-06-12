@@ -1,7 +1,7 @@
 import { ServiceCard } from "@/components/service-card";
 import { CTASection } from "@/components/cta-section";
 import type { Metadata } from "next";
-import { Rocket, Briefcase, ShoppingCart, Wrench, Bot, Phone, MessageSquare, Zap, X, Check } from "lucide-react";
+import { Rocket, Briefcase, ShoppingCart, Wrench, Bot, Phone, MessageSquare, Zap, X, Check, ExternalLink, Wrench as ToolIcon, Layout, Moon, Shield, Gauge } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Services — Web Design & AI Automation",
@@ -161,6 +161,109 @@ export default function ServicesPage() {
               <p className="font-semibold">With AI: Every call answered, every lead followed up</p>
               <p className="text-muted-foreground">AI Employee cost: $597/month = $7,164/year. <strong>ROI: 1,350%</strong></p>
             </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Work — Live Example */}
+      <section className="py-16 md:py-24 bg-muted/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest">
+              Our Work
+            </span>
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold">
+              See What We Build
+            </h2>
+            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+              Not mockups. Not templates. Real, live sites we designed, built, and shipped.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-lg">
+              {/* Example Header */}
+              <div className="bg-gradient-to-br from-indigo-500 to-purple-600 p-6 md:p-8">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">PepeTech</h3>
+                    <p className="text-indigo-100 mt-1">pepetech.com — Free Developer Tools Platform</p>
+                  </div>
+                  <a
+                    href="https://pepetech.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-lg bg-white/20 backdrop-blur-sm px-4 py-2 text-sm font-semibold text-white hover:bg-white/30 transition-colors"
+                  >
+                    Visit Live Site
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Details */}
+              <div className="p-6 md:p-8">
+                <p className="text-muted-foreground leading-relaxed">
+                  A full-featured developer tools platform with 12 free browser-based utilities,
+                  a curated directory of 30+ services, dark mode, and affiliate integration.
+                  Built with Next.js, Tailwind CSS, and deployed on Vercel.
+                  100% client-side processing — zero tracking, zero data leaving the browser.
+                </p>
+
+                {/* Features grid */}
+                <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="flex items-center gap-2 text-sm">
+                    <ToolIcon className="h-4 w-4 text-primary shrink-0" />
+                    <span>12 Free Tools</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <Layout className="h-4 w-4 text-primary shrink-0" />
+                    <span>Custom SVG Icons</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <Moon className="h-4 w-4 text-primary shrink-0" />
+                    <span>Dark Mode</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <Shield className="h-4 w-4 text-primary shrink-0" />
+                    <span>100% Client-Side</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <Gauge className="h-4 w-4 text-primary shrink-0" />
+                    <span>Sub-second Load</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <ExternalLink className="h-4 w-4 text-primary shrink-0" />
+                    <span>30+ Curated Links</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <Shield className="h-4 w-4 text-primary shrink-0" />
+                    <span>SEO Optimized</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <Gauge className="h-4 w-4 text-primary shrink-0" />
+                    <span>Static Export</span>
+                  </div>
+                </div>
+
+                {/* Tech stack */}
+                <div className="mt-6 pt-6 border-t border-border">
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
+                    Tech Stack
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Next.js 14", "TypeScript", "Tailwind CSS", "Vercel", "Static Export", "SEO"].map(tech => (
+                      <span
+                        key={tech}
+                        className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
