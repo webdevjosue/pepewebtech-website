@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-06-11-ai-voice-agent-receptionist-small-business",
+    title: "AI Voice Agents for Small Business: Never Miss a Call Again",
+    date: "Jun 11, 2026",
+    category: "AI & Automation",
+    excerpt: "62% of calls to small businesses go unanswered. AI voice agents answer 100%, book appointments, and qualify leads 24/7 — starting at $29/month. Real stats, pricing, and ROI data for 2026.",
+    readTime: "10 min read",
+    image: "/images/blog/2026-06-11-ai-voice-agent-receptionist-small-business-header.webp",
+  },
+  {
     slug: "2026-06-04-google-ai-mode-organic-traffic-small-business",
     title: "Google's AI Mode Is Stealing Your Organic Traffic. Here's How to Fight Back.",
     date: "Jun 4, 2026",
