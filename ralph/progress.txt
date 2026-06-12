@@ -1,9 +1,35 @@
 # Ralph Progress Log
 Started: 2026-03-27
-Project: PepeWebTech.com
+Project: PepeWebTech.com + Pepetech
 Branch: ralph/code-review-fixes
 Source: GLM-5.1 Code Review v3 (2026-03-27)
+Updated: 2026-06-13 — Phase Development PRD incorporated
+
 ---
+
+## Phase Plan Created: 2026-06-13
+
+### Phases
+- Phase 0: Website Foundation (15 stories) — ralph/prd.json
+- Phase 1: Z-Image-Turbo Local Gen (7 stories) — ralph/prd-phase1.json
+- Phase 2: Audio Stack (8 stories) — ralph/prd-phase2.json
+- Phase 3: Pepetech Affiliate Directory (15 stories) — ralph/prd-phase3.json
+- Phase 4: Automation & Growth (10 stories) — ralph/prd-phase4.json
+- **Total: 55 user stories across 5 phases**
+
+### Master Plan
+- ralph/prd-phase-plan.json — links all phases with gates and dependencies
+- .hermes/plans/2026-06-13_ralph-loop-phase-development-prd.md — full plan doc
+
+### Phase 1 & 2 can run in parallel
+### Phase 3 depends on Phase 0 + Phase 1
+### Phase 4 depends on Phase 1 + Phase 2 + Phase 3
+
+---
+
+## Phase 0 Progress (Website Fixes)
+
+<!-- Update as stories are completed -->
 
 ## Codebase Patterns
 <!-- Reusable patterns discovered during iterations go here -->

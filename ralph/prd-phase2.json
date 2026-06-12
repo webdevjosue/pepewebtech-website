@@ -1,0 +1,148 @@
+{
+  "phase": 2,
+  "name": "Audio Stack Completion",
+  "description": "Full local audio generation — TTS voices, music, SFX — integrated into content + UGC pipeline",
+  "gate": "Generate sample voice, music track, and SFX locally. Chatterbox voice cloning tested.",
+  "depends_on": [],
+  "created": "2026-06-13",
+  "status": "pending",
+  "userStories": [
+    {
+      "id": "P2-001",
+      "title": "Install AudioCraft for music + SFX generation",
+      "description": "As a content creator, I need AudioCraft installed and working for local music and sound effect generation.",
+      "acceptanceCriteria": [
+        "AudioCraft installed in comfy-venv or dedicated venv",
+        "Import audiocraft succeeds without errors",
+        "MusicGen small model downloads and loads",
+        "AudioGen model downloads and loads",
+        "GPU acceleration works (AMD ROCm)",
+        "Generate 5-second test music clip successfully"
+      ],
+      "priority": 1,
+      "dependencies": [],
+      "passes": false,
+      "notes": "pip install audiocraft. May need audiocraft[audioools] extras. Test ROCm compatibility first.",
+      "status": "pending"
+    },
+    {
+      "id": "P2-002",
+      "title": "Test AudioCraft on AMD ROCm — verify GPU inference works",
+      "description": "As a technical operator, I need to verify AudioCraft runs on AMD ROCm GPU so I know if local audio gen is viable.",
+      "acceptanceCriteria": [
+        "AudioCraft uses GPU for inference (verify via rocm-smi)",
+        "Music generation completes in under 30 seconds for 10-second clip",
+        "No CUDA-specific errors (AudioCraft may assume CUDA)",
+        "If ROCm fails: document error and test CPU fallback performance",
+        "Write compatibility report to ralph/phase2-audiocraft-rocm.md"
+      ],
+      "priority": 2,
+      "dependencies": ["P2-001"],
+      "passes": false,
+      "notes": "AudioCraft may need patches for ROCm. PyTorch in comfy-venv is ROCm-native (2.10.0.dev+rocm6.3).",
+      "status": "pending"
+    },
+    {
+      "id": "P2-003",
+      "title": "Test Chatterbox V3 voice generation with emotion profiles",
+      "description": "As a content creator, I need to verify all 10 emotion profiles in Chatterbox V3 work for natural-sounding voiceovers.",
+      "acceptanceCriteria": [
+        "All 10 emotion profiles generate audio successfully",
+        "Each profile produces noticeably different vocal tone/emotion",
+        "Generated audio is clear and natural-sounding (no artifacts)",
+        "Generation time under 10 seconds per 100 words",
+        "Save sample outputs to ~/test-output/chatterbox-samples/"
+      ],
+      "priority": 3,
+      "dependencies": [],
+      "passes": false,
+      "notes": "Chatterbox V3 already installed (pip, v0.1.7). 10 emotion profiles exist in the UGC pipeline scripts.",
+      "status": "pending"
+    },
+    {
+      "id": "P2-004",
+      "title": "Test Chatterbox V3 voice cloning with reference audio",
+      "description": "As a content creator, I need voice cloning to work so I can create consistent branded voices across all content.",
+      "acceptanceCriteria": [
+        "Provide a reference audio file (10-30 seconds) for cloning",
+        "Generate new speech in the cloned voice",
+        "Cloned voice maintains speaker characteristics from reference",
+        "Generate both English and Spanish text with same cloned voice",
+        "Save sample outputs to ~/test-output/chatterbox-clone-samples/"
+      ],
+      "priority": 4,
+      "dependencies": ["P2-003"],
+      "passes": false,
+      "notes": "voice_references/ directory exists in ugc-videos project. Need actual reference audio files from Mr. Z.",
+      "status": "pending"
+    },
+    {
+      "id": "P2-005",
+      "title": "Create Hermes skill for local audio generation (TTS + music + SFX)",
+      "description": "As an operator, I need a reusable Hermes skill for local audio generation so any agent can generate voices, music, and SFX.",
+      "acceptanceCriteria": [
+        "Skill covers: Chatterbox TTS, AudioCraft MusicGen, AudioCraft AudioGen",
+        "Includes prompt templates for: narration, podcast intro, background music, SFX",
+        "Documents GPU requirements and fallback options",
+        "Skill tested: generate voice + music + SFX via Hermes agent call",
+        "Troubleshooting section for AMD ROCm audio issues"
+      ],
+      "priority": 5,
+      "dependencies": ["P2-002", "P2-003"],
+      "passes": false,
+      "notes": "Create at skills/creative/audio-generation/ or extend existing audiocraft skill.",
+      "status": "pending"
+    },
+    {
+      "id": "P2-006",
+      "title": "Integrate audio gen into UGC video pipeline",
+      "description": "As the video pipeline operator, I need the UGC pipeline to use local Chatterbox TTS instead of cloud TTS for voiceovers.",
+      "acceptanceCriteria": [
+        "UGC pipeline generate_video.py uses Chatterbox V3 by default",
+        "Emotion profile assignment per scene works correctly",
+        "Voice cloning integration for consistent narrator voice",
+        "Background music generated locally via AudioCraft (optional flag)",
+        "Pipeline still produces complete output: audio files + timeline manifest"
+      ],
+      "priority": 6,
+      "dependencies": ["P2-005"],
+      "passes": false,
+      "notes": "Pipeline at ~/ugc-videos/scripts/generate_video.py. Already has Chatterbox integration, needs testing.",
+      "status": "pending"
+    },
+    {
+      "id": "P2-007",
+      "title": "Create audio style presets (brand voice, music mood templates)",
+      "description": "As a brand operator, I need consistent audio branding across all content so listeners recognize the Pepewebtech sound.",
+      "acceptanceCriteria": [
+        "Define 3 voice presets: professional-narrator, friendly-explainer, energetic-promo",
+        "Define 5 music mood presets: upbeat-tech, calm-focus, dramatic-reveal, corporate-modern, lofi-chill",
+        "Define 10 SFX presets: transition-whoosh, notification-ding, success-chime, error-buzz, typing-click, etc.",
+        "Each preset saved as reusable config",
+        "Test each preset: generate sample output"
+      ],
+      "priority": 7,
+      "dependencies": ["P2-005"],
+      "passes": false,
+      "notes": "These presets feed into blog pipeline (podcast intros), UGC pipeline (video narration), and social media.",
+      "status": "pending"
+    },
+    {
+      "id": "P2-008",
+      "title": "Fallback chain: local → Edge TTS → cloud if GPU fails",
+      "description": "As a reliability operator, I need automatic fallback so content generation never blocks on GPU issues.",
+      "acceptanceCriteria": [
+        "Audio generation tries local GPU first (Chatterbox/AudioCraft)",
+        "If local fails: falls back to Edge TTS (free, cloud, no GPU)",
+        "If Edge TTS fails: falls back to ZAI cloud TTS",
+        "Fallback chain logged with reason for fallback",
+        "No content generation blocked for more than 60 seconds"
+      ],
+      "priority": 8,
+      "dependencies": ["P2-005"],
+      "passes": false,
+      "notes": "Edge TTS is already default TTS. ZAI cloud TTS is available as last resort.",
+      "status": "pending"
+    }
+  ]
+}

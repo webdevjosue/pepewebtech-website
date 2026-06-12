@@ -8,7 +8,7 @@ import { CTASection } from "@/components/cta-section";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { blogPosts } from "@/lib/blog-data";
-import { Rocket, Briefcase, ShoppingCart, Zap, DollarSign, Smartphone, Lock } from "lucide-react";
+import { Rocket, Briefcase, ShoppingCart, Zap, DollarSign, Smartphone, Lock, Bot, Phone } from "lucide-react";
 
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
@@ -25,14 +25,14 @@ const localBusinessJsonLd = {
     addressRegion: "CA",
     addressCountry: "US",
   },
-  priceRange: "$1,500-$8,000",
-  openingHours: "Mo-Fr 09:00-17:00",
+  priceRange: "$497-$1,497/mo (AI) | $1,500-$8,000 (Web)",
+  openingHours: "Mo-Su 00:00-23:59",
   sameAs: [],
   areaServed: {
     "@type": "Place",
-    name: "Southern California",
+    name: "United States",
   },
-  serviceType: ["Website Design", "Web Development", "E-Commerce Development", "SEO", "Web Maintenance"],
+  serviceType: ["AI Employees", "AI Chatbots", "AI Phone Agents", "Website Design", "Web Development", "E-Commerce Development", "SEO", "Web Maintenance"],
 };
 
 export default function Home() {
@@ -54,50 +54,50 @@ export default function Home() {
               What We Do
             </span>
             <h2 className="mt-3 text-3xl md:text-4xl font-bold text-foreground">
-              Services Built for Small Business
+              AI Employees + Websites
             </h2>
             <p className="mt-3 text-muted-foreground">
-              Everything you need to establish your online presence
+              Your business never sleeps. Neither do our AI agents.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             <ServiceCard
+              icon={Bot}
+              title="AI Chatbot Employee"
+              description="A chatbot trained on YOUR business that answers questions, captures leads, and books appointments — 24/7."
+              price="From $497/mo"
+              features={[
+                "Custom-trained on your business",
+                "Lead capture & booking",
+                "Bilingual English/Spanish",
+                "Works 24/7, instant replies",
+                "Monthly performance report",
+              ]}
+            />
+            <ServiceCard
+              icon={Phone}
+              title="AI Phone Agent"
+              description="Every missed call is lost revenue. Our AI answers every call, books appointments, and routes emergencies to you."
+              price="From $997/mo"
+              features={[
+                "Answers every call 24/7",
+                "Books appointments automatically",
+                "Handles FAQs and pricing",
+                "Routes urgent calls to you",
+                "Call recording & transcripts",
+              ]}
+            />
+            <ServiceCard
               icon={Rocket}
-              title="Landing Pages"
-              description="Single-page sites designed to convert visitors into customers. Perfect for launching new products or services."
+              title="Professional Websites"
+              description="Websites that rank on Google, load fast, and convert visitors into customers. From landing pages to full stores."
               price="From $1,500"
               features={[
                 "Custom design",
                 "Mobile responsive",
                 "SEO optimized",
-                "Contact form",
+                "AI auto-blog included",
                 "Fast delivery",
-              ]}
-            />
-            <ServiceCard
-              icon={Briefcase}
-              title="Business Websites"
-              description="Professional multi-page websites with all the features your business needs. Blog, contact forms, and more."
-              price="From $4,000"
-              features={[
-                "Up to 10 pages",
-                "Blog system",
-                "CMS integration",
-                "Analytics setup",
-                "Ongoing support",
-              ]}
-            />
-            <ServiceCard
-              icon={ShoppingCart}
-              title="E-Commerce"
-              description="Online stores with payment processing, inventory management, and everything you need to sell online."
-              price="From $8,000"
-              features={[
-                "Shopping cart",
-                "Payment processing",
-                "Inventory management",
-                "Shipping integration",
-                "Analytics dashboard",
               ]}
             />
           </div>

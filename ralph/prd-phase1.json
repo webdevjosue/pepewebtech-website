@@ -1,0 +1,130 @@
+{
+  "phase": 1,
+  "name": "Z-Image-Turbo Local Image Generation",
+  "description": "Local AI image generation working on AMD ROCm GPU, integrated into blog + content pipeline",
+  "gate": "Generate 3 test images locally, blog pipeline uses local gen for hero images",
+  "depends_on": ["phase-0"],
+  "created": "2026-06-13",
+  "status": "pending",
+  "userStories": [
+    {
+      "id": "P1-001",
+      "title": "Verify Z-Image-Turbo workflow runs on ROCm AMD GPU",
+      "description": "As a content creator, I need local image generation working on my AMD GPU so I can generate images at $0 marginal cost.",
+      "acceptanceCriteria": [
+        "ComfyUI starts successfully with --lowvram flag on AMD GPU",
+        "Z-Image-Turbo workflow JSON loads without errors in ComfyUI",
+        "Generate one test image (512x512) successfully",
+        "GPU utilization shows activity during generation (rocm-smi)",
+        "VRAM usage stays under 14GB during generation",
+        "Output image saved to disk and viewable"
+      ],
+      "priority": 1,
+      "dependencies": [],
+      "passes": false,
+      "notes": "ComfyUI already installed at ~/ComfyUI with comfy-venv. Z-Image-Turbo models already downloaded (20GB). May need PyTorch ROCm build check.",
+      "status": "pending"
+    },
+    {
+      "id": "P1-002",
+      "title": "Download and integrate ControlNet model for Z-Image-Turbo",
+      "description": "As a content creator, I need ControlNet support for guided image generation (pose, depth, edges) so I can create consistent brand imagery.",
+      "acceptanceCriteria": [
+        "ControlNet model Z-Image-Turbo-Fun-Controlnet-Union.safetensors downloaded to ComfyUI models dir",
+        "ControlNet workflow JSON loads in ComfyUI",
+        "Generate one test image with ControlNet guidance",
+        "ControlNet improves image composition vs unguided generation"
+      ],
+      "priority": 2,
+      "dependencies": ["P1-001"],
+      "passes": false,
+      "notes": "Model name: Z-Image-Turbo-Fun-Controlnet-Union.safetensors. Location: ComfyUI/models/controlnet/",
+      "status": "pending"
+    },
+    {
+      "id": "P1-003",
+      "title": "Smoke test: generate 3 sample images (photoreal, illustration, text-render)",
+      "description": "As a content creator, I need to verify Z-Image-Turbo handles multiple styles so I can use it for blog hero images, social media, and marketing.",
+      "acceptanceCriteria": [
+        "Photorealistic image: generate a professional tech workspace photo",
+        "Illustration: generate a clean infographic-style illustration",
+        "Text rendering: generate an image with English text overlay that is readable",
+        "All 3 images generated in under 60 seconds each",
+        "Images saved to ~/test-output/ with naming convention: style_timestamp.png"
+      ],
+      "priority": 3,
+      "dependencies": ["P1-001"],
+      "passes": false,
+      "notes": "Z-Image-Turbo supports bilingual text rendering (EN/CN). Test specifically for text quality.",
+      "status": "pending"
+    },
+    {
+      "id": "P1-004",
+      "title": "Create Hermes skill for Z-Image-Turbo image generation",
+      "description": "As an operator, I need a reusable Hermes skill for local image generation so that any agent/cron can generate images without manual setup.",
+      "acceptanceCriteria": [
+        "Skill file created at skills/creative/comfyui/ with Z-Image-Turbo workflow instructions",
+        "Skill includes prompt templates for blog hero, social media, thumbnail, illustration",
+        "Skill documents the API call pattern (POST to ComfyUI /prompt endpoint)",
+        "Skill includes troubleshooting for common ROCm/AMD issues",
+        "Skill tested by generating an image via Hermes agent call"
+      ],
+      "priority": 4,
+      "dependencies": ["P1-001", "P1-003"],
+      "passes": false,
+      "notes": "Existing ComfyUI skill at skills/creative/comfyui/SKILL.md — extend or create sub-skill.",
+      "status": "pending"
+    },
+    {
+      "id": "P1-005",
+      "title": "Integrate local image gen into blog pipeline (replace cloud fallback)",
+      "description": "As the blog automation operator, I need the blog pipeline to generate hero images locally instead of using cloud ZAI glm-image so I can reduce costs to $0/image.",
+      "acceptanceCriteria": [
+        "Blog pipeline cron job uses local ComfyUI for hero image generation",
+        "Cloud ZAI glm-image remains as fallback if local gen fails",
+        "Generated hero images match blog post topic (relevant visual)",
+        "Images saved to public/images/blog/ in WebP format",
+        "Pipeline still completes end-to-end (blog post + image + build + deploy)",
+        "Cost per blog post drops from $0.015 to $0 for image generation"
+      ],
+      "priority": 5,
+      "dependencies": ["P1-004"],
+      "passes": false,
+      "notes": "Current blog pipeline uses ZAI glm-image cloud API. Replace with local gen, keep cloud as fallback.",
+      "status": "pending"
+    },
+    {
+      "id": "P1-006",
+      "title": "Benchmark: local vs cloud image generation",
+      "description": "As a decision-maker, I need performance and quality benchmarks comparing local vs cloud image generation so I can make informed decisions about which to use.",
+      "acceptanceCriteria": [
+        "Generate 10 images locally and 10 via cloud (same prompts)",
+        "Measure: generation time, image quality (subjective 1-10), VRAM usage, cost",
+        "Write benchmark report to ralph/phase1-benchmark.md",
+        "Recommendation: when to use local vs cloud based on results"
+      ],
+      "priority": 6,
+      "dependencies": ["P1-003"],
+      "passes": false,
+      "notes": "This data informs future infrastructure decisions and skill defaults.",
+      "status": "pending"
+    },
+    {
+      "id": "P1-007",
+      "title": "Create image style presets for Pepewebtech brand consistency",
+      "description": "As a brand operator, I need consistent visual style across all generated images so that Pepewebtech has a cohesive brand look.",
+      "acceptanceCriteria": [
+        "Define 5 style presets: blog-hero, social-card, thumbnail, infographic, testimonial-bg",
+        "Each preset has: prompt template, negative prompt, seed range, dimensions, style keywords",
+        "Presets saved in skill references/ directory",
+        "Test each preset: generate one image per preset, verify brand consistency",
+        "Document presets in skill file"
+      ],
+      "priority": 7,
+      "dependencies": ["P1-004"],
+      "passes": false,
+      "notes": "Pepewebtech brand: modern, clean, tech-forward, dark/light theme, bilingual-friendly.",
+      "status": "pending"
+    }
+  ]
+}

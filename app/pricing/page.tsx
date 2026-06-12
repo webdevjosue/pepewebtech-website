@@ -6,14 +6,14 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pricing",
-  description: "Transparent pricing for AI-powered web development. Landing pages from $1,500, business websites from $4,000.",
+  title: "Pricing — AI Employees & Web Design",
+  description: "AI Employees from $297/mo. AI chatbots, phone agents, and follow-up systems that work 24/7. Web design from $897. Transparent pricing, no hidden fees.",
   alternates: {
     canonical: "/pricing",
   },
   openGraph: {
-    title: "Pricing | PepeWebTech",
-    description: "Transparent pricing for AI-powered web development. Landing pages from $1,500, business websites from $4,000.",
+    title: "Pricing | PepeWebTech — AI Employees & Web Design",
+    description: "AI Employees from $297/mo. Chatbots, phone agents, follow-up systems. Web design from $897.",
     url: "https://pepewebtech.com/pricing",
     images: [
       {
@@ -26,11 +26,63 @@ export const metadata: Metadata = {
   },
 };
 
-const plans = [
+const aiPlans = [
   {
-    name: "Starter",
-    price: "$1,500",
-    description: "Landing Page",
+    name: "AI Chatbot",
+    price: "$297",
+    period: "/mo",
+    description: "Website AI Employee",
+    featured: false,
+    features: [
+      "Custom-trained on your business",
+      "Lead capture & qualification",
+      "Appointment booking",
+      "24/7 instant responses",
+      "Bilingual English/Spanish",
+      "Monthly performance report",
+    ],
+  },
+  {
+    name: "AI Phone Agent",
+    price: "$597",
+    period: "/mo",
+    description: "Never miss a call again",
+    featured: true,
+    features: [
+      "Answers every call, 24/7",
+      "Books appointments automatically",
+      "Handles FAQs and pricing",
+      "Routes urgent calls to you",
+      "Call recording & transcripts",
+      "SMS follow-up included",
+      "Setup included (normally $497)",
+    ],
+  },
+  {
+    name: "Full AI Package",
+    price: "$897",
+    period: "/mo",
+    description: "Chatbot + Phone + Follow-Up",
+    featured: false,
+    features: [
+      "AI Website Chatbot",
+      "AI Phone Agent",
+      "AI Follow-Up System (SMS + Email)",
+      "Unified dashboard",
+      "Priority support",
+      "Monthly performance reports",
+      "Free setup (save $497)",
+      "Google Review automation",
+    ],
+  },
+];
+
+const webPlans = [
+  {
+    name: "Landing Page",
+    price: "$897",
+    period: "one-time",
+    description: "High-converting single page",
     featured: false,
     features: [
       "Single page design",
@@ -42,14 +94,15 @@ const plans = [
     ],
   },
   {
-    name: "Business",
-    price: "$4,000",
-    description: "Full Website",
+    name: "Business Website",
+    price: "$2,497",
+    period: "one-time",
+    description: "Full site + AI auto-blog",
     featured: true,
     features: [
       "Up to 10 pages",
       "Mobile responsive",
-      "Blog integration",
+      "Blog with AI auto-publishing",
       "Full SEO setup",
       "Analytics dashboard",
       "2 revision rounds",
@@ -57,38 +110,48 @@ const plans = [
     ],
   },
   {
-    name: "E-Commerce",
-    price: "$8,000",
-    description: "Online Store",
+    name: "Website + AI Employee",
+    price: "$3,497",
+    period: "+ $597/mo",
+    description: "The full package",
     featured: false,
     features: [
-      "Unlimited products",
-      "Payment processing",
-      "Inventory management",
-      "Order tracking",
-      "Full SEO setup",
+      "Business website (10+ pages)",
+      "AI Phone Agent included",
+      "AI Chatbot on site",
+      "Auto blog + SEO",
+      "SMS follow-up system",
       "3 revision rounds",
       "60-day support",
+      "Save $1,000 vs buying separate",
     ],
   },
 ];
 
 const faqs = [
   {
-    q: "Do you offer payment plans?",
-    a: "Yes! We offer flexible payment plans. Typically 50% upfront and 50% on delivery. We can work with your budget.",
+    q: "How fast can you set up an AI Employee?",
+    a: "5-7 business days for the AI Chatbot. 7-10 days for the AI Phone Agent. Full package: 10-14 days. We train the AI on your specific business, test it, and go live.",
   },
   {
-    q: "How long does a project take?",
-    a: "Landing pages: 3-5 business days. Business websites: 1-2 weeks. E-commerce: 2-4 weeks. AI-powered = faster delivery.",
+    q: "Do I need to change my phone system?",
+    a: "No. We forward your missed calls or after-hours calls to our AI. Your current setup stays the same. When the AI can't handle something, it transfers to you.",
   },
   {
-    q: "What's included in hosting?",
-    a: "Free SSL, automatic backups, CDN for fast loading, 99.9% uptime, and analytics. No hidden hosting fees.",
+    q: "What happens if the AI can't answer a question?",
+    a: "It collects the caller's info and sends you a notification immediately. You call them back. It also learns from every interaction and gets smarter over time.",
   },
   {
-    q: "Can I make changes after launch?",
-    a: "Absolutely. Each plan includes revision rounds. We also offer maintenance plans for ongoing updates and support.",
+    q: "Is there a contract?",
+    a: "Month-to-month. No long-term contracts. We earn your business every month. Cancel anytime with 30 days notice.",
+  },
+  {
+    q: "Do you offer payment plans for websites?",
+    a: "Yes. 50% upfront, 50% on delivery. We can also work with your budget — just ask.",
+  },
+  {
+    q: "Can I see it working before I buy?",
+    a: "Absolutely. Book a free 15-minute strategy call and we'll demo our AI live on the call. You'll see exactly what your customers will experience.",
   },
 ];
 
@@ -104,15 +167,22 @@ export default function PricingPage() {
             Simple, Transparent Pricing
           </h1>
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            No hidden fees. No surprises. Choose the plan that fits your needs.
+            No hidden fees. No contracts. Cancel anytime.
           </p>
         </div>
       </section>
 
-      <section className="pb-16 md:pb-24">
+      {/* AI Employee Plans */}
+      <section className="pb-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest">
+              AI Employees
+            </span>
+            <h2 className="mt-2 text-2xl font-bold">AI That Works 24/7</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
-            {plans.map((plan) => (
+            {aiPlans.map((plan) => (
               <Card
                 key={plan.name}
                 className={
@@ -130,6 +200,65 @@ export default function PricingPage() {
                   <h3 className="text-xl font-semibold">{plan.name}</h3>
                   <div className="mt-2">
                     <span className="text-4xl font-bold">{plan.price}</span>
+                    <span className="text-muted-foreground">{plan.period}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {plan.description}
+                  </p>
+                </CardHeader>
+                <CardContent className="pt-6">
+                  <ul className="space-y-3">
+                    {plan.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="text-sm text-muted-foreground flex items-start gap-2"
+                      >
+                        <span className="text-primary mt-0.5" aria-hidden="true">&#10003;</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter>
+                  <Button asChild className="w-full" variant={plan.featured ? "default" : "outline"}>
+                    <Link href="/contact">Get Started</Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Web Design Plans */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest">
+              Web Design
+            </span>
+            <h2 className="mt-2 text-2xl font-bold">Professional Websites</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+            {webPlans.map((plan) => (
+              <Card
+                key={plan.name}
+                className={
+                  plan.featured
+                    ? "border-primary shadow-lg relative"
+                    : ""
+                }
+              >
+                {plan.featured && (
+                  <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    Best Value
+                  </Badge>
+                )}
+                <CardHeader className="text-center pb-4 border-b">
+                  <h3 className="text-xl font-semibold">{plan.name}</h3>
+                  <div className="mt-2">
+                    <span className="text-4xl font-bold">{plan.price}</span>
+                    <span className="text-muted-foreground"> {plan.period}</span>
                   </div>
                   <p className="text-sm text-muted-foreground mt-1">
                     {plan.description}
@@ -160,7 +289,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-24 bg-muted/50">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-bold text-primary uppercase tracking-widest">
@@ -180,8 +309,9 @@ export default function PricingPage() {
       </section>
 
       <CTASection
-        title="Ready to Get Started?"
-        description="Get a free consultation and quote for your project."
+        title="Ready to Stop Losing Customers?"
+        description="Free 15-minute strategy call. See our AI live, get your ROI estimate."
+        buttonText="Book Free Strategy Call"
       />
     </>
   );

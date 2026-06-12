@@ -1,0 +1,191 @@
+{
+  "phase": 4,
+  "name": "Automation & Growth",
+  "description": "Full autonomous content machine — blog, affiliate content, social media, SEO monitoring, UGC pipeline",
+  "gate": "Blog auto-publishes 3x/week, affiliate content auto-generates weekly, Pinterest pins daily, SEO reports weekly",
+  "depends_on": ["phase-1", "phase-2", "phase-3"],
+  "created": "2026-06-13",
+  "status": "pending",
+  "userStories": [
+    {
+      "id": "P4-001",
+      "title": "Upgrade blog pipeline to use local image gen (end cloud dependency)",
+      "description": "As the blog pipeline operator, I need hero images generated locally via ComfyUI so every blog post costs $0 in image generation.",
+      "acceptanceCriteria": [
+        "Blog pipeline cron generates hero images via Z-Image-Turbo (not ZAI cloud)",
+        "Cloud API remains as documented fallback only",
+        "3 consecutive blog posts published with locally-generated hero images",
+        "Image generation failure triggers automatic retry + cloud fallback",
+        "Build + deploy still works end-to-end"
+      ],
+      "priority": 1,
+      "dependencies": [],
+      "passes": false,
+      "notes": "This is the culmination of Phase 1 + Phase 3 pipeline work. Local gen as default, cloud as safety net.",
+      "status": "pending"
+    },
+    {
+      "id": "P4-002",
+      "title": "Build affiliate content cron (weekly: research + write + publish review)",
+      "description": "As a content operator, I need a weekly cron that produces a new tool review so the directory grows consistently without manual effort.",
+      "acceptanceCriteria": [
+        "Cron runs every Sunday at 9am",
+        "Researches trending tools in directory categories",
+        "Writes 1000-2000 word review with pros/cons/pricing/features",
+        "Generates hero image locally",
+        "Adds affiliate links with tracking",
+        "Saves draft for human review (auto-publish or manual approve)"
+      ],
+      "priority": 2,
+      "dependencies": [],
+      "passes": false,
+      "notes": "Extend existing blog pipeline cron pattern. Different content template (review vs blog).",
+      "status": "pending"
+    },
+    {
+      "id": "P4-003",
+      "title": "Pinterest auto-pin cron (daily: generate pin + schedule)",
+      "description": "As a Pinterest growth operator, I need daily auto-pins so the account stays active and drives consistent referral traffic.",
+      "acceptanceCriteria": [
+        "Cron runs daily at 11am EST",
+        "Picks content from recently published reviews/blog posts",
+        "Generates pin image using Canva/template",
+        "Posts to relevant Pinterest board with SEO-optimized description",
+        "Tracks pin performance (impressions, clicks) in analytics",
+        "Rate-limits to avoid Pinterest spam detection"
+      ],
+      "priority": 3,
+      "dependencies": [],
+      "passes": false,
+      "notes": "Pinterest API rate limits: 1000 pins/day for business accounts. Stay well under.",
+      "status": "pending"
+    },
+    {
+      "id": "P4-004",
+      "title": "X/Twitter auto-post cron (daily: share new content)",
+      "description": "As a social media operator, I need auto-posts on X/Twitter when new content publishes so social channels stay active.",
+      "acceptanceCriteria": [
+        "Cron triggers on new blog post or review publish",
+        "Generates tweet with title + link + relevant hashtags",
+        "Posts via xurl CLI (already available)",
+        "Scheduling: stagger posts 2-3 hours apart if multiple publishes",
+        "No duplicate posts for same content"
+      ],
+      "priority": 4,
+      "dependencies": [],
+      "passes": false,
+      "notes": "xurl skill already exists. Use Hermes cron + xurl for posting.",
+      "status": "pending"
+    },
+    {
+      "id": "P4-005",
+      "title": "SEO monitoring cron (weekly: track rankings, backlinks, Core Web Vitals)",
+      "description": "As an SEO operator, I need weekly reports on search performance so I can identify issues and opportunities.",
+      "acceptanceCriteria": [
+        "Cron runs every Monday at 8am",
+        "Checks Google Search Console data: impressions, clicks, CTR, positions",
+        "Checks Core Web Vitals for key pages (LCP, CLS, INP)",
+        "Checks backlink count and new referring domains",
+        "Compares week-over-week changes",
+        "Report delivered to Discord with highlights + action items",
+        "Flags significant ranking drops (>5 positions)"
+      ],
+      "priority": 5,
+      "dependencies": [],
+      "passes": false,
+      "notes": "Google Search Console API for data. Lighthouse/PageSpeed Insights for CWV. Ahrefs/Moz for backlinks (if budget allows).",
+      "status": "pending"
+    },
+    {
+      "id": "P4-006",
+      "title": "Opportunity Scanner integration with affiliate pipeline",
+      "description": "As a business operator, I need the opportunity scanner to surface affiliate programs and trending tools, not just general opportunities.",
+      "acceptanceCriteria": [
+        "Opportunity Scanner cron (every 4h) includes affiliate program discovery",
+        "Surfaces new tools with existing affiliate programs",
+        "Surfaces trending tools with high search volume + commercial intent",
+        "Matches opportunities to existing directory categories",
+        "Auto-creates draft review placeholder for top opportunities",
+        "Reports new opportunities to Discord with affiliate program details"
+      ],
+      "priority": 6,
+      "dependencies": [],
+      "passes": false,
+      "notes": "Opportunity Scanner cron already exists (every 4h). Extend its prompt to include affiliate/tool discovery.",
+      "status": "pending"
+    },
+    {
+      "id": "P4-007",
+      "title": "Revenue tracking dashboard (affiliate + ads + services)",
+      "description": "As a business owner, I need a unified revenue dashboard so I can see all income streams in one place.",
+      "acceptanceCriteria": [
+        "Dashboard shows: affiliate revenue, ad revenue (if any), service inquiries from website",
+        "Revenue broken down by: source, tool, category, month",
+        "Trend chart: month-over-month revenue growth",
+        "Affiliate conversion rate (clicks → purchases)",
+        "Monthly auto-report delivered to Discord",
+        "Dashboard accessible via local URL or admin page"
+      ],
+      "priority": 7,
+      "dependencies": [],
+      "passes": false,
+      "notes": "Start with affiliate data from P3-014. Add other streams as they come online.",
+      "status": "pending"
+    },
+    {
+      "id": "P4-008",
+      "title": "UGC video pipeline integration (wire to agent delegation)",
+      "description": "As the video content operator, I need the UGC pipeline fully wired to Hermes agent delegation so videos can be produced autonomously.",
+      "acceptanceCriteria": [
+        "COO profile can delegate video production tasks to worker profiles",
+        "Full pipeline: research → script → TTS → images → assembly → QC → delivery",
+        "Chatterbox V3 for voiceover (local, emotion profiles)",
+        "ComfyUI for scene images (local, style consistent)",
+        "Delivered to Discord for human review before upload",
+        "End-to-end test: produce one complete video autonomously"
+      ],
+      "priority": 8,
+      "dependencies": [],
+      "passes": false,
+      "notes": "UGC pipeline plan exists at .hermes/plans/2026-06-12_ugc-content-pipeline.md. Phase 1-3 of that plan need completion first.",
+      "status": "pending"
+    },
+    {
+      "id": "P4-009",
+      "title": "Cross-promotion engine (blog → video, video → blog, both → Pinterest)",
+      "description": "As a growth operator, I need content cross-promotion automated so every piece of content amplifies every other piece.",
+      "acceptanceCriteria": [
+        "New blog post → auto-tweet + auto-pin + suggest video topic",
+        "New video → auto-tweet + auto-pin + suggest blog expansion",
+        "New review → auto-tweet + auto-pin + suggest comparison post",
+        "Cross-links added automatically (blog mentions tools reviewed in directory)",
+        "Content calendar maintained across all channels",
+        "No duplicate content across channels (each platform gets unique framing)"
+      ],
+      "priority": 9,
+      "dependencies": ["P4-002", "P4-003", "P4-004"],
+      "passes": false,
+      "notes": "The flywheel effect: blog → SEO → traffic → affiliate clicks → revenue → reinvest in content.",
+      "status": "pending"
+    },
+    {
+      "id": "P4-010",
+      "title": "Monthly growth report cron (metrics + next actions)",
+      "description": "As a business owner, I need a monthly growth report so I can track progress against goals and adjust strategy.",
+      "acceptanceCriteria": [
+        "Cron runs on the 1st of each month",
+        "Report includes: traffic, revenue, content published, subscriber growth, SEO rankings",
+        "Compares to previous month and to goals",
+        "Highlights: top performing content, worst performing, anomalies",
+        "Recommends: 3-5 action items for next month",
+        "Delivered to Discord as formatted report",
+        "Saved to ralph/monthly-reports/ for historical tracking"
+      ],
+      "priority": 10,
+      "dependencies": ["P4-005", "P4-007"],
+      "passes": false,
+      "notes": "This is the feedback loop that closes the Ralph system: measure → learn → iterate → improve.",
+      "status": "pending"
+    }
+  ]
+}

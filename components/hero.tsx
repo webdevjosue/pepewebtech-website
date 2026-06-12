@@ -13,35 +13,35 @@ export function Hero() {
         }}
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <Badge className="mb-6">AI-Powered Development</Badge>
+        <Badge className="mb-6">AI Employees for Your Business</Badge>
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
-          Build Your Website{" "}
-          <span className="gradient-text">4x Faster</span>
+          Stop Losing Customers.{" "}
+          <span className="gradient-text">Hire AI.</span>
         </h1>
         <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-          Modern websites for small businesses. Powered by AI, delivered in
-          days, not weeks. Starting at $1,500.
+          AI employees that answer every call, capture every lead, and book appointments 24/7. 
+          Never miss a customer again. From $497/month.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg">
-            <Link href="/contact">Book Your Free Consultation</Link>
+            <Link href="/contact">Book Free Strategy Call</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link href="/pricing">View Pricing</Link>
+            <Link href="/pricing">See Pricing</Link>
           </Button>
         </div>
         <div className="mt-12 grid grid-cols-3 gap-8 max-w-md mx-auto">
           <div>
-            <div className="text-3xl font-bold text-foreground">50+</div>
-            <div className="text-sm text-muted-foreground">Projects Delivered</div>
+            <div className="text-3xl font-bold text-foreground">24/7</div>
+            <div className="text-sm text-muted-foreground">Always On</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-foreground">4x</div>
-            <div className="text-sm text-muted-foreground">Faster Delivery</div>
+            <div className="text-3xl font-bold text-foreground">&lt;60s</div>
+            <div className="text-sm text-muted-foreground">Response Time</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-foreground">50%</div>
-            <div className="text-sm text-muted-foreground">Lower Cost</div>
+            <div className="text-3xl font-bold text-foreground">$497</div>
+            <div className="text-sm text-muted-foreground">/Month Starting</div>
           </div>
         </div>
       </div>

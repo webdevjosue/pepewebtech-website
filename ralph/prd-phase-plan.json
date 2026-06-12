@@ -1,0 +1,113 @@
+{
+  "project": "PepeWebTech + Pepetech",
+  "system": "Ralph Loop — PRD-Driven Iterative Development",
+  "version": "1.0",
+  "created": "2026-06-13",
+  "author": "Pepebot2 (GLM-5.1)",
+  "status": "ACTIVE",
+  "phases": [
+    {
+      "id": "phase-0",
+      "name": "Website Foundation (Ralph Loop)",
+      "prd": "ralph/prd.json",
+      "stories": 15,
+      "status": "pending",
+      "gate": "All 15 stories pass acceptance criteria + quality checks pass + pepewebtech.com live with fixes",
+      "priority": "CRITICAL — must complete first",
+      "estimatedEffort": "4-6 hours",
+      "files": [
+        "ralph/prd.json",
+        "ralph/ralph.config.json",
+        "ralph/progress.txt"
+      ]
+    },
+    {
+      "id": "phase-1",
+      "name": "Z-Image-Turbo Local Image Gen",
+      "prd": "ralph/prd-phase1.json",
+      "stories": 7,
+      "status": "pending",
+      "gate": "Generate 3 test images locally, blog pipeline uses local gen for hero images",
+      "priority": "HIGH — enables all visual content",
+      "estimatedEffort": "3-4 hours",
+      "dependsOn": ["phase-0"],
+      "canParallel": false,
+      "files": [
+        "ralph/prd-phase1.json"
+      ]
+    },
+    {
+      "id": "phase-2",
+      "name": "Audio Stack Completion",
+      "prd": "ralph/prd-phase2.json",
+      "stories": 8,
+      "status": "pending",
+      "gate": "Generate sample voice, music track, and SFX locally. Chatterbox voice cloning tested.",
+      "priority": "HIGH — enables video + podcast content",
+      "estimatedEffort": "3-4 hours",
+      "dependsOn": [],
+      "canParallel": true,
+      "parallelWith": "phase-1",
+      "files": [
+        "ralph/prd-phase2.json"
+      ]
+    },
+    {
+      "id": "phase-3",
+      "name": "Pepetech Affiliate + Directory",
+      "prd": "ralph/prd-phase3.json",
+      "stories": 15,
+      "status": "pending",
+      "gate": "10 published tool reviews with affiliate links, Pinterest account live, directory pages indexed",
+      "priority": "HIGHEST — revenue engine",
+      "estimatedEffort": "15-20 hours",
+      "dependsOn": ["phase-0", "phase-1"],
+      "canParallel": false,
+      "files": [
+        "ralph/prd-phase3.json"
+      ]
+    },
+    {
+      "id": "phase-4",
+      "name": "Automation & Growth",
+      "prd": "ralph/prd-phase4.json",
+      "stories": 10,
+      "status": "pending",
+      "gate": "Blog 3x/week, affiliate weekly, Pinterest daily, SEO weekly, revenue tracked",
+      "priority": "MEDIUM — optimization after revenue flows",
+      "estimatedEffort": "8-12 hours",
+      "dependsOn": ["phase-1", "phase-2", "phase-3"],
+      "canParallel": false,
+      "files": [
+        "ralph/prd-phase4.json"
+      ]
+    }
+  ],
+  "totalStories": 55,
+  "completedStories": 0,
+  "parallelTracks": {
+    "trackA": ["phase-0", "phase-1", "phase-3", "phase-4"],
+    "trackB": ["phase-2"]
+  },
+  "metrics": {
+    "storiesTotal": 55,
+    "storiesPhase0": 15,
+    "storiesPhase1": 7,
+    "storiesPhase2": 8,
+    "storiesPhase3": 15,
+    "storiesPhase4": 10
+  },
+  "relatedPlans": [
+    "PRD-STACK-PLAN.md",
+    ".hermes/plans/2026-06-13_ralph-loop-phase-development-prd.md",
+    ".hermes/plans/2026-06-12_ugc-content-pipeline.md",
+    "digital-products-plan.md"
+  ],
+  "loopPattern": {
+    "step1": "Write PRD with user stories + acceptance criteria → ralph/prd-phaseN.json",
+    "step2": "Execute stories one at a time (TDD: test → implement → verify) → update status in PRD",
+    "step3": "Run quality checks from ralph.config.json → PASS or REJECT + fix",
+    "step4": "Log progress + patterns + decisions → ralph/progress.txt",
+    "step5": "Iterate: update PRD v2 with learnings → next loop or NEXT PHASE"
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "phase": 3,
+  "name": "Pepetech Affiliate + Directory Platform",
+  "description": "Launch affiliate directory platform with first 10 tool reviews, Pinterest integration, SEO-ready pages indexed by Google",
+  "gate": "10 published tool reviews with affiliate links, Pinterest account live with pin templates, directory pages indexed",
+  "depends_on": ["phase-0", "phase-1"],
+  "created": "2026-06-13",
+  "status": "pending",
+  "userStories": [
+    {
+      "id": "P3-001",
+      "title": "Decide: standalone domain vs pepewebtech.com/directory",
+      "description": "As the business owner, I need to decide where Pepetech lives so the architecture and SEO strategy can be planned.",
+      "acceptanceCriteria": [
+        "Decision documented: standalone domain (pepetech.com) OR subdirectory (/tools/ or /directory/)",
+        "If standalone: domain registered and DNS configured",
+        "If subdirectory: Next.js routing plan documented",
+        "Decision considers: SEO authority sharing, brand separation, maintenance cost",
+        "Mr. Z approves decision"
+      ],
+      "priority": 1,
+      "dependencies": [],
+      "passes": false,
+      "notes": "RECOMMENDATION: subdirectory (/tools/) to share SEO authority with pepewebtech.com. Standalone domain better for eventual sale.",
+      "status": "pending"
+    },
+    {
+      "id": "P3-002",
+      "title": "Design directory taxonomy (categories, subcategories, tags)",
+      "description": "As a content strategist, I need a clear taxonomy for the tool directory so content is organized and discoverable.",
+      "acceptanceCriteria": [
+        "Top-level categories defined (min 5, max 10): AI Tools, Web Hosting, SEO, Marketing, Productivity, etc.",
+        "Subcategories for each top-level category (2-5 each)",
+        "Tag system for cross-cutting attributes (pricing tier, SMB-focused, bilingual, free-trial, etc.)",
+        "Taxonomy saved as JSON schema in project",
+        "Taxonomy supports SEO-friendly URL structure: /tools/{category}/{tool-name}"
+      ],
+      "priority": 2,
+      "dependencies": ["P3-001"],
+      "passes": false,
+      "notes": "Reference: G2.com, Capterra, Product Hunt category structures. Focus on small business relevance.",
+      "status": "pending"
+    },
+    {
+      "id": "P3-003",
+      "title": "Build directory framework: category pages + tool detail pages",
+      "description": "As a developer, I need the directory page templates built so tool reviews and category listings can be published.",
+      "acceptanceCriteria": [
+        "Category listing page: grid of tools with name, logo, rating, price range, 'Visit' CTA",
+        "Tool detail page: hero section, pros/cons, feature list, pricing tiers, screenshots, affiliate CTA button",
+        "Both pages use Next.js SSG for performance",
+        "Responsive design (mobile-first)",
+        "Breadcrumb navigation: Home > Category > Tool",
+        "Schema.org markup: Product, Review, AggregateRating"
+      ],
+      "priority": 3,
+      "dependencies": ["P3-002"],
+      "passes": false,
+      "notes": "Build as Next.js pages. Use existing pepewebtech-website project if subdirectory approach.",
+      "status": "pending"
+    },
+    {
+      "id": "P3-004",
+      "title": "Build affiliate link management system (redirect + tracking)",
+      "description": "As a revenue operator, I need tracked affiliate links so I know which referrals convert and earn commissions.",
+      "acceptanceCriteria": [
+        "Affiliate links use /go/{slug} redirect pattern (not raw affiliate URLs)",
+        "Redirect endpoint tracks: click timestamp, source page, referral tool, UTM params",
+        "Click data stored in lightweight DB (SQLite or Supabase)",
+        "Admin dashboard shows: clicks per link, clicks per tool, top referrers",
+        "Links are nofollow for SEO compliance",
+        "301/302 redirect configurable per link"
+      ],
+      "priority": 4,
+      "dependencies": ["P3-001"],
+      "passes": false,
+      "notes": "Keep it simple. SQLite for now, migrate to Supabase if traffic warrants. Use Next.js API routes for redirect.",
+      "status": "pending"
+    },
+    {
+      "id": "P3-005",
+      "title": "Join first 3 affiliate networks",
+      "description": "As a monetization operator, I need active affiliate accounts so I can earn commissions on tool referrals.",
+      "acceptanceCriteria": [
+        "Amazon Associates account approved (easiest entry)",
+        "Impact.com or ShareASale account approved (software/SaaS focused)",
+        "One additional network joined (PartnerStack, CJ, or direct programs)",
+        "Affiliate IDs/links documented in secure config (not in git)",
+        "Test affiliate links: click → verify tracking cookie set"
+      ],
+      "priority": 5,
+      "dependencies": [],
+      "passes": false,
+      "notes": "Amazon Associates: instant approval for most sites. Impact/ShareASale: 1-7 day review. Some programs require minimum traffic.",
+      "status": "pending"
+    },
+    {
+      "id": "P3-006",
+      "title": "Write first 10 tool reviews with affiliate links",
+      "description": "As a content creator, I need the first 10 in-depth tool reviews published so the directory has launch content.",
+      "acceptanceCriteria": [
+        "10 reviews published covering: AI tools (3), web hosting (2), SEO tools (2), marketing (2), productivity (1)",
+        "Each review: 1000-2000 words, pros/cons, feature table, pricing, verdict",
+        "Each review has affiliate CTA button with tracked link",
+        "Each review has hero image (generated via Z-Image-Turbo)",
+        "Each review has schema markup (Product + Review JSON-LD)",
+        "Reviews published and accessible via directory pages"
+      ],
+      "priority": 6,
+      "dependencies": ["P3-003", "P3-004", "P3-005"],
+      "passes": false,
+      "notes": "Use Hermes blog pipeline as template. Each review is a detailed content piece, not thin affiliate page.",
+      "status": "pending"
+    },
+    {
+      "id": "P3-007",
+      "title": "Design + build comparison table component (X vs Y)",
+      "description": "As a content creator, I need a reusable comparison component so I can publish 'Tool A vs Tool B' posts that rank for comparison searches.",
+      "acceptanceCriteria": [
+        "Comparison page template: side-by-side feature table, pricing comparison, pros/cons, verdict",
+        "Component accepts JSON data for the two tools being compared",
+        "Mobile-responsive: tables scroll horizontally on small screens",
+        "Schema markup: Product comparisons for rich results",
+        "Example comparison: 'Jasper vs Copy.ai' or 'Shopify vs WooCommerce' published"
+      ],
+      "priority": 7,
+      "dependencies": ["P3-003"],
+      "passes": false,
+      "notes": "Comparison posts are highest SEO value for affiliate content. 'X vs Y' search intent is commercial (ready to buy).",
+      "status": "pending"
+    },
+    {
+      "id": "P3-008",
+      "title": "Design + build roundup template (Top 10 X for Y)",
+      "description": "As a content creator, I need a roundup template so I can publish 'Top N Tools for X' posts that maximize affiliate link density.",
+      "acceptanceCriteria": [
+        "Roundup page template: numbered list with tool cards (name, logo, 2-sentence pitch, pros, pricing, CTA)",
+        "Template supports 5-20 items per roundup",
+        "Each item has affiliate CTA with tracked link",
+        "Intro paragraph optimized for target keyword",
+        "Example roundup: 'Top 10 AI Tools for Small Business in 2026' published"
+      ],
+      "priority": 8,
+      "dependencies": ["P3-003", "P3-004"],
+      "passes": false,
+      "notes": "Roundups are the bread and butter of affiliate sites. Each item = one affiliate link opportunity.",
+      "status": "pending"
+    },
+    {
+      "id": "P3-009",
+      "title": "Pinterest business account setup + pin template design",
+      "description": "As a traffic acquisition operator, I need a Pinterest business account with pin templates so I can drive visual traffic to directory pages.",
+      "acceptanceCriteria": [
+        "Pinterest business account created or converted from personal",
+        "5 boards created matching directory categories",
+        "Pin templates designed: product review pin, comparison pin, roundup pin, tip pin",
+        "Each template: 1000x1500px (Pinterest optimal), bold text, brand colors",
+        "Templates saved as ComfyUI workflows or Canva templates for easy reuse"
+      ],
+      "priority": 9,
+      "dependencies": ["P3-002"],
+      "passes": false,
+      "notes": "Pinterest drives 33% of referral traffic for many affiliate sites. Visual platform = perfect for tool screenshots + graphics.",
+      "status": "pending"
+    },
+    {
+      "id": "P3-010",
+      "title": "Pinterest automation workflow (auto-pin on publish)",
+      "description": "As a content operator, I need pins auto-created and scheduled when new reviews/roundups are published so Pinterest stays active without manual work.",
+      "acceptanceCriteria": [
+        "On publish of new review: auto-generate pin image using template",
+        "Pin auto-posted to relevant Pinterest board with SEO description",
+        "Pin links back to the review/roundup page",
+        "Scheduling: stagger pins across the week (not all at once)",
+        "Pin performance tracked (impressions, clicks, saves)"
+      ],
+      "priority": 10,
+      "dependencies": ["P3-009"],
+      "passes": false,
+      "notes": "Pinterest API for business accounts. Or use Tailwind/Buffer for scheduling. Cron job via Hermes.",
+      "status": "pending"
+    },
+    {
+      "id": "P3-011",
+      "title": "SEO strategy: schema markup for reviews (Product, Review, AggregateRating)",
+      "description": "As an SEO operator, I need proper structured data on all review/directory pages so Google shows rich results (star ratings, prices, availability).",
+      "acceptanceCriteria": [
+        "Product schema on every tool detail page with name, description, offers",
+        "Review schema with author, date, rating, review body",
+        "AggregateRating schema with average rating and count",
+        "FAQ schema on comparison pages (if applicable)",
+        "All schemas validated with Google Rich Results Test (no errors)",
+        "BreadcrumbList schema on all directory pages"
+      ],
+      "priority": 11,
+      "dependencies": ["P3-003"],
+      "passes": false,
+      "notes": "Rich results = higher CTR in search. Star ratings in SERPs can increase CTR by 20-30%.",
+      "status": "pending"
+    },
+    {
+      "id": "P3-012",
+      "title": "Hero images + category thumbnails via local Z-Image-Turbo",
+      "description": "As a content creator, I need branded hero images and category thumbnails generated locally so the directory looks professional at $0 image cost.",
+      "acceptanceCriteria": [
+        "Hero images for each category page (5-10 images)",
+        "Default tool thumbnail for tools without logos (placeholder)",
+        "Comparison infographic images for X vs Y posts",
+        "Roundup header images for Top N posts",
+        "All images in WebP format, under 200KB each",
+        "Consistent visual style across all generated images"
+      ],
+      "priority": 12,
+      "dependencies": ["P3-003"],
+      "passes": false,
+      "notes": "Uses Phase 1 Z-Image-Turbo local gen. Brand presets from P1-007 apply here.",
+      "status": "pending"
+    },
+    {
+      "id": "P3-013",
+      "title": "Content pipeline: automated affiliate content generation",
+      "description": "As a content operator, I need a cron job that researches and drafts new tool reviews so the directory grows without manual work.",
+      "acceptanceCriteria": [
+        "Cron job runs weekly: research trending tools → draft review → add to review queue",
+        "Research includes: features, pricing, pros/cons, competitors, user reviews",
+        "Draft review saved as markdown for human review before publish",
+        "Draft includes suggested affiliate programs for the tool",
+        "Queue system: draft → reviewed → approved → published"
+      ],
+      "priority": 13,
+      "dependencies": ["P3-006", "P3-005"],
+      "passes": false,
+      "notes": "Extend existing blog pipeline cron. Same pattern: research → draft → QC → publish. Different content type.",
+      "status": "pending"
+    },
+    {
+      "id": "P3-014",
+      "title": "Analytics: affiliate click tracking + revenue dashboard",
+      "description": "As a business operator, I need to see which tools drive clicks and revenue so I can optimize the directory for earnings.",
+      "acceptanceCriteria": [
+        "Click tracking from P3-004 feeds into analytics",
+        "Dashboard shows: total clicks, clicks per tool, clicks per category, top performers",
+        "Revenue data imported from affiliate network dashboards (manual or API)",
+        "Monthly revenue report auto-generated",
+        "Dashboard accessible via admin route or local file"
+      ],
+      "priority": 14,
+      "dependencies": ["P3-004"],
+      "passes": false,
+      "notes": "Start simple: SQLite + static HTML dashboard. Upgrade to real-time later.",
+      "status": "pending"
+    },
+    {
+      "id": "P3-015",
+      "title": "Launch: first 50 directory pages live + submitted to Google",
+      "description": "As the launch operator, I need 50 pages live and indexed so the directory starts receiving organic search traffic.",
+      "acceptanceCriteria": [
+        "50 pages published: 10 reviews + 5 comparisons + 3 roundups + category pages + tool detail stubs",
+        "XML sitemap includes all directory pages",
+        "Google Search Console submitted with sitemap URL",
+        "All pages return HTTP 200",
+        "All pages have unique title + meta description",
+        "Core Web Vitals: LCP < 2.5s, CLS < 0.1, FID < 100ms"
+      ],
+      "priority": 15,
+      "dependencies": ["P3-006", "P3-007", "P3-008", "P3-011"],
+      "passes": false,
+      "notes": "50 pages = critical mass for Google to start taking the directory seriously. Quality over quantity.",
+      "status": "pending"
+    }
+  ]
+}
