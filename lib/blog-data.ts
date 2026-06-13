@@ -430,6 +430,8 @@ export const blogPosts: BlogPost[] = [
     category: "AI Trends",
     excerpt: "Canva's new Magic Layers feature turns flat images and AI-generated designs into fully layered, editable elements. A game-changer for small business design.",
     readTime: "5 min read",
+  
+    image: "/images/blog/2026-03-11-canva-magic-layers-ai-design-editable-header.webp",
   },
   {
     slug: "2026-03-10-local-llm-vs-cloud-api-cost-analysis",
@@ -438,6 +440,8 @@ export const blogPosts: BlogPost[] = [
     category: "Tech",
     excerpt: "Local LLMs vs Cloud APIs: A comprehensive cost and privacy analysis for 2026. Learn when running AI on-device makes sense for your small business.",
     readTime: "7 min read",
+  
+    image: "/images/blog/2026-03-10-local-llm-vs-cloud-api-cost-analysis-header.webp",
   },
   {
     slug: "2026-03-09-gpt-5-4-openai-new-model-small-business-guide",
@@ -446,6 +450,8 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "OpenAI's GPT-5.4 brings new capabilities for small businesses and developers. Learn about the Pro and Thinking versions, massive context windows, and more.",
     readTime: "6 min read",
+  
+    image: "/images/blog/2026-03-09-gpt-5-4-openai-new-model-small-business-guide-header.webp",
   },
   {
     slug: "2026-03-08-local-ai-edge-computing-small-business-guide",
@@ -454,6 +460,8 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "Local AI and edge computing are changing how small businesses use AI. Learn about on-device AI models, privacy benefits, and cost savings for your business.",
     readTime: "6 min read",
+  
+    image: "/images/blog/2026-03-08-local-ai-edge-computing-small-business-guide-header.webp",
   },
   {
     slug: "2026-03-06-gpt-5-4-small-business-guide",
@@ -462,6 +470,8 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "OpenAI's GPT-5.4 is here. Learn what small businesses need to know about the new Pro and Thinking versions, pricing, and practical applications.",
     readTime: "5 min read",
+  
+    image: "/images/blog/2026-03-06-gpt-5-4-small-business-guide-header.webp",
   },
   {
     slug: "2026-03-05-ai-tools-small-businesses-2026-practical-guide",
@@ -470,6 +480,8 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "Discover affordable AI tools that small businesses are using in 2026 to boost productivity, reduce costs, and stay competitive. No coding required.",
     readTime: "7 min read",
+  
+    image: "/images/blog/2026-03-05-ai-tools-small-businesses-2026-practical-guide-header.webp",
   },
   {
     slug: "2026-03-05-ai-agents-digital-employees-2026",
@@ -478,6 +490,8 @@ export const blogPosts: BlogPost[] = [
     category: "AI Agents",
     excerpt: "AI agents are transforming from chatbots to digital employees in 2026. Learn how small businesses can save 42% on labor costs with autonomous AI agents.",
     readTime: "6 min read",
+  
+    image: "/images/blog/2026-03-05-ai-agents-digital-employees-2026-header.webp",
   },
   {
     slug: "2026-03-04-ai-generated-frontend-code-2026",
@@ -486,6 +500,8 @@ export const blogPosts: BlogPost[] = [
     category: "Web Development",
     excerpt: "AI-generated frontend code is revolutionizing web development. Learn how 75% of enterprise code is now AI-assisted, cutting development costs and time.",
     readTime: "6 min read",
+  
+    image: "/images/blog/2026-03-04-ai-generated-frontend-code-2026-header.webp",
   },
   {
     slug: "2026-03-04-ai-agents-digital-employees-2026",
@@ -494,6 +510,8 @@ export const blogPosts: BlogPost[] = [
     category: "AI Agents",
     excerpt: "AI Agents are transforming from chatbots to digital employees in 2026. Learn how 67% of businesses are deploying AI agents that work autonomously.",
     readTime: "6 min read",
+  
+    image: "/images/blog/2026-03-04-ai-agents-digital-employees-2026-header.webp",
   },
   {
     slug: "2026-03-03-ai-web-development-beyond-chatgpt-2026",
@@ -502,6 +520,8 @@ export const blogPosts: BlogPost[] = [
     category: "Web Development",
     excerpt: "AI web development is moving beyond ChatGPT. Discover how 2026's AI-native development tools, automated SEO, and intelligent marketing modules are transforming the industry.",
     readTime: "6 min read",
+  
+    image: "/images/blog/2026-03-03-ai-web-development-beyond-chatgpt-2026-header.webp",
   },
   {
     slug: "2026-03-03-ai-small-tools-simplicity-2026",
@@ -510,6 +530,8 @@ export const blogPosts: BlogPost[] = [
     category: "Tips",
     excerpt: "Discover how 2026 AI tools for small businesses are shifting from complex enterprise solutions to simple, focused tools that solve specific problems quickly.",
     readTime: "5 min read",
+  
+    image: "/images/blog/2026-03-03-ai-small-tools-simplicity-2026-header.webp",
   },
   {
     slug: "2026-03-02-geo-small-business-guide",
@@ -518,6 +540,8 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "GEO (Generative Engine Optimization) is replacing traditional SEO in 2026. Learn how small businesses can optimize for AI-powered search engines.",
     readTime: "6 min read",
+  
+    image: "/images/blog/2026-03-02-geo-small-business-guide-header.webp",
   },
   {
     slug: "2026-03-01-practical-ai-tools-small-businesses-2026",
@@ -526,6 +550,8 @@ export const blogPosts: BlogPost[] = [
     category: "Tips",
     excerpt: "Discover 5 practical AI tools that every small business can deploy in 2026. From content creation to customer service, these affordable solutions deliver results.",
     readTime: "6 min read",
+  
+    image: "/images/blog/2026-03-01-practical-ai-tools-small-businesses-2026-header.webp",
   },
   {
     slug: "2026-03-01-agentic-ai-small-business-automation-2026",
@@ -534,6 +560,8 @@ export const blogPosts: BlogPost[] = [
     category: "AI Agents",
     excerpt: "Agentic AI is transforming small business operations in 2026. Learn how AI agents can automate workflows, reduce operational costs by 60%, and act as digital employees.",
     readTime: "6 min read",
+  
+    image: "/images/blog/2026-03-01-agentic-ai-small-business-automation-2026-header.webp",
   },
   {
     slug: "2026-02-28-ai-native-web-development-2026-guide",
@@ -542,6 +570,8 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "AI-native web development is transforming how small businesses build websites in 2026. Learn how AI tools reduce development costs by 90%, launch sites in days.",
     readTime: "7 min read",
+  
+    image: "/images/blog/2026-02-28-ai-native-web-development-2026-guide-header.webp",
   },
   {
     slug: "2026-02-28-ai-agents-software-development-guide",
@@ -550,6 +580,8 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "AI agents are revolutionizing software development in 2026. Learn how autonomous AI coding agents reduce development costs by 90%, complete projects in days.",
     readTime: "7 min read",
+  
+    image: "/images/blog/2026-02-28-ai-agents-software-development-guide-header.webp",
   },
   {
     slug: "2026-02-27-ai-native-web-development-2026-guide",
@@ -558,6 +590,8 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "AI-native web development is transforming how websites are built in 2026. Learn how 75%+ of enterprise code is AI-assisted and what this means for small businesses.",
     readTime: "6 min read",
+  
+    image: "/images/blog/2026-02-27-ai-native-web-development-2026-guide-header.webp",
   },
   {
     slug: "2026-02-27-ai-agents-small-business-automation-2026",
@@ -566,6 +600,8 @@ export const blogPosts: BlogPost[] = [
     category: "AI Agents",
     excerpt: "AI agents are transforming small business operations in 2026. Learn how autonomous AI agents automate customer service, workflows, and boost efficiency.",
     readTime: "6 min read",
+  
+    image: "/images/blog/2026-02-27-ai-agents-small-business-automation-2026-header.webp",
   },
   {
     slug: "2026-02-26-lightweight-ai-automation-small-businesses",
@@ -574,6 +610,8 @@ export const blogPosts: BlogPost[] = [
     category: "AI Agents",
     excerpt: "Lightweight AI office automation tools are transforming how small businesses operate. Learn how these affordable, easy-to-use tools can boost efficiency.",
     readTime: "5 min read",
+  
+    image: "/images/blog/2026-02-26-lightweight-ai-automation-small-businesses-header.webp",
   },
   {
     slug: "2026-02-26-ai-agents-2026-small-businesses-guide",
@@ -582,6 +620,8 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "2026 is the year AI Agents go mainstream. Learn what they are, why they matter for small businesses, and practical ways to get started with automation.",
     readTime: "6 min read",
+  
+    image: "/images/blog/2026-02-26-ai-agents-2026-small-businesses-guide-header.webp",
   },
   {
     slug: "2026-02-25-generative-engine-optimization-small-business-guide",
@@ -590,6 +630,8 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "GEO (Generative Engine Optimization) is replacing SEO in 2026. Learn what this means for small businesses, how to prepare, and practical steps to stay visible.",
     readTime: "6 min read",
+  
+    image: "/images/blog/2026-02-25-generative-engine-optimization-small-business-guide-header.webp",
   },
   {
     slug: "2026-02-24-ai-agents-replacing-basic-work-small-businesses",
@@ -598,6 +640,8 @@ export const blogPosts: BlogPost[] = [
     category: "AI Agents",
     excerpt: "AI Agents are replacing basic work in 2026. Learn what this means for small businesses, how to leverage AI automation, and practical steps to get started.",
     readTime: "5 min read",
+  
+    image: "/images/blog/2026-02-24-ai-agents-replacing-basic-work-small-businesses-header.webp",
   },
   {
     slug: "2026-02-23-ai-tools-small-business-2026-guide",
@@ -606,6 +650,8 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "2026 is the year AI became accessible to small businesses. Discover lightweight, affordable AI tools delivering real results with adoption numbers and case studies.",
     readTime: "6 min read",
+  
+    image: "/images/blog/2026-02-23-ai-tools-small-business-2026-guide-header.webp",
   },
   {
     slug: "2026-02-23-ai-agents-small-business-guide",
@@ -622,6 +668,8 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "12 million small businesses need AI tools, but 90% lack the expertise. Discover the massive 2026 opportunity for AI implementation services.",
     readTime: "5 min read",
+  
+    image: "/images/blog/2026-02-22-small-business-ai-adoption-2026-opportunity-header.webp",
   },
   {
     slug: "2026-02-22-jetbrains-ai-free-tier",
@@ -630,6 +678,8 @@ export const blogPosts: BlogPost[] = [
     category: "News",
     excerpt: "JetBrains announces free AI tier for all IDEs. What this means for small business developers and how to access enterprise-grade AI coding tools at zero cost.",
     readTime: "5 min read",
+  
+    image: "/images/blog/2026-02-22-jetbrains-ai-free-tier-header.webp",
   },
   {
     slug: "2026-02-21-web-design-trends-ai-saves-12-hours-week",
@@ -638,6 +688,8 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "Discover how AI-powered web design is saving professionals 12 hours per week and helping small businesses test 42% more content.",
     readTime: "5 min read",
+  
+    image: "/images/blog/2026-02-21-web-design-trends-ai-saves-12-hours-week-header.webp",
   },
   {
     slug: "2026-02-20-zero-cost-ai-tools-small-businesses",
@@ -646,6 +698,8 @@ export const blogPosts: BlogPost[] = [
     category: "Tips",
     excerpt: "Discover zero-cost AI tools that are revolutionizing how small businesses operate\u2014no coding required.",
     readTime: "5 min read",
+  
+    image: "/images/blog/2026-02-20-zero-cost-ai-tools-small-businesses-header.webp",
   },
   {
     slug: "2026-02-20-ai-first-development-small-business-guide",
