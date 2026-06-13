@@ -28,6 +28,9 @@ export default function ContactPage() {
 
     // POST directly to CRM — creates lead instantly + email notification
     const CRM_URL = "https://intervals-gather-naturals-stores.trycloudflare.com";
+    // Get the selected option's TEXT (e.g. "AI Phone Agent — $697/mo") not the value
+    const serviceSelect = e.currentTarget.querySelector("#service") as HTMLSelectElement;
+    const serviceLabel = serviceSelect?.options[serviceSelect.selectedIndex]?.text || formData.get("service");
     fetch(`${CRM_URL}/api/lead`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -36,7 +39,7 @@ export default function ContactPage() {
         business_name: formData.get("business_name"),
         email: formData.get("email"),
         phone: formData.get("phone"),
-        service_interest: formData.get("service"),
+        service_interest: serviceLabel,
         best_time: formData.get("best_time"),
         message: formData.get("message"),
       }),
