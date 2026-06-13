@@ -44,7 +44,7 @@ export function Hero() {
             <div className="text-sm text-muted-foreground">Missed Calls</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-foreground">$297</div>
+            <div className="text-3xl font-bold text-foreground">$397</div>
             <div className="text-sm text-muted-foreground">/Month Starting</div>
           </div>
         </div>

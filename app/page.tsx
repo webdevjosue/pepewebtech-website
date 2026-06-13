@@ -91,7 +91,7 @@ export default function Home() {
               icon={Rocket}
               title="Professional Websites"
               description="Websites that rank on Google, load fast, and convert visitors into customers. From landing pages to full stores."
-              price="From $1,500"
+              price="From $1,497"
               features={[
                 "Custom design",
                 "Mobile responsive",
