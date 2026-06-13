@@ -7,13 +7,13 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Pricing — AI Employees & Web Design",
-  description: "AI Employees from $297/mo. AI chatbots, phone agents, and follow-up systems that work 24/7. Web design from $897. Transparent pricing, no hidden fees.",
+  description: "AI Employees from $397/mo. AI chatbots, phone agents, and follow-up systems that work 24/7. Web design from $897. Transparent pricing, no hidden fees.",
   alternates: {
     canonical: "/pricing",
   },
   openGraph: {
     title: "Pricing | PepeWebTech — AI Employees & Web Design",
-    description: "AI Employees from $297/mo. Chatbots, phone agents, follow-up systems. Web design from $897.",
+    description: "AI Employees from $397/mo. Chatbots, phone agents, follow-up systems. Web design from $1,497.",
     url: "https://pepewebtech.com/pricing",
     images: [
       {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const aiPlans = [
   {
     name: "AI Chatbot",
-    price: "$297",
+    price: "$397",
     period: "/mo",
     description: "Website AI Employee",
     featured: false,
@@ -44,7 +44,7 @@ const aiPlans = [
   },
   {
     name: "AI Phone Agent",
-    price: "$597",
+    price: "$697",
     period: "/mo",
     description: "Never miss a call again",
     featured: true,
@@ -60,7 +60,7 @@ const aiPlans = [
   },
   {
     name: "Full AI Package",
-    price: "$897",
+    price: "$997",
     period: "/mo",
     description: "Chatbot + Phone + Follow-Up",
     featured: false,
@@ -80,7 +80,7 @@ const aiPlans = [
 const webPlans = [
   {
     name: "Landing Page",
-    price: "$897",
+    price: "$997",
     period: "one-time",
     description: "High-converting single page",
     featured: false,
@@ -95,7 +95,7 @@ const webPlans = [
   },
   {
     name: "Business Website",
-    price: "$2,497",
+    price: "$2,997",
     period: "one-time",
     description: "Full site + AI auto-blog",
     featured: true,
@@ -111,8 +111,8 @@ const webPlans = [
   },
   {
     name: "Website + AI Employee",
-    price: "$3,497",
-    period: "+ $597/mo",
+    price: "$3,997",
+    period: "+ $697/mo",
     description: "The full package",
     featured: false,
     features: [

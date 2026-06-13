@@ -21,11 +21,11 @@ const localBusinessJsonLd = {
   description: "AI-powered web development for small businesses. Fast, affordable, modern websites.",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Southern California",
+    addressLocality: "Temecula",
     addressRegion: "CA",
     addressCountry: "US",
   },
-  priceRange: "$497-$1,497/mo (AI) | $1,500-$8,000 (Web)",
+  priceRange: "$397-$997/mo (AI) | $1,497-$4,997 (Web)",
   openingHours: "Mo-Su 00:00-23:59",
   sameAs: [],
   areaServed: {
@@ -65,7 +65,7 @@ export default function Home() {
               icon={Bot}
               title="AI Chatbot Employee"
               description="A chatbot trained on YOUR business that answers questions, captures leads, and books appointments — 24/7."
-              price="From $497/mo"
+              price="From $397/mo"
               features={[
                 "Custom-trained on your business",
                 "Lead capture & booking",
@@ -78,7 +78,7 @@ export default function Home() {
               icon={Phone}
               title="AI Phone Agent"
               description="Every missed call is lost revenue. Our AI answers every call, books appointments, and routes emergencies to you."
-              price="From $997/mo"
+              price="From $697/mo"
               features={[
                 "Answers every call 24/7",
                 "Books appointments automatically",
@@ -189,8 +189,9 @@ export default function Home() {
 
       {/* CTA */}
       <CTASection
-        title="Ready to Build Your Website?"
-        description="Get a free consultation and quote. No commitment required."
+        title="Ready to Stop Losing Customers?"
+        description="Free 15-minute strategy call. See our AI live, get your ROI estimate."
+        buttonText="Book Your Free Call"
       />
     </>
   );

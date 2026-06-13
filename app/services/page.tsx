@@ -61,29 +61,29 @@ export default function ServicesPage() {
               icon={Bot}
               title="AI Website Chatbot"
               description="A chatbot trained on YOUR business. Answers questions, captures leads, books appointments — 24/7. No more lost website visitors."
-              price="$297/mo"
+              price="$397/mo"
               features={["Custom-trained on your business", "Lead capture & qualification", "Appointment booking", "Works 24/7, instant responses", "Bilingual English/Spanish"]}
             />
             <ServiceCard
               icon={Phone}
               title="AI Phone Agent"
               description="Missed calls = missed money. Our AI answers every call in under 60 seconds, handles booking, and routes emergencies to you."
-              price="$597/mo"
+              price="$697/mo"
               features={["Answers every call, 24/7", "Books appointments automatically", "Handles FAQs and pricing", "Routes urgent calls to your phone", "Call recording & transcripts"]}
             />
             <ServiceCard
               icon={MessageSquare}
               title="AI Follow-Up System"
               description="80% of sales need 5+ follow-ups. Our AI sends personalized texts and emails automatically so no lead goes cold."
-              price="$497/mo"
+              price="$397/mo"
               features={["Automated SMS follow-up", "Email nurture sequences", "Re-engagement campaigns", "Review request automation", "CRM integration"]}
             />
             <ServiceCard
               icon={Zap}
               title="Full AI Employee Package"
               description="Chatbot + Phone Agent + Follow-Up System. Everything working together. One setup, total coverage."
-              price="$897/mo"
-              features={["All three AI employees", "Unified dashboard", "Priority support", "Monthly performance reports", "Free setup (normally $997)"]}
+              price="$997/mo"
+              features={["All three AI employees", "Unified dashboard", "Priority support", "Monthly performance reports", "Free setup (normally $497)"]}
             />
           </div>
         </div>
@@ -109,14 +109,14 @@ export default function ServicesPage() {
               icon={Rocket}
               title="Landing Pages"
               description="Single-page sites designed to convert. Perfect for launching new products, services, or campaigns. Fast delivery, maximum impact."
-              price="From $897"
+              price="From $1,497"
               features={["Single page design", "Mobile responsive", "Contact form", "SEO basics", "Free hosting setup"]}
             />
             <ServiceCard
               icon={Briefcase}
               title="Business Websites"
               description="Professional multi-page websites with blog, contact forms, analytics, and AI-powered auto-updates."
-              price="From $2,497"
+              price="From $2,997"
               features={["Up to 10 pages", "Blog with auto-publishing", "Full SEO setup", "Analytics dashboard", "30-day support"]}
             />
             <ServiceCard
@@ -159,7 +159,7 @@ export default function ServicesPage() {
             </div>
             <div>
               <p className="font-semibold">With AI: Every call answered, every lead followed up</p>
-              <p className="text-muted-foreground">AI Employee cost: $597/month = $7,164/year. <strong>ROI: 1,350%</strong></p>
+              <p className="text-muted-foreground">AI Employee cost: $697/month = $8,364/year. <strong>ROI: 1,350%</strong></p>
             </div>
             </div>
           </div>

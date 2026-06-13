@@ -1,17 +1,17 @@
 import { FeatureCard } from "@/components/feature-card";
 import { CTASection } from "@/components/cta-section";
 import type { Metadata } from "next";
-import { MapPin, Zap, DollarSign, Smartphone, Lock } from "lucide-react";
+import { MapPin, Zap, DollarSign, Smartphone, Lock, Code2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "PepeWebTech is a Southern California-based digital agency. AI-powered web development for small businesses.",
+  description: "PepeWebTech is a Temecula, CA-based agency helping small businesses with AI employees, websites, and automation. Local, personal, affordable.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
     title: "About | PepeWebTech",
-    description: "PepeWebTech is a Southern California-based digital agency. AI-powered web development for small businesses.",
+    description: "PepeWebTech is a Temecula, CA-based agency helping small businesses with AI employees, websites, and automation.",
     url: "https://pepewebtech.com/about",
     images: [
       {
@@ -24,8 +24,6 @@ export const metadata: Metadata = {
   },
 };
 
-// no stats array — rendered inline
-
 export default function AboutPage() {
   return (
     <>
@@ -35,26 +33,29 @@ export default function AboutPage() {
             About
           </span>
           <h1 className="mt-3 text-4xl md:text-5xl font-bold">
-            Built by Developers, for Businesses
+            Your Neighbor. Your AI Partner.
           </h1>
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            We make professional web development accessible to every small business
+            Local, personal, and obsessed with helping Temecula businesses grow
           </p>
         </div>
       </section>
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Our Mission</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Meet Josue</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              PepeWebTech is a service of <strong className="text-foreground">Josue Zazueta LLC</strong>, a Southern California-based digital agency. We combine cutting-edge AI tools with years of development experience to deliver websites that work.
+              I&apos;m <strong className="text-foreground">Josue Zazueta</strong>, and I run PepeWebTech right here in <strong className="text-foreground">Temecula, California</strong>. I built this company because I watched local businesses lose customers to missed calls, slow responses, and outdated websites — while big agencies charged $20,000+ for work that should cost a fraction of that.
             </p>
             <p>
-              Our mission is simple: make professional web development accessible to every small business. No more $20,000 quotes. No more 3-month timelines. Just fast, affordable, quality work.
+              I work with AI tools every single day. My own operation runs on a fleet of 15 AI agents that handle research, content, monitoring, and automation 24/7. I&apos;m not selling you something I don&apos;t use myself — I&apos;m selling you the same advantage my own business runs on.
             </p>
             <p>
-              We believe that small businesses deserve the same quality web presence as large corporations—without the enterprise price tag. By leveraging AI-powered development tools, we&apos;re able to deliver professional results at a fraction of the traditional cost and time.
+              When you hire PepeWebTech, you&apos;re not getting a faceless agency or a call center. You&apos;re getting me — a neighbor in Temecula who will personally set up your AI employee, train it on your business, and make sure it works. And if something goes wrong, you call or text me directly.
+            </p>
+            <p>
+              I&apos;m currently taking on my first 10 founding clients at special rates. After that, prices go up. If you&apos;ve been thinking about getting an AI employee or a new website, now is the time.
             </p>
           </div>
 
@@ -62,9 +63,9 @@ export default function AboutPage() {
             <div>
               <div className="text-2xl font-bold flex items-center justify-center gap-2">
                 <MapPin className="h-6 w-6" aria-hidden="true" />
-                <span>SoCal</span>
+                <span>Temecula</span>
               </div>
-              <div className="text-sm text-muted-foreground">Based in SoCal</div>
+              <div className="text-sm text-muted-foreground">Locally Based</div>
             </div>
             <div>
               <div className="text-2xl font-bold">2026</div>
@@ -72,14 +73,14 @@ export default function AboutPage() {
             </div>
             <div>
               <div className="text-2xl font-bold flex items-center justify-center gap-2">
-                <Zap className="h-6 w-6" aria-hidden="true" />
-                <span>AI</span>
+                <Code2 className="h-6 w-6" aria-hidden="true" />
+                <span>15</span>
               </div>
-              <div className="text-sm text-muted-foreground">AI Powered</div>
+              <div className="text-sm text-muted-foreground">AI Agents Running</div>
             </div>
             <div>
-              <div className="text-2xl font-bold">50+</div>
-              <div className="text-sm text-muted-foreground">Projects</div>
+              <div className="text-2xl font-bold">1-on-1</div>
+              <div className="text-sm text-muted-foreground">Founder Support</div>
             </div>
           </div>
         </div>
@@ -95,12 +96,12 @@ export default function AboutPage() {
               Why PepeWebTech?
             </h2>
             <p className="mt-3 text-muted-foreground">
-              We use cutting-edge AI tools to deliver better results, faster
+              AI tools let us deliver better results, faster, at lower cost
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-5xl mx-auto">
-            <FeatureCard icon={Zap} title="4x Faster" description="AI-assisted development means we build in days what others take weeks to complete." />
-            <FeatureCard icon={DollarSign} title="50% Cheaper" description="Efficiency savings passed directly to you. Enterprise quality at small business prices." />
+            <FeatureCard icon={Zap} title="Live in Days" description="AI-assisted development means we build in days what others take weeks to complete." />
+            <FeatureCard icon={DollarSign} title="Half the Price" description="Efficiency savings passed directly to you. Compare our quotes to any agency in the Inland Empire." />
             <FeatureCard icon={Smartphone} title="Mobile-First" description="Every site is built mobile-responsive from day one. No extra cost, no compromises." />
             <FeatureCard icon={Lock} title="Secure Hosting" description="Free SSL, automatic backups, and enterprise-grade security included at no extra charge." />
           </div>
@@ -108,8 +109,9 @@ export default function AboutPage() {
       </section>
 
       <CTASection
-        title="Want to Work With Us?"
-        description="Let's build something great together."
+        title="Ready to Stop Losing Customers?"
+        description="Free 15-minute strategy call. See our AI live, get your ROI estimate."
+        buttonText="Book Your Free Call"
       />
     </>
   );
