@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-06-13-schema-markup-ai-search-small-business",
+    title: "Why AI Search Can't Find Your Small Business (And How Schema Markup Fixes It)",
+    date: "Jun 13, 2026",
+    category: "SEO & Marketing",
+    excerpt: "AI Overviews appear in 25% of Google searches, and 83% end without a click. Schema markup is the free, under-an-hour fix that helps AI systems find and cite your small business. Step-by-step implementation guide.",
+    readTime: "9 min read",
+    image: "/images/blog/2026-06-13-schema-markup-ai-search-small-business-header.webp",
+  },
+  {
     slug: "2026-06-11-microsoft-build-2026-windows-agent-platform-small-business",
     title: "Microsoft Just Turned Windows Into an AI Agent Platform: What Small Businesses Need to Know",
     date: "Jun 11, 2026",
