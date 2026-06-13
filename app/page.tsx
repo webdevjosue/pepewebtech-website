@@ -54,7 +54,7 @@ export default function Home() {
               What We Do
             </span>
             <h2 className="mt-3 text-3xl md:text-4xl font-bold text-foreground">
-              AI Employees + Websites
+              Never Miss Another Customer
             </h2>
             <p className="mt-3 text-muted-foreground">
               Your business never sleeps. Neither do our AI agents.
@@ -101,6 +101,20 @@ export default function Home() {
               ]}
             />
           </div>
+          <div className="mt-8 trust-badges">
+            <span className="trust-badge">
+              <Zap className="h-3.5 w-3.5" />
+              Built in Days, Not Months
+            </span>
+            <span className="trust-badge">
+              <Smartphone className="h-3.5 w-3.5" />
+              Mobile-First Design
+            </span>
+            <span className="trust-badge">
+              <Lock className="h-3.5 w-3.5" />
+              Free SSL &amp; Hosting
+            </span>
+          </div>
           <div className="mt-12 text-center">
             <Button asChild variant="outline">
               <Link href="/services">View All Services &rarr;</Link>
@@ -109,53 +123,8 @@ export default function Home() {
         </div>
       </section>
 
-      <hr className="section-divider" />
-
-      {/* Why Us */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="text-xs font-bold text-primary uppercase tracking-widest">
-              Why PepeWebTech
-            </span>
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-foreground">
-              The AI Advantage
-            </h2>
-            <p className="mt-3 text-muted-foreground">
-              We use cutting-edge AI tools to deliver better results, faster
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-            <FeatureCard
-              icon={Zap}
-              title="4x Faster"
-              description="AI-assisted development means we build in days what others take weeks to complete."
-            />
-            <FeatureCard
-              icon={DollarSign}
-              title="50% Cheaper"
-              description="Efficiency savings passed directly to you. Enterprise quality at small business prices."
-            />
-            <FeatureCard
-              icon={Smartphone}
-              title="Mobile-First"
-              description="Every site is built mobile-responsive from day one. No extra cost, no compromises."
-            />
-            <FeatureCard
-              icon={Lock}
-              title="Secure Hosting"
-              description="Free SSL, automatic backups, and enterprise-grade security included at no extra charge."
-            />
-          </div>
-        </div>
-      </section>
-
-      <hr className="section-divider" />
-
       {/* Portfolio */}
       <Showcase />
-
-      <hr className="section-divider" />
 
       {/* Blog */}
       <section className="py-16 md:py-24 bg-muted/50">
@@ -184,7 +153,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Founding Client Program */}
       <Testimonials />
 
       {/* CTA */}

@@ -13,11 +13,36 @@ export function Footer() {
               PepeWebTech
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
-              AI-powered web development for small businesses.
+              AI-powered web development for small businesses. Serving Temecula, Murrieta &amp; Southern California.
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-foreground mb-3">Services</h4>
+            <h4 className="font-semibold text-foreground mb-3">AI Employees</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  AI Chatbot
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  AI Phone Agent
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Full AI Package
+                </Link>
+              </li>
+              <li>
+                <Link href="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Pricing
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-foreground mb-3">Web Design</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -42,8 +67,16 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-foreground mb-3">Company</h4>
+            <h4 className="font-semibold text-foreground mb-3">Connect</h4>
             <ul className="space-y-2">
+              <li>
+                <a
+                  href="mailto:info@pepewebtech.com"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  info@pepewebtech.com
+                </a>
+              </li>
               <li>
                 <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   About
@@ -61,26 +94,13 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          <div>
-            <h4 className="font-semibold text-foreground mb-3">Connect</h4>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="mailto:info@pepewebtech.com"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Email
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
         <div className="mt-10 pt-6 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            &copy; 2026 Josue Zazueta LLC. All rights reserved.
+            &copy; 2026 PepeWebTech. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground mt-1">
-            PepeWebTech is a service of Josue Zazueta LLC
+            Based in Temecula, California
           </p>
         </div>
       </div>

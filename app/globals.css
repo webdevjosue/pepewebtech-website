@@ -13,7 +13,7 @@
     --secondary: 210 40% 96%;
     --secondary-foreground: 222 47% 11%;
     --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted-foreground: 215 16% 40%;
     --accent: 189 94% 43%;
     --accent-foreground: 0 0% 100%;
     --border: 214 32% 91%;
@@ -275,4 +275,37 @@ section.bg-primary\/5 {
   section .grid > [class*="border-primary"] {
     @apply scale-[1.02] shadow-lg;
   }
+}
+
+/* ===== VISUAL REFINEMENT ADDITIONS ===== */
+
+/* Card hover lift effect for service/pricing cards */
+.card-hover {
+  @apply transition-all duration-200;
+}
+.card-hover:hover {
+  @apply -translate-y-1 shadow-lg;
+}
+
+/* Pricing featured card — stronger visual distinction */
+section [class*="border-primary"]:not(.nav-glass) {
+  @apply ring-2 ring-primary/20 shadow-md;
+}
+
+/* Trust badges row */
+.trust-badges {
+  @apply flex flex-wrap items-center justify-center gap-4 mt-6;
+}
+.trust-badge {
+  @apply inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground bg-muted px-3 py-1.5 rounded-full;
+}
+
+/* Hero spacing fix — more breathing room */
+.hero-section > div > p {
+  @apply mt-8;
+}
+
+/* Pricing section divider — clear separation between AI and Web */
+.pricing-divider {
+  @apply my-8 border-t border-border;
 }

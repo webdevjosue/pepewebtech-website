@@ -169,6 +169,24 @@ export default function PricingPage() {
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
             No hidden fees. No contracts. Cancel anytime.
           </p>
+          <div className="trust-badges">
+            <span className="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.66 0 3.22.45 4.56 1.24"/></svg>
+              30-Day Money-Back
+            </span>
+            <span className="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              No Contract
+            </span>
+            <span className="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Month-to-Month
+            </span>
+            <span className="trust-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+              Free Setup (First 10 Clients)
+            </span>
+          </div>
         </div>
       </section>
 
@@ -231,6 +249,7 @@ export default function PricingPage() {
       </section>
 
       {/* Web Design Plans */}
+      <hr className="section-divider pricing-divider" />
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">

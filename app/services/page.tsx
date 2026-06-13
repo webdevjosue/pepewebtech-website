@@ -36,7 +36,7 @@ export default function ServicesPage() {
             Websites + AI Employees for Your Business
           </h1>
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            Your competitors are still paying humans to answer phones at 2am. You won&apos;t have to.
+            While your competitors miss 4 out of 10 calls after hours, you&apos;ll capture every single one.
           </p>
         </div>
       </section>
@@ -83,7 +83,7 @@ export default function ServicesPage() {
               title="Full AI Employee Package"
               description="Chatbot + Phone Agent + Follow-Up System. Everything working together. One setup, total coverage."
               price="$997/mo"
-              features={["All three AI employees", "Unified dashboard", "Priority support", "Monthly performance reports", "Free setup (normally $497)"]}
+              features={["All three AI employees", "Unified dashboard", "Priority support", "Monthly performance reports", "Free setup (save $497)"]}
             />
           </div>
         </div>
@@ -137,7 +137,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ROI Proof */}
+      {/* ROI Proof — fixed math */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold">
@@ -149,8 +149,8 @@ export default function ServicesPage() {
               <X className="h-5 w-5" strokeWidth={3} />
             </div>
             <div>
-              <p className="font-semibold">Without AI: You miss 40% of calls after hours</p>
-              <p className="text-muted-foreground">At $200 average job value × 10 missed calls/week = <strong>$104,000/year lost</strong></p>
+              <p className="font-semibold">Without AI: You miss ~4 calls/week after hours</p>
+              <p className="text-muted-foreground">At $150 average job value × 4 calls × 52 weeks = <strong>$31,200/year lost</strong></p>
             </div>
             </div>
             <div className="flex gap-4 items-start">
@@ -159,7 +159,7 @@ export default function ServicesPage() {
             </div>
             <div>
               <p className="font-semibold">With AI: Every call answered, every lead followed up</p>
-              <p className="text-muted-foreground">AI Employee cost: $697/month = $8,364/year. <strong>ROI: 1,350%</strong></p>
+              <p className="text-muted-foreground">AI Phone Agent cost: $697/month = $8,364/year. You only need <strong>1 recovered call/month to break even.</strong> Everything else is profit.</p>
             </div>
             </div>
           </div>
@@ -177,7 +177,7 @@ export default function ServicesPage() {
               See What We Build
             </h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-              Not mockups. Not templates. Real, live sites we designed, built, and shipped.
+              Real, live sites we designed, built, and shipped.
             </p>
           </div>
 
@@ -211,15 +211,15 @@ export default function ServicesPage() {
                   100% client-side processing — zero tracking, zero data leaving the browser.
                 </p>
 
-                {/* Features grid */}
+                {/* Outcome-focused features */}
                 <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="flex items-center gap-2 text-sm">
-                    <ToolIcon className="h-4 w-4 text-primary shrink-0" />
-                    <span>12 Free Tools</span>
+                    <Gauge className="h-4 w-4 text-primary shrink-0" />
+                    <span>Sub-second Load</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <Layout className="h-4 w-4 text-primary shrink-0" />
-                    <span>Custom SVG Icons</span>
+                    <span>SEO Optimized</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <Moon className="h-4 w-4 text-primary shrink-0" />
@@ -228,39 +228,6 @@ export default function ServicesPage() {
                   <div className="flex items-center gap-2 text-sm">
                     <Shield className="h-4 w-4 text-primary shrink-0" />
                     <span>100% Client-Side</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Gauge className="h-4 w-4 text-primary shrink-0" />
-                    <span>Sub-second Load</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <ExternalLink className="h-4 w-4 text-primary shrink-0" />
-                    <span>30+ Curated Links</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Shield className="h-4 w-4 text-primary shrink-0" />
-                    <span>SEO Optimized</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Gauge className="h-4 w-4 text-primary shrink-0" />
-                    <span>Static Export</span>
-                  </div>
-                </div>
-
-                {/* Tech stack */}
-                <div className="mt-6 pt-6 border-t border-border">
-                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
-                    Tech Stack
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {["Next.js 14", "TypeScript", "Tailwind CSS", "Vercel", "Static Export", "SEO"].map(tech => (
-                      <span
-                        key={tech}
-                        className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"
-                      >
-                        {tech}
-                      </span>
-                    ))}
                   </div>
                 </div>
               </div>
@@ -272,7 +239,7 @@ export default function ServicesPage() {
       <CTASection
         title="Ready to Stop Losing Customers?"
         description="Free 15-minute strategy call. We'll show you exactly how much money you're losing and how to fix it."
-        buttonText="Get Free Strategy Call"
+        buttonText="Book Your Free Call"
       />
     </>
   );

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Globe, Zap, Scissors, Rocket } from "lucide-react";
+import { Globe, Zap, Scissors } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 interface ShowcaseItem {
@@ -19,19 +19,19 @@ const showcaseItems: ShowcaseItem[] = [
     icon: Globe,
     title: "PepeWebTech",
     description:
-      "Complete business platform with modern design, dark/light mode, pricing, and 50+ blog posts.",
-    tags: ["HTML5", "CSS3", "JavaScript"],
+      "Complete business platform with modern design, dark/light mode, pricing, and 80+ blog posts.",
+    tags: ["Fast Loading", "SEO Optimized", "Responsive"],
     href: "https://www.pepewebtech.com",
     external: true,
     thumbnail: "/images/pepewebtech-thumb.png",
   },
   {
     icon: Zap,
-    title: "Web Dev Josue",
+    title: "PepeTech",
     description:
-      "Modern responsive portfolio showcasing full-stack development skills and project history.",
-    tags: ["HTML5", "CSS3", "JavaScript", "Tailwind"],
-    href: "https://webdevjosue.github.io",
+      "Developer tools platform with 12 free utilities. 100% client-side processing, zero tracking.",
+    tags: ["SEO Optimized", "Sub-second Load", "Custom SVG Icons"],
+    href: "https://pepetech.com",
     external: true,
     thumbnail: "/images/portfolio-thumb.png",
   },
@@ -39,19 +39,11 @@ const showcaseItems: ShowcaseItem[] = [
     icon: Scissors,
     title: "The Butchers Barbershop",
     description:
-      "Premium barbershop website in Murrieta, CA. Established 2021. Modern design with booking and services showcase.",
-    tags: ["Business", "Booking", "Responsive"],
+      "Premium barbershop website in Murrieta, CA. Modern design with booking and services showcase.",
+    tags: ["Local Business", "Booking", "Mobile Optimized"],
     href: "https://webpage-eight-bice.vercel.app",
     external: true,
     thumbnail: "/images/butchers-thumb.png",
-  },
-  {
-    icon: Rocket,
-    title: "Your Project Here",
-    description:
-      "Have a vision? We build custom websites, apps, and e-commerce solutions tailored to your business.",
-    tags: ["Web", "App", "E-Commerce"],
-    href: "/contact",
   },
 ];
 
@@ -72,7 +64,7 @@ export function Showcase() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {showcaseItems.map((item) => (
-            <Card key={item.title} className="overflow-hidden hover:shadow-lg transition-shadow">
+            <Card key={item.title} className="overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
               <CardHeader className="pb-0 pt-0">
                 {item.thumbnail ? (
                   <img
@@ -106,21 +98,11 @@ export function Showcase() {
                   rel={item.external ? "noopener noreferrer" : undefined}
                   className="text-sm font-semibold text-primary hover:underline"
                 >
-                  {item.external ? "View Live Site →" : "Start Your Project →"}
+                  View Live Site →
                 </Link>
               </CardContent>
             </Card>
           ))}
-        </div>
-        <div className="mt-12 text-center">
-          <Link
-            href="https://webdevjosue.github.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm hover:bg-accent hover:text-accent-foreground transition-colors"
-          >
-            View Full Portfolio →
-          </Link>
         </div>
       </div>
     </section>
