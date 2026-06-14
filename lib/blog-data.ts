@@ -669,6 +669,7 @@ export const blogPosts: BlogPost[] = [
     category: "Guide",
     excerpt: "AI Agents are the next evolution of AI. Unlike chatbots that just talk, AI Agents can actually do tasks. Learn what this means for small businesses and how to start.",
     readTime: "6 min read",
+    image: "/images/blog/2026-02-23-ai-agents-small-business-guide-header.webp",
   },
   {
     slug: "2026-02-22-small-business-ai-adoption-2026-opportunity",
