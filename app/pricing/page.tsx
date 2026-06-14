@@ -199,18 +199,14 @@ export default function PricingPage() {
             </span>
             <h2 className="mt-2 text-2xl font-bold">AI That Works 24/7</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto items-stretch">
             {aiPlans.map((plan) => (
               <Card
                 key={plan.name}
-                className={
-                  plan.featured
-                    ? "border-primary shadow-lg relative"
-                    : ""
-                }
+                className={`flex flex-col h-full relative transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${plan.featured ? "border-primary shadow-lg md:scale-[1.04] md:z-10 ring-2 ring-primary/20" : ""}`}
               >
                 {plan.featured && (
-                  <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
                     Most Popular
                   </Badge>
                 )}
@@ -224,24 +220,24 @@ export default function PricingPage() {
                     {plan.description}
                   </p>
                 </CardHeader>
-                <CardContent className="pt-6">
-                  <ul className="space-y-3">
+                <CardContent className="pt-6 flex-1 flex flex-col">
+                  <ul className="space-y-3 flex-1">
                     {plan.features.map((feature) => (
                       <li
                         key={feature}
                         className="text-sm text-muted-foreground flex items-start gap-2"
                       >
-                        <span className="text-primary mt-0.5" aria-hidden="true">&#10003;</span>
-                        {feature}
+                        <span className="text-primary mt-0.5 flex-shrink-0" aria-hidden="true">&#10003;</span>
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
+                  <CardFooter className="px-0 pt-6">
+                    <Button asChild className="w-full" variant={plan.featured ? "default" : "outline"}>
+                      <Link href="/contact">Get Started</Link>
+                    </Button>
+                  </CardFooter>
                 </CardContent>
-                <CardFooter>
-                  <Button asChild className="w-full" variant={plan.featured ? "default" : "outline"}>
-                    <Link href="/contact">Get Started</Link>
-                  </Button>
-                </CardFooter>
               </Card>
             ))}
           </div>
@@ -258,18 +254,14 @@ export default function PricingPage() {
             </span>
             <h2 className="mt-2 text-2xl font-bold">Professional Websites</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto items-stretch">
             {webPlans.map((plan) => (
               <Card
                 key={plan.name}
-                className={
-                  plan.featured
-                    ? "border-primary shadow-lg relative"
-                    : ""
-                }
+                className={`flex flex-col h-full relative transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${plan.featured ? "border-primary shadow-lg md:scale-[1.04] md:z-10 ring-2 ring-primary/20" : ""}`}
               >
                 {plan.featured && (
-                  <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
                     Best Value
                   </Badge>
                 )}
@@ -283,24 +275,24 @@ export default function PricingPage() {
                     {plan.description}
                   </p>
                 </CardHeader>
-                <CardContent className="pt-6">
-                  <ul className="space-y-3">
+                <CardContent className="pt-6 flex-1 flex flex-col">
+                  <ul className="space-y-3 flex-1">
                     {plan.features.map((feature) => (
                       <li
                         key={feature}
                         className="text-sm text-muted-foreground flex items-start gap-2"
                       >
-                        <span className="text-primary mt-0.5" aria-hidden="true">&#10003;</span>
-                        {feature}
+                        <span className="text-primary mt-0.5 flex-shrink-0" aria-hidden="true">&#10003;</span>
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
+                  <CardFooter className="px-0 pt-6">
+                    <Button asChild className="w-full" variant={plan.featured ? "default" : "outline"}>
+                      <Link href="/contact">Get Started</Link>
+                    </Button>
+                  </CardFooter>
                 </CardContent>
-                <CardFooter>
-                  <Button asChild className="w-full" variant={plan.featured ? "default" : "outline"}>
-                    <Link href="/contact">Get Started</Link>
-                  </Button>
-                </CardFooter>
               </Card>
             ))}
           </div>
