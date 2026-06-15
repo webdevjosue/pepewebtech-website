@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-06-15-zai-glm-coding-plan-review-small-business",
+    title: "Z.AI's GLM Coding Plan: The $18/Month AI Deal Most Small Businesses Are Missing",
+    date: "Jun 15, 2026",
+    category: "AI Tools",
+    excerpt: "GLM-5.2 with 1M token context, image generation, and full API access for $18/month. We run our entire 16-agent business on it. Here's the honest breakdown — specs, use cases, and limitations.",
+    readTime: "5 min read",
+    image: "/images/blog/2026-06-15-zai-glm-coding-plan-review-small-business-header.webp",
+  },
+  {
     slug: "2026-06-13-schema-markup-ai-search-small-business",
     title: "Why AI Search Can't Find Your Small Business (And How Schema Markup Fixes It)",
     date: "Jun 13, 2026",

@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Pricing — AI Employees & Web Design",
-  description: "AI Employees from $397/mo. AI chatbots, phone agents, and follow-up systems that work 24/7. Web design from $897. Transparent pricing, no hidden fees.",
+  description: "AI Employees from $397/mo. AI chatbots, phone agents, and follow-up systems that work 24/7. Web design from $1,497. Transparent pricing, no hidden fees.",
   alternates: {
     canonical: "/pricing",
   },
@@ -80,7 +80,7 @@ const aiPlans = [
 const webPlans = [
   {
     name: "Landing Page",
-    price: "$997",
+    price: "$1,497",
     period: "one-time",
     description: "High-converting single page",
     featured: false,
@@ -110,20 +110,20 @@ const webPlans = [
     ],
   },
   {
-    name: "Website + AI Employee",
-    price: "$3,997",
-    period: "+ $697/mo",
-    description: "The full package",
+    name: "E-Commerce Store",
+    price: "$4,997",
+    period: "one-time",
+    description: "Sell online with everything included",
     featured: false,
     features: [
-      "Business website (10+ pages)",
-      "AI Phone Agent included",
-      "AI Chatbot on site",
-      "Auto blog + SEO",
-      "SMS follow-up system",
-      "3 revision rounds",
+      "Unlimited products",
+      "Payment processing (Stripe)",
+      "Inventory management",
+      "Order tracking & emails",
+      "Mobile responsive design",
+      "Full SEO setup",
+      "2 revision rounds",
       "60-day support",
-      "Save $1,000 vs buying separate",
     ],
   },
 ];
