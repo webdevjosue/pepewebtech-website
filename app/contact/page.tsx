@@ -26,8 +26,13 @@ export default function ContactPage() {
     btn.textContent = "Sending...";
     btn.disabled = true;
 
-    // POST directly to CRM — creates lead instantly + email notification
-    const CRM_URL = "https://intervals-gather-naturals-stores.trycloudflare.com";
+    // POST directly to CRM — creates lead instantly + email notification.
+    // URL is env-driven so a rotated Cloudflare tunnel URL becomes an env
+    // update (NEXT_PUBLIC_CRM_URL) instead of a code change + redeploy.
+    const CRM_URL = (
+      process.env.NEXT_PUBLIC_CRM_URL ||
+      "https://intervals-gather-naturals-stores.trycloudflare.com"
+    ).replace(/\/+$/, "");
     // Get the selected option's TEXT (e.g. "AI Phone Agent — $697/mo") not the value
     const serviceSelect = e.currentTarget.querySelector("#service") as HTMLSelectElement;
     const serviceLabel = serviceSelect?.options[serviceSelect.selectedIndex]?.text || formData.get("service");

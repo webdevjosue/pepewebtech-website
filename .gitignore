@@ -3,6 +3,8 @@ node_modules
 .next
 out
 legacy
+# Local env files (hold secrets — never commit). NEXT_PUBLIC_CRM_URL lives here.
+.env*.local
 *.tsbuildinfo
 next-env.d.ts
 MOBILE-AUDIT.md
