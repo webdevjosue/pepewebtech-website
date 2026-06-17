@@ -1,34 +1,45 @@
-# PepeWebTech Website -- Agent Context
+# PepeWebTech Website — Agent Context
 
 ## Project Info
-- **Type:** Static website (HTML/CSS/JS) hosted on Vercel
+- **Type:** Business website + blog (currently Next.js 14)
 - **Location:** /home/pepe-agent/pepewebtech-website
-- **Domain:** pepewebtech.com
-- **Repo:** github.com/webdevjosue/pepewebtech-website
+- **Domain:** pepewebtech.com (Vercel auto-deploy from main)
 - **Obsidian Vault:** /home/pepe-agent/Pepe-Agent
 
-## Business Context
-See Obsidian vault for full business documentation:
-- /home/pepe-agent/Pepe-Agent/Home.md -- Project overview
-- /home/pepe-agent/Pepe-Agent/Revenue Roadmap.md -- Monetization
-- /home/pepe-agent/Pepe-Agent/Domain Portfolio.md -- Domain inventory
+## Current Stack (As-Built)
+- Next.js 14 (static export to `out/`)
+- Deploy: `git push origin main` → Vercel auto-deploys
+- Blog: HTML files in `content/blog/`
+- No database, no server-side runtime
 
-## Additional Context
-- See ralph/AGENTS.md for detailed codebase patterns
-- Blog pipeline: HTML posts in blog/posts/
-- PRD phases in ralph/prd-phase-*.json
-- Worktree paths: /home/pepe-agent/worktrees/pepewebtech-coder, pepewebtech-content, pepewebtech-verifier
+## Build Commands
+```bash
+npm run build     # Build static site to out/
+npm run lint      # ESLint check
+npm run dev       # Local dev server
+```
 
-## Conventions
-- No framework -- vanilla HTML/CSS/JS only
-- CSS custom properties in :root for theming
-- Mobile-first responsive design
-- No build step (static files served directly)
-- Commits follow conventional format: type: description
+## Rules
+- **No fixed stack for future projects** — if rebuilding, research best approach first
+- Icons not emojis (inline SVG only)
+- No placeholder `href='#'` links
+- No fake testimonials or inflated numbers
+- All blog posts include mobile-fixes.css
+- Commits: `type: description` (feat/fix/refactor/docs)
+- Push to main triggers Vercel deploy — be careful
 
-## Quality Checks
-- No placeholder href='#' links
-- All blog posts have mobile-fixes.css
+## Affiliate Links
+- Z.AI referral: `https://z.ai/subscribe?ic=DQQVB6KRO6` (NOT doubled)
+- KNOWN BUG: blog post `2026-06-15-zai-glm-coding-plan-review-small-business.html` has doubled code — needs fix
+
+## Pricing (Must Stay Consistent)
+- AI Chatbot: $397/mo | Phone Agent: $697/mo | Follow-Up: $397/mo | Full: $997/mo
+- Landing: $1,497 | Business: $2,997 | E-Commerce: $4,997
+
+## Coordination
+- Before working: read ~/Pepe-Agent/Agent-Logs/coder.md (or content.md)
+- After working: append to your Agent-Log with files changed + status
+- See ~/Pepe-Agent/PepeWebTech Project.md for full docs
 
 ## Owner
-Josue Zazueta LLC -- info@pepewebtech.com
+Josue Zazueta — info@pepewebtech.com
