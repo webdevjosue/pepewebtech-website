@@ -30,7 +30,7 @@ npm run dev       # Local dev server
 
 ## Affiliate Links
 - Z.AI referral: `https://z.ai/subscribe?ic=DQQVB6KRO6` (NOT doubled)
-- KNOWN BUG: blog post `2026-06-15-zai-glm-coding-plan-review-small-business.html` has doubled code — needs fix
+- FIXED Jun 17: blog post affiliate link typo corrected (was DQQVB6KRO6KRO6)
 
 ## Pricing (Must Stay Consistent)
 - AI Chatbot: $397/mo | Phone Agent: $697/mo | Follow-Up: $397/mo | Full: $997/mo
