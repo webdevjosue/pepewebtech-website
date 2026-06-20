@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-06-20-google-search-console-ai-reports-small-business-guide",
+    title: "Google Just Gave You AI Search Data (And a Kill Switch) — What Small Businesses Should Do",
+    date: "Jun 20, 2026",
+    category: "SEO & Marketing",
+    excerpt: "Google Search Console now shows AI Overviews and AI Mode impressions for your website — plus a toggle to opt out. Here is what the new Gen AI reports mean and what small business owners should do with them.",
+    readTime: "8 min read",
+    image: "/images/blog/2026-06-20-google-search-console-ai-reports-small-business-guide-header.webp",
+  },
+  {
     slug: "2026-06-15-zai-glm-coding-plan-review-small-business",
     title: "Z.AI's GLM Coding Plan: The $18/Month AI Deal Most Small Businesses Are Missing",
     date: "Jun 15, 2026",
