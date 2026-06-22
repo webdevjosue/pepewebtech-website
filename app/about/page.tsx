@@ -24,9 +24,57 @@ export const metadata: Metadata = {
   },
 };
 
+const aboutPageJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://pepewebtech.com/about#aboutpage",
+      url: "https://pepewebtech.com/about",
+      name: "About PepeWebTech",
+      description: "PepeWebTech is a Temecula, CA-based agency helping small businesses with AI employees, websites, and automation.",
+      mainEntity: {
+        "@id": "https://pepewebtech.com/about#person",
+      },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://pepewebtech.com/about#person",
+      name: "Josue Zazueta",
+      jobTitle: "Founder",
+      worksFor: {
+        "@type": "Organization",
+        name: "PepeWebTech",
+        url: "https://pepewebtech.com",
+      },
+      url: "https://pepewebtech.com/about",
+      image: "https://pepewebtech.com/images/pepewebtech-thumb.png",
+      email: "info@pepewebtech.com",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Temecula",
+        addressRegion: "CA",
+        addressCountry: "US",
+      },
+      knowsAbout: [
+        "AI Employees",
+        "AI Chatbots",
+        "AI Phone Agents",
+        "Web Development",
+        "SEO",
+        "Business Automation",
+      ],
+    },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageJsonLd) }}
+      />
       <section className="pt-32 pb-12 md:pt-40 text-center bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <span className="text-xs font-bold text-primary uppercase tracking-widest">
