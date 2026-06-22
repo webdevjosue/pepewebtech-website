@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-06-22-google-llm-patent-seo-teaching-ai-identity-small-business",
+    title: "Google Patented a New Way AI Understands Your Business — What Small Businesses Need to Do",
+    date: "Jun 22, 2026",
+    category: "SEO & Marketing",
+    excerpt: "Google filed a patent showing how its AI builds entity profiles of businesses from web content. SEO is shifting from keywords to identity. Here's what small business owners should do now.",
+    readTime: "9 min read",
+    image: "/images/blog/2026-06-22-google-llm-patent-seo-teaching-ai-identity-small-business-header.webp",
+  },
+  {
     slug: "2026-06-20-google-search-console-ai-reports-small-business-guide",
     title: "Google Just Gave You AI Search Data (And a Kill Switch) — What Small Businesses Should Do",
     date: "Jun 20, 2026",
