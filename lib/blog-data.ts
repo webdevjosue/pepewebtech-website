@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-06-23-ai-crm-replace-salesforce-small-business-2026",
+    title: "Why Your Small Business Should Ditch Traditional CRM for AI-Native Tools in 2026",
+    date: "Jun 23, 2026",
+    category: "Business Growth",
+    excerpt: "Traditional CRM software is built for enterprise sales teams. AI-native CRM tools do the same work for $0-50/month and actually get used. Real pricing comparisons and tool recommendations for 2026.",
+    readTime: "8 min read",
+    image: "/images/blog/2026-06-23-ai-crm-replace-salesforce-small-business-2026-header.webp",
+  },
+  {
     slug: "2026-06-22-google-llm-patent-seo-teaching-ai-identity-small-business",
     title: "Google Patented a New Way AI Understands Your Business — What Small Businesses Need to Do",
     date: "Jun 22, 2026",
