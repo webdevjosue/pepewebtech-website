@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-06-25-anthropic-claude-small-business-quickbooks-paypal-hubspot",
+    title: "Anthropic's Claude for Small Business: AI That Actually Does Your Back-Office Work",
+    date: "Jun 25, 2026",
+    category: "AI Tools",
+    excerpt: "Anthropic just launched Claude for Small Business — AI that plugs into QuickBooks, PayPal, HubSpot, and Canva to handle payroll, invoicing, and marketing. Real breakdown of what it does, what it costs, and whether your Southern California business should care.",
+    readTime: "9 min read",
+    image: "/images/blog/2026-06-25-anthropic-claude-small-business-quickbooks-paypal-hubspot-header.webp",
+  },
+  {
     slug: "2026-06-23-ai-crm-replace-salesforce-small-business-2026",
     title: "Why Your Small Business Should Ditch Traditional CRM for AI-Native Tools in 2026",
     date: "Jun 23, 2026",
