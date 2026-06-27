@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-06-27-meta-business-agent-whatsapp-small-business-free",
+    title: "Meta Just Gave Every Small Business a Free AI Customer Service Agent",
+    date: "Jun 27, 2026",
+    category: "AI Tools",
+    excerpt: "Meta expanded its Business Agent globally on WhatsApp, Messenger, and Instagram — free to start. Over one million businesses already use it, handling 10 million customer conversations a week. Here's what it does and how to set it up.",
+    readTime: "8 min read",
+    image: "/images/blog/2026-06-27-meta-business-agent-whatsapp-small-business-free-header.webp",
+  },
+  {
     slug: "2026-06-25-anthropic-claude-small-business-quickbooks-paypal-hubspot",
     title: "Anthropic's Claude for Small Business: AI That Actually Does Your Back-Office Work",
     date: "Jun 25, 2026",
