@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-06-29-ai-pricing-tools-small-business-revenue-growth",
+    title: "AI Pricing Tools Are Quietly Boosting Small Business Revenue",
+    date: "Jun 29, 2026",
+    category: "AI Tools",
+    excerpt: "35% of small businesses now use AI pricing tools, and 97% report higher revenue. Real data on how dynamic and algorithmic pricing works, what it costs, and whether your SoCal business should adopt it.",
+    readTime: "8 min read",
+    image: "/images/blog/2026-06-29-ai-pricing-tools-small-business-revenue-growth-header.webp",
+  },
+  {
     slug: "2026-06-27-meta-business-agent-whatsapp-small-business-free",
     title: "Meta Just Gave Every Small Business a Free AI Customer Service Agent",
     date: "Jun 27, 2026",
