@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-06-30-cipa-cookie-lawsuit-small-business-website-california",
+    title: "Your Small Business Website Could Get Sued for Using Cookies",
+    date: "Jun 30, 2026",
+    category: "Security",
+    excerpt: "California's CIPA wiretapping law is being used to sue businesses over website cookies and tracking pixels. $5,000 per violation, no harm required. Here's what SoCal small business owners must do now.",
+    readTime: "9 min read",
+    image: "/images/blog/2026-06-30-cipa-cookie-lawsuit-small-business-website-california-header.webp",
+  },
+  {
     slug: "2026-06-29-ai-pricing-tools-small-business-revenue-growth",
     title: "AI Pricing Tools Are Quietly Boosting Small Business Revenue",
     date: "Jun 29, 2026",
