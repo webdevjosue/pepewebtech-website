@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-07-02-ada-website-accessibility-lawsuits-small-business-2026",
+    title: "ADA Website Lawsuits Are Surging. Here's How to Protect Your Small Business",
+    date: "Jul 2, 2026",
+    category: "Security",
+    excerpt: "ADA website accessibility lawsuits against small businesses are exploding in 2026. Missouri just passed a law to curb them. Here's what SoCal business owners must know about WCAG compliance, overlay widgets, and real lawsuit risk.",
+    readTime: "9 min read",
+    image: "/images/blog/2026-07-02-ada-website-accessibility-lawsuits-small-business-2026-header.webp",
+  },
+  {
     slug: "2026-06-30-cipa-cookie-lawsuit-small-business-website-california",
     title: "Your Small Business Website Could Get Sued for Using Cookies",
     date: "Jun 30, 2026",
