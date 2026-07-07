@@ -10,6 +10,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-07-07-google-antitrust-ruling-small-business-advertising-costs",
+    title: "Google Just Lost Its Search Monopoly — Here's What It Means for Your Small Business Advertising",
+    date: "Jul 7, 2026",
+    category: "SEO & Marketing",
+    excerpt: "The EU upheld a €4.1B fine, a US judge declared Google Search a monopoly, and courts are ordering real remedies. Here's how these antitrust rulings affect small business ad costs, CPCs, and what you should do now.",
+    readTime: "9 min read",
+    image: "/images/blog/2026-07-07-google-antitrust-ruling-small-business-advertising-costs-header.webp",
+  },
+  {
+    slug: "2026-07-06-ai-phone-agent-objections-small-business-fix",
+    title: "AI Phone Agents Can't Handle Objections Yet — What Small Businesses Should Know",
+    date: "Jul 6, 2026",
+    category: "AI & Automation",
+    excerpt: "AI phone agents can answer calls and book appointments, but many still fail when a prospect says 'it's too expensive' or 'I need to think about it.' Here is what SoCal small businesses need to know before buying or upgrading AI phone coverage.",
+    readTime: "9 min read",
+    image: "/images/blog/2026-07-06-ai-phone-agent-objections-small-business-fix-header.webp",
+  },
+  {
     slug: "2026-07-02-ada-website-accessibility-lawsuits-small-business-2026",
     title: "ADA Website Lawsuits Are Surging. Here's How to Protect Your Small Business",
     date: "Jul 2, 2026",
