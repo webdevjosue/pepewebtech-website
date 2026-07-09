@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-07-09-ai-search-visibility-small-business-guide",
+    title: "92% of Small Businesses Are Invisible to AI Search. Here's How to Fix It.",
+    date: "Jul 9, 2026",
+    category: "SEO & Marketing",
+    excerpt: "When someone asks ChatGPT or Perplexity about local businesses, 92% never get cited. Here's how to get your Southern California small business into AI search answers using GEO, schema markup, and the new visibility tools.",
+    readTime: "9 min read",
+    image: "/images/blog/2026-07-09-ai-search-visibility-small-business-guide-header.webp",
+  },
+  {
     slug: "2026-07-07-google-antitrust-ruling-small-business-advertising-costs",
     title: "Google Just Lost Its Search Monopoly — Here's What It Means for Your Small Business Advertising",
     date: "Jul 7, 2026",
