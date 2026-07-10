@@ -97,6 +97,11 @@ export function Footer() {
                   Privacy Policy
                 </Link>
               </li>
+              <li>
+                <Link href="/affiliate-disclosure" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Affiliate Disclosure
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

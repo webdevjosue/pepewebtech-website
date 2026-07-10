@@ -1,5 +1,6 @@
 import { blogPosts } from "@/lib/blog-data";
 import { notFound } from "next/navigation";
+import { AffiliateDisclosureBadge } from "@/components/affiliate-disclosure";
 import fs from "fs";
 import path from "path";
 import type { Metadata } from "next";
@@ -81,8 +82,14 @@ export default async function BlogPostPage({ params }: PageProps) {
   const htmlPath = path.join(contentDir, `${slug}.html`);
 
   let htmlContent = "";
+  let hasAffiliateLinks = false;
   if (fs.existsSync(htmlPath)) {
     htmlContent = fs.readFileSync(htmlPath, "utf-8");
+    // Detect affiliate links: Z.AI referral links, or links with rel="nofollow sponsored"
+    hasAffiliateLinks =
+      /z\.ai\/subscribe\?ic=|rel=["'].*?(?:nofollow|sponsored)/i.test(
+        htmlContent
+      );
     // Extract body content, strip nav/footer/script/style/link, render as-is
     const bodyMatch = htmlContent.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
     if (bodyMatch) {
@@ -117,6 +124,8 @@ export default async function BlogPostPage({ params }: PageProps) {
             {post.title}
           </h1>
         </header>
+
+        {hasAffiliateLinks && <AffiliateDisclosureBadge />}
 
         <div className="relative">
           <div
