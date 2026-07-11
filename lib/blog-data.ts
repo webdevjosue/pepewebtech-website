@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-07-11-cloudflare-ai-crawler-control-small-business-website",
+    title: "Cloudflare Just Gave You Control Over AI Crawlers on Your Website. Here's What to Do.",
+    date: "Jul 11, 2026",
+    category: "Security",
+    excerpt: "Cloudflare's new AI crawler policy gives every website owner granular control over AI training, search, and agent bots. Starting September 15, 2026, AI training crawlers get blocked by default. Here's what small business owners should do.",
+    readTime: "8 min read",
+    image: "/images/blog/2026-07-11-cloudflare-ai-crawler-control-small-business-website-header.webp",
+  },
+  {
     slug: "2026-07-09-ai-search-visibility-small-business-guide",
     title: "92% of Small Businesses Are Invisible to AI Search. Here's How to Fix It.",
     date: "Jul 9, 2026",
