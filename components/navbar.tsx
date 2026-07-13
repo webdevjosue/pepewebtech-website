@@ -19,7 +19,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -27,39 +27,41 @@ export function Navbar() {
   return (
     <nav
       aria-label="Main navigation"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "nav-glass shadow-md"
-          : "bg-transparent"
+          ? "nav-glass scrolled"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="text-xl font-bold text-foreground hover:text-primary transition-colors"
+            className="text-xl font-bold text-foreground hover:text-primary transition-colors tracking-tight"
           >
             PepeWebTech
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-3 py-2 rounded-lg hover:bg-secondary/60"
               >
                 {link.label}
               </Link>
             ))}
-            <ThemeToggle />
-            <Button asChild>
+            <div className="ml-3">
+              <ThemeToggle />
+            </div>
+            <Button asChild className="ml-2 btn-primary-premium">
               <Link href="/contact">Book Your Free Call</Link>
             </Button>
           </div>
 
-          {/* Mobile nav - shadcn Sheet */}
+          {/* Mobile nav */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
@@ -71,13 +73,13 @@ export function Navbar() {
               <div className="flex items-center justify-between mb-8">
                 <span className="text-lg font-bold">PepeWebTech</span>
               </div>
-              <nav className="flex flex-col gap-4">
+              <nav className="flex flex-col gap-2">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                    className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-2.5 px-3 rounded-lg hover:bg-secondary"
                   >
                     {link.label}
                   </Link>

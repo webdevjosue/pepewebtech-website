@@ -3,109 +3,109 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer className="border-t border-border bg-card">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div className="md:col-span-1">
             <Link
               href="/"
-              className="text-xl font-bold text-foreground"
+              className="text-xl font-bold text-foreground tracking-tight"
             >
               PepeWebTech
             </Link>
-            <p className="mt-3 text-sm text-muted-foreground">
+            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
               AI-powered web development for small businesses. Serving Temecula, Murrieta &amp; Southern California.
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-foreground mb-3">AI Employees</h4>
-            <ul className="space-y-2">
+            <h4 className="font-semibold text-foreground mb-4 text-sm tracking-wide">AI Employees</h4>
+            <ul className="space-y-3">
               <li>
-                <Link href="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   AI Chatbot
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   AI Phone Agent
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Full AI Package
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Pricing
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-foreground mb-3">Web Design</h4>
-            <ul className="space-y-2">
+            <h4 className="font-semibold text-foreground mb-4 text-sm tracking-wide">Web Design</h4>
+            <ul className="space-y-3">
               <li>
-                <Link href="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Landing Pages
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Business Sites
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   E-Commerce
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Maintenance
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-foreground mb-3">Connect</h4>
-            <ul className="space-y-2">
+            <h4 className="font-semibold text-foreground mb-4 text-sm tracking-wide">Connect</h4>
+            <ul className="space-y-3">
               <li>
                 <a
                   href="mailto:info@pepewebtech.com"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   info@pepewebtech.com
                 </a>
               </li>
               <li>
-                <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/affiliate-disclosure" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/affiliate-disclosure" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Affiliate Disclosure
                 </Link>
               </li>
             </ul>
           </div>
         </div>
-        <div className="mt-10 pt-6 border-t border-border text-center">
+        <div className="mt-12 pt-6 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
             &copy; 2026 PepeWebTech. All rights reserved.
           </p>

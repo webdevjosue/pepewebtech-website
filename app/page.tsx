@@ -47,16 +47,16 @@ export default function Home() {
       <Hero />
 
       {/* Services */}
-      <section className="py-16 md:py-24 bg-muted/50">
+      <section className="py-20 md:py-28 bg-muted/40">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <span className="text-xs font-bold text-primary uppercase tracking-widest">
               What We Do
             </span>
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-foreground">
+            <h2 className="mt-3 text-3xl md:text-5xl font-bold text-foreground tracking-tight">
               Never Miss Another Customer
             </h2>
-            <p className="mt-3 text-muted-foreground">
+            <p className="mt-4 text-muted-foreground text-lg">
               Your business never sleeps. Neither do our AI agents.
             </p>
           </div>
@@ -127,16 +127,16 @@ export default function Home() {
       <Showcase />
 
       {/* Blog */}
-      <section className="py-16 md:py-24 bg-muted/50">
+      <section className="py-20 md:py-28 bg-muted/40">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <span className="text-xs font-bold text-primary uppercase tracking-widest">
               Blog
             </span>
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-foreground">
+            <h2 className="mt-3 text-3xl md:text-5xl font-bold text-foreground tracking-tight">
               Latest Insights
             </h2>
-            <p className="mt-3 text-muted-foreground">
+            <p className="mt-4 text-muted-foreground text-lg">
               Tips, guides, and industry news for small businesses
             </p>
           </div>
