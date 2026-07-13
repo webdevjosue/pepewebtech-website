@@ -10,13 +10,13 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "2026-07-14-ai-startup-boom-what-small-businesses-need-to-know",
+    slug: "2026-07-13-ai-startup-boom-what-small-businesses-need-to-know",
     title: "AI Is Sparking a Record Wave of New Businesses. Here's What It Means for Yours.",
-    date: "Jul 14, 2026",
+    date: "Jul 13, 2026",
     category: "AI Trends",
     excerpt: "AI is driving the highest level of new US business formation in over two decades, with new firms projected 24% higher than last year. Here's what SoCal small businesses need to know about AI-powered competition, rising costs, and where to compete.",
     readTime: "8 min read",
-    image: "/images/blog/2026-07-14-ai-startup-boom-what-small-businesses-need-to-know-header.webp",
+    image: "/images/blog/2026-07-13-ai-startup-boom-what-small-businesses-need-to-know-header.webp",
   },
   {
     slug: "2026-07-11-cloudflare-ai-crawler-control-small-business-website",
