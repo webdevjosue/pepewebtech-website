@@ -48,10 +48,10 @@ function PricingCard({ plan, badgeText }: { plan: Plan; badgeText: string }) {
       <div className="text-center pb-6 border-b border-border/40">
         <h3 className="text-xl font-bold tracking-tight">{plan.name}</h3>
         <div className="mt-4 flex items-baseline justify-center gap-1">
-          <span className="text-5xl font-extrabold tracking-tight">{plan.price}</span>
-          <span className="text-muted-foreground text-sm font-medium">{plan.period}</span>
+          <span className={`text-5xl font-extrabold tracking-tight ${plan.featured ? "text-white" : "text-primary"}`}>{plan.price}</span>
+          <span className={`text-sm font-medium ${plan.featured ? "text-white/80" : "text-muted-foreground"}`}>{plan.period}</span>
         </div>
-        <p className={`text-sm mt-2 ${plan.featured ? "opacity-90" : "text-muted-foreground"}`}>
+        <p className={`text-sm mt-2 ${plan.featured ? "text-white/90" : "text-muted-foreground"}`}>
           {plan.description}
         </p>
       </div>
@@ -61,7 +61,7 @@ function PricingCard({ plan, badgeText }: { plan: Plan; badgeText: string }) {
           {plan.features.map((feature, i) => (
             <li
               key={i}
-              className={`text-sm flex items-start gap-3 ${plan.featured ? "text-white/90" : "text-muted-foreground"}`}
+              className={`text-sm flex items-start gap-3 ${plan.featured ? "text-white/90" : "text-foreground/80"}`}
             >
               <span className={`flex-shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center ${plan.featured ? "bg-white/20" : "bg-primary/10"}`}>
                 <Check className={`h-3 w-3 ${plan.featured ? "text-white" : "text-primary"}`} />

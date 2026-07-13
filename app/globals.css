@@ -247,13 +247,9 @@
 }
 
 /* Featured card text override — all pure white for max contrast */
+.pricing-featured h3,
 .pricing-featured .text-foreground,
-.pricing-featured .text-muted-foreground,
-.pricing-featured h3 {
-  color: white !important;
-}
-
-.pricing-featured .text-primary {
+.pricing-featured .text-muted-foreground {
   color: white !important;
 }
 
