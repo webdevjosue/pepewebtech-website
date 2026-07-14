@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-07-14-ai-token-costs-small-business-hidden-bill",
+    title: "Your AI Tools Are Burning Through Cash. Here's How to Stop the Bleeding.",
+    date: "Jul 14, 2026",
+    category: "AI Trends",
+    excerpt: "Uber burned through its 2026 AI budget in four months. GitHub Copilot switched to metered billing. Gartner says AI coding costs will surpass developer salaries by 2028. Here's how small businesses can avoid getting caught in the AI billing trap.",
+    readTime: "9 min read",
+    image: "/images/blog/2026-07-14-ai-token-costs-small-business-hidden-bill-header.webp",
+  },
+  {
     slug: "2026-07-13-ai-startup-boom-what-small-businesses-need-to-know",
     title: "AI Is Sparking a Record Wave of New Businesses. Here's What It Means for Yours.",
     date: "Jul 13, 2026",
