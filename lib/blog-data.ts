@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-07-16-small-business-ai-trust-gap-costing-money",
+    title: "75% of Small Businesses Don't Trust AI — and That's Costing Them Money",
+    date: "Jul 16, 2026",
+    category: "AI & Automation",
+    excerpt: "Three quarters of small businesses don't trust AI for basic tasks. Meanwhile, businesses using it are saving 4+ hours per week and projecting stronger competitive positioning. The hesitation has a price tag — here's how to close the trust gap.",
+    readTime: "8 min read",
+    image: "/images/blog/2026-07-16-small-business-ai-trust-gap-costing-money-header.webp",
+  },
+  {
     slug: "2026-07-14-ai-token-costs-small-business-hidden-bill",
     title: "Your AI Tools Are Burning Through Cash. Here's How to Stop the Bleeding.",
     date: "Jul 14, 2026",
