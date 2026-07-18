@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2026-07-18-stackoverflow-traffic-decline-ai-small-business-website",
+    title: "StackOverflow Just Lost Half Its Traffic to AI. Your Small Business Website Is Next.",
+    date: "Jul 18, 2026",
+    category: "SEO & Marketing",
+    excerpt: "A viral chart shows StackOverflow lost half its traffic since ChatGPT launched. The same AI shift is quietly eroding organic traffic for small business websites — and most owners have no idea it's happening. Here's the data and what to do about it.",
+    readTime: "9 min read",
+    image: "/images/blog/2026-07-18-stackoverflow-traffic-decline-ai-small-business-website-header.webp",
+  },
+  {
     slug: "2026-07-16-small-business-ai-trust-gap-costing-money",
     title: "75% of Small Businesses Don't Trust AI — and That's Costing Them Money",
     date: "Jul 16, 2026",
